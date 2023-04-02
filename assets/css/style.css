@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+*,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --primary-color: #f30d0d;
+}
+
+body {
+  background: #e7e7e8;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+header {
+  position: fixed;
+  padding: 0 5rem;
+  background-color: #fff;
+  width: 100%;
+  height: 4rem;
+}
+
+.navbar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-links {
+  display: flex;
+  gap: 4rem;
+  margin-left: 150px;
+}
+
+.nav-link {
+  color: #000;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 15px;
+  border-radius: 5px;
+  width: 200px;
+  gap: 10px;
+}
+
+.toggle-btn-open {
+  font-size: 1.5rem;
+  display: none;
+  cursor: pointer;
+}
+.toggle-btn-open i {
+  font-size: 1.5rem;
+  display: none;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: none;
+  height: 0;
+  right: 0;
+  top: 60px;
+  width: 0;
+  background-color: #fff;
+  overflow: hidden;
+  transition: height 200ms ease-in-out;
+  z-index: 10;
+  gap: 10px;
+}
+
+.dropdown-menu.open {
+  height: 300px;
+}
+
+.dropdown-menu li {
+  padding: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-menu .action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 880px) {
+  .list-links,
+  .action-btn {
+    display: none;
+  }
+
+  .toggle-btn-open {
+    display: flex;
+  }
+  .toggle-btn-open i {
+    display: flex;
+  }
+  /* header {
+    padding: 0 3rem;
+  } */
+
+  .dropdown-menu {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 1rem;
+    gap: 20px;
+    width: 100vw;
+  }
+
+  .dropdown-menu li {
+    border-bottom: 0.5px solid #eaeaea;
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .dropdown-menu {
+    width: 100vw;
+  }
+  header {
+    padding: 0 1rem;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
