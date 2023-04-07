@@ -532,3 +532,130 @@ header {
   color: #000000b4;
   gap: 10px;
 }
+
+.container-informações-empresa {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  background-color: #fff;
+  height: 60vh;
+}
+
+.content-informações-empresa {
+  width: 90%;
+  max-width: 1500px;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+
+.content-google-maps {
+  width: 50%;
+  height: 100%;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 1324px) {
+  .content-google-maps {
+    width: 70%;
+  }
+}
+
+.div-informações-empresa {
+  width: 30%;
+  height: 100%;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1324px) {
+  .div-informações-empresa {
+    width: 40%;
+  }
+  .title-informações-empresa {
+    font-size: 20px;
+  }
+}
+
+.descrição-informações-empresa {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+}
+.descrição-informações-empresa i {
+  font-size: 30px;
+  color: var(--primary-color);
+}
+
+.descrição-informações-empresa p {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.title-informações-empresa {
+  font-size: 27px;
+}
+
+@media screen and (max-width: 800px) {
+  .container-informações-empresa {
+    height: 100vh;
+  }
+
+  .content-informações-empresa {
+    flex-direction: column-reverse;
+    height: 95%;
+  }
+
+  .content-google-maps {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .div-informações-empresa {
+    width: 100%;
+    padding: 0;
+    height: 70%;
+  }
+
+  .title-informações-empresa {
+    font-size: 27px;
+  }
+
+  .descrição-informações-empresa p {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .descrição-informações-empresa i {
+    font-size: 26px;
+  }
+}
+
+.container-footer {
+  width: 100vw;
+  height: 17vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 30px;
+  background-color: #202020;
+  color: #fff;
+}
+
+.container-footer div {
+  display: flex;
+  gap: 30px;
+}
+
+.container-footer p {
+  font-size: 13px;
+  font-weight: 500;
+}
