@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --primary-color: #f30d0d;
+  --background-color: #f2f2f2;
+  --container-color: #fff;
+  --hover-color: #be0a0a;
+}
+
+body {
+  background-color: var(--background-color);
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+header {
+  position: fixed;
+  padding: 0 5rem;
+  background-color: var(--container-color);
+  width: 100%;
+  height: 4rem;
+  z-index: 1000;
+  border: 1px solid #eaeaea;
+}
+
+.navbar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-links {
+  display: flex;
+  gap: 4rem;
+  margin-left: 150px;
+}
+
+.nav-link {
+  color: #000;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 15px;
+  border-radius: 5px;
+  width: 200px;
+  gap: 10px;
+  transition: background-color 200ms ease;
+}
+
+.action-btn:hover {
+  background-color: var(--hover-color);
+}
+
+.toggle-btn-open {
+  font-size: 1.5rem;
+  display: none;
+  cursor: pointer;
+}
+.toggle-btn-open i {
+  font-size: 1.5rem;
+  display: none;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: none;
+  height: 0;
+  right: 0;
+  top: 60px;
+  width: 0;
+  background-color: var(--container-color);
+  overflow: hidden;
+  transition: height 200ms ease-in-out;
+  z-index: 100;
+  gap: 10px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.14);
+}
+
+.dropdown-menu.open {
+  height: 300px;
+}
+
+.dropdown-menu li {
+  padding: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-menu .action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 880px) {
+  .list-links,
+  .action-btn {
+    display: none;
+  }
+
+  .toggle-btn-open {
+    display: flex;
+  }
+  .toggle-btn-open i {
+    display: flex;
+  }
+
+  .dropdown-menu {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 1rem;
+    gap: 20px;
+    width: 100vw;
+  }
+
+  .dropdown-menu li {
+    border-bottom: 0.5px solid #eaeaea;
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .dropdown-menu {
+    width: 100vw;
+  }
+  header {
+    padding: 0 1rem;
+  }
+}
+
+.container {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  height: auto;
+  min-height: 100vh;
+  padding: 60px 0 0 0;
+  flex-direction: column;
+}
+
+.header-veiculos {
+  width: 100%;
+  padding: 2rem 5rem;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  border: 1px solid #eaeaea;
+}
+
+.header-veiculos-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .header-veiculos {
+    padding: 2rem 1rem;
+  }
+
+  .header-veiculos-content h2 {
+    font-size: 22px;
+    margin-bottom: 13px;
+  }
+}
+@media screen and (max-width: 724px) {
+  .header-veiculos-content {
+    flex-direction: column;
+  }
+  .header-veiculos-content h2 {
+    margin-bottom: 14px;
+  }
+}
+
+.options-header-veiculos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+}
+
+.search {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 1rem;
+}
+
+.input-search {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.options {
+  display: flex;
+  gap: 10px;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: transparent;
+  transition: background-color 200ms ease;
+}
+
+.options:hover {
+  background-color: var(--background-color);
+}
+
+.options i {
+  font-size: 25px;
+}
+
+.options select {
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.layout-filter-veiculos {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid:
+    "sidebar body" 1fr
+    / 20% 1fr;
+  gap: 8px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.container-filter {
+  grid-area: sidebar;
+  background-color: #fff;
+  padding: 1rem;
+}
+.container-grid {
+  grid-area: body;
+  padding: 1rem;
+}
+
+.grid-carros-destaque {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-gap: 40px;
+  align-items: stretch;
+  margin-top: 20px;
+  place-items: center;
+}
+
+.card-carro {
+  border-radius: 10px;
+  background-color: var(--container-color);
+  width: 95%;
+}
+
+.card-carro .img-carro {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+}
+
+.informações-carro {
+  padding: 1.3rem;
+}
+
+.nome-carro {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.valor-carro {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 17px;
+  color: var(--primary-color);
+}
+
+.linha-card-carros {
+  width: 100%;
+  background-color: #eaeaea;
+  height: 1px;
+  margin: 20px 0;
+}
+
+.caracteristica-carro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.caracteristica-carro-1-col,
+.caracteristica-carro-2-col {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.caracteristica-carro-1-col,
+.caracteristica-carro-2-col p {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.descricao-caracteristica-carro {
+  display: flex;
+}
+
+.descricao-caracteristica-carro img {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 1324px) {
+  .content-carros-destaque {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1330px) {
+  .content-carros-destaque {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .content-carros-destaque {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .content-carros-destaque {
+    width: 95%;
+  }
+}

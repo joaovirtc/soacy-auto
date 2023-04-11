@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Veículos</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="toggle-btn-open">
+          <i class="ri-menu-line"></i>
+        </div>
+        <div class="logo"><a href="./index.html">LOGO</a></div>
+        <div>
+          <ul class="list-links">
+            <li><a class="nav-link" href="./index.html">Início</a></li>
+            <li>
+              <a class="nav-link" href="./pages/veiculos/index.html"
+                >Veículos</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="./pages/empresa/index.html">Empresa</a>
+            </li>
+          </ul>
+        </div>
+        <a href="./pages/contato/index.html" class="action-btn">
+          <i class="ri-whatsapp-line"></i>
+          <p>Entrar em contato</p>
+        </a>
+      </nav>
+      <nav class="dropdown-menu">
+        <li><a href="./index.html" class="nav-link">Início</a></li>
+        <li>
+          <a href="./pages/veiculos/index.html" class="nav-link">Veículos</a>
+        </li>
+        <li>
+          <a href="./pages/empresa/index.html" class="nav-link">Empresa</a>
+        </li>
+        <a href="./pages/contato/index.html" class="action-btn">
+          <i class="ri-whatsapp-line"></i>
+          <p>Entrar em contato</p>
+        </a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="header-veiculos">
+        <div class="header-veiculos-content">
+          <div>
+            <h2>Veículos novos e seminovos</h2>
+          </div>
+          <div class="options-header-veiculos">
+            <!-- <div class="search">
+              <i class="ri-search-2-line icon-search"></i>
+              <input
+                type="text"
+                name=""
+                id=""
+                class="input-search"
+                placeholder="Pesquisar"
+              />
+            </div> -->
+            <div class="options">
+              <i class="ri-arrow-up-down-line"></i>
+              <select name="options" id="cars">
+                <option value="Menor Valor">Filtrar por</option>
+                <option value="Menor Valor">Menor Valor</option>
+                <option value="Maior Valor">Maior Valor</option>
+                <option value="Mais Recentes">Mais Recentes</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="layout-filter-veiculos">
+        <div class="container-filter">
+          <h2>Filtrar</h2>
+        </div>
+        <div class="container-grid">
+          <main class="grid-carros-destaque">
+            <div class="card-carro">
+              <img
+                src="../../assets/img/carro-1.png"
+                alt="Tesla 2022"
+                class="img-carro"
+              />
+              <div class="informações-carro">
+                <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
+                <h3 class="valor-carro">R$ 59.900,00</h3>
+                <div class="linha-card-carros"></div>
+                <div class="caracteristica-carro">
+                  <div class="caracteristica-carro-1-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Calendar.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>2022/2023</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Speedometer.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>140.000 km</p>
+                    </div>
+                  </div>
+                  <div class="caracteristica-carro-2-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Manual transmission.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Automatico</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Gasoline pump.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Eletrico</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-carro">
+              <img
+                src="../../assets/img/carro-1.png"
+                alt="Tesla 2022"
+                class="img-carro"
+              />
+              <div class="informações-carro">
+                <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
+                <h3 class="valor-carro">R$ 59.900,00</h3>
+                <div class="linha-card-carros"></div>
+                <div class="caracteristica-carro">
+                  <div class="caracteristica-carro-1-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Calendar.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>2022/2023</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Speedometer.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>140.000 km</p>
+                    </div>
+                  </div>
+                  <div class="caracteristica-carro-2-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Manual transmission.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Automatico</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Gasoline pump.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Eletrico</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-carro">
+              <img
+                src="../../assets/img/carro-1.png"
+                alt="Tesla 2022"
+                class="img-carro"
+              />
+              <div class="informações-carro">
+                <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
+                <h3 class="valor-carro">R$ 59.900,00</h3>
+                <div class="linha-card-carros"></div>
+                <div class="caracteristica-carro">
+                  <div class="caracteristica-carro-1-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Calendar.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>2022/2023</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Speedometer.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>140.000 km</p>
+                    </div>
+                  </div>
+                  <div class="caracteristica-carro-2-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Manual transmission.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Automatico</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Gasoline pump.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Eletrico</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-carro">
+              <img
+                src="../../assets/img/carro-1.png"
+                alt="Tesla 2022"
+                class="img-carro"
+              />
+              <div class="informações-carro">
+                <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
+                <h3 class="valor-carro">R$ 59.900,00</h3>
+                <div class="linha-card-carros"></div>
+                <div class="caracteristica-carro">
+                  <div class="caracteristica-carro-1-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Calendar.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>2022/2023</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Speedometer.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>140.000 km</p>
+                    </div>
+                  </div>
+                  <div class="caracteristica-carro-2-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Manual transmission.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Automatico</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Gasoline pump.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Eletrico</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-carro">
+              <img
+                src="../../assets/img/carro-1.png"
+                alt="Tesla 2022"
+                class="img-carro"
+              />
+              <div class="informações-carro">
+                <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
+                <h3 class="valor-carro">R$ 59.900,00</h3>
+                <div class="linha-card-carros"></div>
+                <div class="caracteristica-carro">
+                  <div class="caracteristica-carro-1-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Calendar.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>2022/2023</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Speedometer.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>140.000 km</p>
+                    </div>
+                  </div>
+                  <div class="caracteristica-carro-2-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Manual transmission.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Automatico</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Gasoline pump.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Eletrico</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-carro">
+              <img
+                src="../../assets/img/carro-1.png"
+                alt="Tesla 2022"
+                class="img-carro"
+              />
+              <div class="informações-carro">
+                <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
+                <h3 class="valor-carro">R$ 59.900,00</h3>
+                <div class="linha-card-carros"></div>
+                <div class="caracteristica-carro">
+                  <div class="caracteristica-carro-1-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Calendar.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>2022/2023</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Speedometer.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>140.000 km</p>
+                    </div>
+                  </div>
+                  <div class="caracteristica-carro-2-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Manual transmission.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Automatico</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Gasoline pump.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Eletrico</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-carro">
+              <img
+                src="../../assets/img/carro-1.png"
+                alt="Tesla 2022"
+                class="img-carro"
+              />
+              <div class="informações-carro">
+                <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
+                <h3 class="valor-carro">R$ 59.900,00</h3>
+                <div class="linha-card-carros"></div>
+                <div class="caracteristica-carro">
+                  <div class="caracteristica-carro-1-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Calendar.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>2022/2023</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Speedometer.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>140.000 km</p>
+                    </div>
+                  </div>
+                  <div class="caracteristica-carro-2-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Manual transmission.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Automatico</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Gasoline pump.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Eletrico</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-carro">
+              <img
+                src="../../assets/img/carro-1.png"
+                alt="Tesla 2022"
+                class="img-carro"
+              />
+              <div class="informações-carro">
+                <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
+                <h3 class="valor-carro">R$ 59.900,00</h3>
+                <div class="linha-card-carros"></div>
+                <div class="caracteristica-carro">
+                  <div class="caracteristica-carro-1-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Calendar.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>2022/2023</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Speedometer.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>140.000 km</p>
+                    </div>
+                  </div>
+                  <div class="caracteristica-carro-2-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Manual transmission.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Automatico</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Gasoline pump.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Eletrico</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-carro">
+              <img
+                src="../../assets/img/carro-1.png"
+                alt="Tesla 2022"
+                class="img-carro"
+              />
+              <div class="informações-carro">
+                <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
+                <h3 class="valor-carro">R$ 59.900,00</h3>
+                <div class="linha-card-carros"></div>
+                <div class="caracteristica-carro">
+                  <div class="caracteristica-carro-1-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Calendar.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>2022/2023</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Speedometer.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>140.000 km</p>
+                    </div>
+                  </div>
+                  <div class="caracteristica-carro-2-col">
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Manual transmission.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Automatico</p>
+                    </div>
+                    <div class="descricao-caracteristica-carro">
+                      <img
+                        src="../../assets/img/Gasoline pump.svg"
+                        alt=""
+                        width="18px"
+                        height="18px"
+                      />
+                      <p>Eletrico</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </section>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>
