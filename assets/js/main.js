@@ -6,3 +6,14 @@ toggleBtn.onclick = () => {
   dropDownMenu.classList.toggle("open");
   const isOpen = dropDownMenu.classList.contains("open");
 };
+
+// ================= DROP FILTRO ===================
+
+let dropdownFiltro = document.querySelector(".dropdownFiltro");
+dropdownFiltro.onclick = function () {
+  dropdownFiltro.classList.toggle("active");
+};
+
+function SHOW_TEXT_FILTRO(a) {
+  document.querySelector(".nameOption").value = a;
+}
