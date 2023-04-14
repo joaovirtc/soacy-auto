@@ -257,6 +257,10 @@ header {
   background-color: var(--background-color);
 }
 
+.options-header p {
+  font-size: 13px;
+}
+
 .options-header i {
   font-size: 25px;
 }
@@ -287,19 +291,25 @@ header {
   background-color: var(--container-color);
   position: fixed;
   z-index: 1;
-  width: 17%;
+  width: 20%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 50px;
+  gap: 19px;
   padding-top: 40px;
   min-height: 100vh;
 }
 
+@media screen and (max-width: 1200px) {
+  .sidebar {
+    width: 22%;
+  }
+}
+
 .header-sidebar {
-  width: 90%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -307,45 +317,54 @@ header {
 }
 
 .clean-filtro {
-  font-size: 14px;
+  font-size: 15px;
   color: #0f79e4;
   cursor: pointer;
   font-weight: 600;
 }
 
 .header-sidebar h2 {
-  font-size: 20px;
+  font-size: 15px;
+  color: #0f79e4;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .header-sidebar i {
   font-size: 20px;
 }
 
-.container-dropdown-filtro {
-  width: 90%;
+/* =================================== FILTRAR MARCA ================================= */
+
+.container-dropdown-filtro,
+.container-dropdown-filtro-2 {
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   display: flex;
 }
 
-.dropdownFiltro {
+.dropdownFiltro,
+.dropdownFiltro-2 {
   position: relative;
   width: 100%;
   height: 50px;
   border-bottom: 1px solid #ccc;
 }
 
-.title-dropdown-options-filtro {
+.title-dropdown-options-filtro,
+.title-dropdown-options-filtro-2 {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 15px;
   color: #000;
   font-weight: 600;
   border: none;
+  background: transparent;
   outline: none;
 }
 .ri-global-line {
@@ -354,7 +373,7 @@ header {
 }
 
 .title-dropdown-options-filtro::placeholder {
-  font-size: 17px;
+  font-size: 15px;
   color: #000;
   font-weight: 600;
 }
@@ -369,15 +388,15 @@ header {
   position: absolute;
   top: 100%;
   width: 100%;
-  background-color: var(--background-color);
+  background-color: var(--container-color);
   border-radius: 10px;
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
-  border: 1px solid var(--background-color);
   max-height: 0;
   overflow-y: scroll;
   transition: max-height 200ms ease-in-out;
+  z-index: 3;
 }
 
 .options-filtro::-webkit-scrollbar {
@@ -399,7 +418,7 @@ header {
 .dropdownFiltro.active .options-filtro {
   visibility: visible;
   opacity: 1;
-  max-height: 300px;
+  max-height: 1000px;
 }
 .dropdownFiltro.active {
   border: 1px solid transparent;
@@ -408,6 +427,7 @@ header {
 .options-filtro div {
   padding: 12px 20px;
   cursor: pointer;
+  border-bottom: 1px solid #ccc;
 }
 
 .opções {
@@ -417,15 +437,267 @@ header {
   gap: 30px;
 }
 .opções p {
-  font-size: 14px;
+  font-size: 13px;
   color: #000;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .opções:hover {
   background-color: var(--container-color);
 }
 
+.ri-global-line {
+  font-size: 30px;
+  color: #000000af;
+}
+
+.icon-arrow-down {
+  position: absolute;
+  left: 94%;
+  top: 30%;
+}
+
+/* =================================== FILTRAR MODELOS ================================= */
+
+.title-dropdown-options-filtro-2::placeholder {
+  font-size: 15px;
+  color: #000;
+  font-weight: 600;
+}
+
+.options-filtro-2 {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background-color: var(--container-color);
+  border-radius: 10px;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  overflow-y: scroll;
+  transition: max-height 200ms ease-in-out;
+  z-index: 2;
+}
+
+.options-filtro-2::-webkit-scrollbar {
+  width: 5px;
+  height: 9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.dropdownFiltro-2.active-2 .options-filtro-2 {
+  visibility: visible;
+  opacity: 1;
+  max-height: 300px;
+}
+.dropdownFiltro-2.active-2 {
+  border: 1px solid transparent;
+}
+
+.options-filtro-2 div {
+  padding: 12px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.opções-2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+.opções-2 p {
+  font-size: 13px;
+  color: #000;
+  font-weight: 700;
+}
+
+.opções-2:hover {
+  background-color: var(--container-color);
+}
+/* =================================== FILTRAR ANO ================================= */
+.container-dropdown-filtro-ANO {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.dropdownFiltro-ANO {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+}
+
+.title-dropdown-options-filtro-ANO {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  font-size: 15px;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+.ri-global-line {
+  font-size: 30px;
+  color: #000000af;
+}
+
+.title-dropdown-options-filtro-ANO::placeholder {
+  font-size: 15px;
+  color: #000;
+  font-weight: 600;
+}
+
+.icon-arrow-down {
+  position: absolute;
+  left: 94%;
+  top: 30%;
+}
+
+.options-filtro-ANO {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background-color: var(--container-color);
+  border-radius: 10px;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  overflow-y: scroll;
+  transition: max-height 200ms ease-in-out;
+  z-index: 1;
+}
+
+.options-filtro-ANO::-webkit-scrollbar {
+  width: 5px;
+  height: 9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.dropdownFiltro-ANO.active-ANO .options-filtro-ANO {
+  visibility: visible;
+  opacity: 1;
+  max-height: 300px;
+}
+.dropdownFiltro-ANO.active-ANO {
+  border: 1px solid transparent;
+}
+
+.options-filtro-ANO div {
+  padding: 12px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.opções-ANO {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+.opções-ANO p {
+  font-size: 13px;
+  color: #000;
+  font-weight: 700;
+}
+
+.opções-ANO:hover {
+  background-color: var(--container-color);
+}
+
+/* ============================= FILTRO CHECKBOX ============================= */
+
+.container-filtro-preçoMinMax {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filtro-preçoMinMax {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.8rem;
+  gap: 10px;
+}
+
+.header-filtro-preçoMinMax p {
+  font-size: 15px;
+  color: #000;
+  font-weight: 600;
+}
+
+.checkbox-opções-filtro-preçoMinMax {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.checkbox-opções-filtro-preçoMinMax div {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.checkbox-opções-filtro-preçoMinMax span {
+  font-size: 13px;
+  color: #000000cb;
+  font-weight: 500;
+}
+
+.opções-filtro-preçoMinMax {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.opções-filtro-preçoMinMax input {
+  width: 40%;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 13px;
+}
+
+/* ============================= MAIN VEICULOS ============================= */
 .veiculos {
   grid-area: veiculos;
   background-color: #ccc;

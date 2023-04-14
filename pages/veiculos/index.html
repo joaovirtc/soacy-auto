@@ -75,8 +75,9 @@
             </div>
             <div class="options-header">
               <i class="ri-arrow-up-down-line"></i>
+
               <select name="options" id="cars">
-                <option value="">Filtrar por:</option>
+                <option value="Menor Valor">Organizar por:</option>
                 <option value="Menor Valor">Menor Valor</option>
                 <option value="Maior Valor">Maior Valor</option>
                 <option value="Mais Recentes">Mais Recentes</option>
@@ -90,7 +91,7 @@
         <div class="sidebar">
           <div class="header-sidebar">
             <h2>Filtrar</h2>
-            <p class="clean-filtro">Limpar</p>
+            <h2 class="clean-filtro">Limpar</h2>
           </div>
 
           <!-- ======================= DROPDOWN ============================-->
@@ -167,6 +168,95 @@
                   />
                   <p>CHEVROLET</p>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-dropdown-filtro-2">
+            <div class="dropdownFiltro-2">
+              <input
+                type="text"
+                placeholder="Modelos"
+                class="title-dropdown-options-filtro-2 nameOption-2"
+                value=""
+                readonly
+              />
+              <i class="ri-arrow-down-s-line icon-arrow-down"></i>
+              <div class="options-filtro-2">
+                <div
+                  onclick="SHOW_TEXT_FILTRO2('Todas as marcas')"
+                  class="opções-2"
+                >
+                  <p>Todos os modelos</p>
+                </div>
+                <div onclick="SHOW_TEXT_FILTRO2('Palio')" class="opções-2">
+                  <p>Fiat Palio</p>
+                </div>
+                <div onclick="SHOW_TEXT_FILTRO2('Palio')" class="opções-2">
+                  <p>Fiat Palio</p>
+                </div>
+                <div onclick="SHOW_TEXT_FILTRO2('Palio')" class="opções-2">
+                  <p>Fiat Palio</p>
+                </div>
+                <div onclick="SHOW_TEXT_FILTRO2('Palio')" class="opções-2">
+                  <p>Fiat Palio</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-dropdown-filtro-ANO">
+            <div class="dropdownFiltro-ANO">
+              <input
+                type="text"
+                placeholder="Ano"
+                class="title-dropdown-options-filtro-ANO nameOption-ANO"
+                value=""
+                readonly
+              />
+              <i class="ri-arrow-down-s-line icon-arrow-down"></i>
+              <div class="options-filtro-ANO">
+                <div
+                  onclick="SHOW_TEXT_FILTRO_ANO('Todos os anos')"
+                  class="opções-ANO"
+                >
+                  <p>Todos os anos</p>
+                </div>
+                <div onclick="SHOW_TEXT_FILTRO_ANO('2023')" class="opções-ANO">
+                  <p>2023</p>
+                </div>
+                <div onclick="SHOW_TEXT_FILTRO_ANO('2022')" class="opções-ANO">
+                  <p>2022</p>
+                </div>
+                <div onclick="SHOW_TEXT_FILTRO_ANO('2021')" class="opções-ANO">
+                  <p>2021</p>
+                </div>
+                <div onclick="SHOW_TEXT_FILTRO_ANO('2020')" class="opções-ANO">
+                  <p>2020</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-filtro-preçoMinMax">
+            <div class="filtro-preçoMinMax">
+              <div class="header-filtro-preçoMinMax"><p>Preço</p></div>
+              <div class="checkbox-opções-filtro-preçoMinMax">
+                <div>
+                  <input type="checkbox" name="" id="" class="checkMark" />
+                  <span>Até R$ 30.000,00</span>
+                </div>
+                <div>
+                  <input type="checkbox" name="" id="" class="checkMark" />
+                  <span>Até R$ 50.000,00</span>
+                </div>
+                <div>
+                  <input type="checkbox" name="" id="" class="checkMark" />
+                  <span> Acima de R$ 70.000,00</span>
+                </div>
+              </div>
+              <div class="opções-filtro-preçoMinMax">
+                <input type="text" placeholder="R$ Min" />
+                <input type="text" placeholder="R$ Max" />
               </div>
             </div>
           </div>
