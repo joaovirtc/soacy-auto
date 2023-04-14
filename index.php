@@ -1,3 +1,8 @@
+<?php
+include_once('./assets/conn.php');
+
+$dt_carros =  $conn->query("SELECT * FROM carro");
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -136,6 +141,7 @@
             <h2 class="title-home">Veículos em destaque</h2>
           </div>
           <main class="grid-carros-destaque">
+            <!-- card carro -->
             <div class="card-carro">
               <img
                 src="./assets/img/carro-1.png"
@@ -190,6 +196,72 @@
                 </div>
               </div>
             </div>
+            <!-- fim de um card -->
+            <?php
+              foreach ($dt_carros as $row) {
+                
+                $ft =  mysqli_fetch_array($conn->query("SELECT * FROM foto where id_carro = {$row["id_carro"]} ORDER BY id_foto ASC"));
+                $valor = $row["valor"];
+                $valor = number_format($valor, 2,',', '.');
+                echo("
+                    <div class=\"card-carro\">
+                  <img
+                    src=\"./assets/img/foto/$ft[0].webp\"
+                    alt=\"{$row["modelo"]} {$row["ano"]}\"
+                    class=\"img-carro\"
+                  />
+                  <div class=\"informações-carro\">
+                    <h3 class=\"nome-carro\">{$row["marca"]} {$row["modelo"]} {$row["ano"]}</h3>
+                    <h3 class=\"valor-carro\">R$ {$valor}</h3>
+                    <div class=\"linha-card-carros\"></div>
+                    <div class=\"caracteristica-carro\">
+                      <div class=\"caracteristica-carro-1-col\">
+                        <div class=\"descricao-caracteristica-carro\">
+                          <img
+                            src=\"./assets/img/Calendar.svg\"
+                            alt=\"\"
+                            width=\"18px\"
+                            height=\"18px\"
+                          />
+                          <p>{$row["ano"]}</p>
+                        </div>
+                        <div class=\"descricao-caracteristica-carro\">
+                          <img
+                            src=\"./assets/img/Speedometer.svg\"
+                            alt=\"\"
+                            width=\"18px\"
+                            height=\"18px\"
+                          />
+                          <p>{$row["quilometragem"]} km</p>
+                        </div>
+                      </div>
+                      <div class=\"caracteristica-carro-2-col\">
+                        <div class=\"descricao-caracteristica-carro\">
+                          <img
+                            src=\"./assets/img/Manual transmission.svg\"
+                            alt=\"\"
+                            width=\"18px\"
+                            height=\"18px\"
+                          />
+                          <p>Automatico</p>
+                        </div>
+                        <div class=\"descricao-caracteristica-carro\">
+                          <img
+                            src=\"./assets/img/Gasoline pump.svg\"
+                            alt=\"\"
+                            width=\"18px\"
+                            height=\"18px\"
+                          />
+                          <p>{$row["combustivel"]}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                ");
+
+              }
+            ?>
           </main>
           <div class="div-link-ver-todos">
             <a href="" class="link-ver-todos">
