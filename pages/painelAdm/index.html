@@ -5,48 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Painel de controle</title>
+    <script src="app.js"></script>
 </head>
 <body>
     <header>
         <menu>
             <nav>
-                <button>abrir</button>
-                <a href="#">home</a>
-                <a href="#">estoque</a>
-                <a href="#">vender</a>
+                <button onclick="toogleMenu()"><i class="large material-icons">menu</i></button>
+                <a href="#"><i class="large material-icons">home</i></a>
+                <a href="#"><i class="large material-icons">directions_car</i></a>
+                <a href="#"><i class="large material-icons">monetization_on</i></a>
             </nav>
         </menu>
     </header>
-    <section class="topo">
-        <p>Painel de controle</p>
-        <p>SoacyCars</p>
-    </section>
-    <section class="conteudo">
-        <div class="conteudo-left">
-            <div class="conteudo-left-topo">
-                <div class="card-anunciados">
-                    <p>Veiculos anunciados</p>
-                    <p>23</p>
+    <div class="corpo">
+        <section class="topo">
+            <div class="topo-conteudo">
+                <p>Painel de controle</p>
+                <p>SoacyCars</p>
+            </div>
+            
+        </section>
+        <section class="conteudo">
+            <div class="conteudo-left">
+                <div class="conteudo-left-topo">
+                    <div class="card card-anunciados">
+                        <p class="titulo">Veiculos anunciados</p>
+                        <p class="qtd">23</p>
+                    </div>
+                    <div class="card card-vendas">
+                        <div class="card-vendas-conteudo-principal">
+                            <p class="titulo">vendas do mes</p>
+                            <p>R$ 132.900,00</p>
+                        </div>
+                        <div class="card-vendas-qtd-veiculos">
+                            <p>2 veiculos</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-vendas">
-                    <div class="card-vendas-conteudo-principal">
-                        <p>vendas do mes</p>
-                        <p>R$ 132.900,00</p>
-                    </div>
-                    <div class="card-vendas-qtd-veiculos">
-                        <p>2 veiculos</p>
-                    </div>
+                <div class="conteudo-left-bottom">
+                    <div class="grafico">grafico</div>
                 </div>
             </div>
-            <div class="conteudo-left-bottom">
-                <div class="grafico"></div>
+            <div class="conteudo-rigth">
+                <div class="calendario">calendario</div>
             </div>
-        </div>
-        <div class="conteudo-rigth">
-            <div class="calendario"></div>
-        </div>
-
-    </section>
+    
+        </section>
+    </div>
+    
 </body>
 </html>
