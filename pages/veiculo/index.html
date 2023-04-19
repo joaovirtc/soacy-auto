@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <title>NOME CARRO</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="toggle-btn-open">
+          <i class="ri-menu-line"></i>
+        </div>
+        <div class="logo"><a href="./index.html">LOGO</a></div>
+        <div>
+          <ul class="list-links">
+            <li><a class="nav-link" href="./index.html">Início</a></li>
+            <li>
+              <a class="nav-link" href="./pages/veiculos/index.html"
+                >Veículos</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="./pages/empresa/index.html">Empresa</a>
+            </li>
+          </ul>
+        </div>
+        <a href="./pages/contato/index.html" class="action-btn">
+          <i class="ri-whatsapp-line"></i>
+          <p>Entrar em contato</p>
+        </a>
+      </nav>
+      <nav class="dropdown-menu">
+        <li><a href="./index.html" class="nav-link">Início</a></li>
+        <li>
+          <a href="./pages/veiculos/index.html" class="nav-link">Veículos</a>
+        </li>
+        <li>
+          <a href="./pages/empresa/index.html" class="nav-link">Empresa</a>
+        </li>
+        <a href="./pages/contato/index.html" class="action-btn">
+          <i class="ri-whatsapp-line"></i>
+          <p>Entrar em contato</p>
+        </a>
+      </nav>
+    </header>
+    <main>
+      <div class="container-header-info-veiculo">
+        <div class="content-header-info-veiculo">
+          <div>
+            <h2 class="nome-header-carro">VOLKSWAGEN JETTA</h2>
+            <h2 class="preço-header-veiculo">R$ 129.990</h2>
+            <p class="description-header-veiculo">
+              1.4 250 TSI TOTAL FLEX COMFORTLINE
+            </p>
+          </div>
+          <div class="div-button-action-open-form">
+            <button class="button-action-open-form">Enviar mensagem</button>
+          </div>
+        </div>
+      </div>
+      <div class="container-slider-img-carro">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./image 19.png" alt="" width="100%" height="100%" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./image 19.png" alt="" width="100%" height="100%" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./image 19.png" alt="" width="100%" height="100%" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./image 19.png" alt="" width="100%" height="100%" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./image 19.png" alt="" width="100%" height="100%" />
+            </div>
+          </div>
+          <div class="swiper-button-next">
+            <i class="ri-arrow-right-line arrow-slider"></i>
+          </div>
+          <div class="swiper-button-prev">
+            <i class="ri-arrow-left-line arrow-slider"></i>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+      <script>
+        function swiperResponsive(param) {
+          if (param.matches) {
+            var swiper = new Swiper(".mySwiper", {
+              slidesPerView: 1,
+              spaceBetween: 1,
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+              // mousewheel: true,
+              keyboard: true,
+            });
+          } else {
+            var swiper = new Swiper(".mySwiper", {
+              slidesPerView: 3,
+              spaceBetween: 1,
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+              // mousewheel: true,
+              keyboard: true,
+            });
+          }
+        }
+
+        var RESPONSIVE_MEDIA_QUERY_JS = window.matchMedia("(max-width: 900px)");
+        swiperResponsive(RESPONSIVE_MEDIA_QUERY_JS);
+        RESPONSIVE_MEDIA_QUERY_JS.addListener(swiperResponsive);
+      </script>
+
+      <div class="container-body-info-veiculo">
+        <div class="content-body-info-veiculo">
+          <div class="container-info-veiculo">
+            <div class="container-detalhes-veiculo">
+              <div class="content-detalhes-veiculo">
+                <div class="div-title-descrição">
+                  <h2 class="title-descrição-carro">Detalhes do veículo</h2>
+                </div>
+                <div class="lista-info-descrição-carro">
+                  <li>
+                    <p class="title-descrição">Ano</p>
+                    <p class="descrição">2023</p>
+                  </li>
+                  <li>
+                    <p class="title-descrição">Km</p>
+                    <p class="descrição">190.000</p>
+                  </li>
+                  <li>
+                    <p class="title-descrição">Câmbio</p>
+                    <p class="descrição">Automático</p>
+                  </li>
+                  <li>
+                    <p class="title-descrição">Combustível</p>
+                    <p class="descrição">Gasolina</p>
+                  </li>
+                  <li>
+                    <p class="title-descrição">Portas</p>
+                    <p class="descrição">4 portas</p>
+                  </li>
+                  <li>
+                    <p class="title-descrição">Cor</p>
+                    <p class="descrição">Azul</p>
+                  </li>
+                  <li>
+                    <p class="title-descrição">Placa</p>
+                    <p class="descrição">*** **Q</p>
+                  </li>
+                  <li>
+                    <p class="title-descrição">Carroceria</p>
+                    <p class="descrição">Sedan</p>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="container-detalhes-veiculo">
+              <div class="content-detalhes-veiculo">
+                <div class="div-title-descrição">
+                  <h2 class="title-descrição-carro">Itens do veículo</h2>
+                </div>
+                <div class="lista-info-descrição-carro">
+                  <li>
+                    <p class="descrição-detalhes">Ar quente</p>
+                  </li>
+                  <li>
+                    <p class="descrição-detalhes">Airbag</p>
+                  </li>
+                  <li>
+                    <p class="descrição-detalhes">Multimidia</p>
+                  </li>
+                  <li>
+                    <p class="descrição-detalhes">Alarme</p>
+                  </li>
+                  <li>
+                    <p class="descrição-detalhes">Ar quente</p>
+                  </li>
+                  <li>
+                    <p class="descrição-detalhes">Airbag</p>
+                  </li>
+                  <li>
+                    <p class="descrição-detalhes">Multimidia</p>
+                  </li>
+                  <li>
+                    <p class="descrição-detalhes">Alarme</p>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="container-detalhes-veiculo">
+              <div class="content-detalhes-veiculo">
+                <div class="div-title-descrição">
+                  <h2 class="title-descrição-carro">Sobre o veículo</h2>
+                </div>
+                <div class="sobre-veiculo">
+                  <p>
+                    Se você está sonhando em trocar de carro, agora você está na
+                    direção certa! O seminovo mais novo do Brasil está na
+                    Localiza Seminovos, onde você encontra a maior variedade de
+                    modelos do mercado e muitas vantagens, como condições únicas
+                    de financiamento, entrada facilitada em até 10 vezes sem
+                    juros, carros revisados e com garantia de quilometragem
+                    real, viabilizamos a troca do seu carro usado e entregamos
+                    seu novo carro na segurança de sua casa! Agende já seu
+                    atendimento! Outros Opcionais: Farol de neblina, Comando de
+                    áudio no volante, Controle de estabilidade, Distribuição
+                    eletrônica de frenagem, Kit Multimídia.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="container-detalhes-veiculo">
+              <div class="content-detalhes-veiculo">
+                <div class="div-title-descrição">
+                  <h2 class="title-descrição-carro">Compra segura</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="container-form-mensagem">
+            <div class="content-form-mensagem">
+              <div class="header-form">
+                <i class="ri-question-answer-line"></i>
+                <p class="text-form-mensagem">Contate o vendedor</p>
+              </div>
+              <form action="" class="form-mensagem">
+                <input
+                  type="text"
+                  class="input-form-mensagem"
+                  placeholder="Nome"
+                />
+                <input
+                  type="text"
+                  class="input-form-mensagem"
+                  placeholder="Telefone"
+                />
+                <input
+                  type="text"
+                  class="input-form-mensagem"
+                  placeholder="E-mail"
+                />
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                  class="input-form-mensagem"
+                  placeholder="Mensagem"
+                ></textarea>
+                <input
+                  type="submit"
+                  class="input-submit-mensagem"
+                  value="Enviar mensagem"
+                />
+              </form>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>
