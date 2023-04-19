@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -100,11 +101,11 @@ button:hover{
     align-items: center;
 }
 .card{
-    font-family: 'inter';
-    width: 280px;
-    height: 125px;
+    width: 21vw;
+    height: 10vw;
     background-color: #ffff;
     border-radius: 15px;
+    padding: 10px;
 }
 .card-anunciados{
     display: flex;
@@ -113,21 +114,51 @@ button:hover{
     align-items: center;
 }
 .card-anunciados > .titulo{
-    font-size: 20px;
+    font-size: min(25px, 1.5vw);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
 }
 .card-anunciados > .qtd{
-    font-size: 30px;
-    font-weight: 600;
-    font-style: bold;
+    font-size: min(35px, 2.8vw);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
 }
 .card-vendas{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
-.card-vendas > .titulo{
-    font-size: 20px;
+.card-vendas-conteudo-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 9px;
+    height: 100%;
+    align-items: center;
+}
+.card-vendas > .card-vendas-conteudo-principal > .titulo{
+    font-size: min(25px, 1.5vw);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+}
+.card-vendas > .card-vendas-conteudo-principal > .valor{
+    font-size: min(25px, 1.8vw);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+}
+.card-vendas-qtd-veiculos{
+    width: 90%;
+    text-align: right;
+    font-size: min(15px, 1.5vw);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    color: #CCCCCC;
 }
 .conteudo-rigth{
     width: 45%;
