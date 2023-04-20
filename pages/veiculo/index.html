@@ -57,19 +57,62 @@
           <p>Entrar em contato</p>
         </a>
       </nav>
+      <script src="../../assets/js/main.js"></script>
     </header>
-    <main>
+
+    <section class="popup-form" id="popup-form">
+      <div class="content-popup-form">
+        <div class="header-popup-form">
+          <p class="title-descrição-carro">Contate o vendedor</p>
+          <button class="close-popup-form" onclick="closePopupForm()">
+            <i class="ri-close-fill icon-close"></i>
+          </button>
+        </div>
+        <form action="" class="popup-form-mensagem">
+          <input type="text" class="input-form-popup" placeholder="Nome" />
+          <input type="text" class="input-form-popup" placeholder="E-mail" />
+          <input type="text" class="input-form-popup" placeholder="Telefone" />
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            class="input-form-popup"
+            placeholder="Mensagem"
+          >
+Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!       
+        </textarea
+          >
+          <div>
+            <p class="text-small-form">
+              Ao clicar em "Enviar" você concorda com a nossa
+              <a class="text-underline">politica de privacidade.</a>
+            </p>
+          </div>
+          <input
+            type="submit"
+            class="input-submit-mensagem"
+            value="Enviar mensagem"
+          />
+        </form>
+      </div>
+    </section>
+
+    <main id="openFormActiveOpacity">
+      <script src="./main.js"></script>
       <div class="container-header-info-veiculo">
         <div class="content-header-info-veiculo">
           <div>
-            <h2 class="nome-header-carro">VOLKSWAGEN JETTA</h2>
+            <h2 class="nome-header-veiculo">VOLKSWAGEN JETTA</h2>
             <h2 class="preço-header-veiculo">R$ 129.990</h2>
             <p class="description-header-veiculo">
               1.4 250 TSI TOTAL FLEX COMFORTLINE
             </p>
           </div>
           <div class="div-button-action-open-form">
-            <button class="button-action-open-form">Enviar mensagem</button>
+            <button class="button-action-open-form" onclick="openPopupForm()">
+              Enviar mensagem
+            </button>
           </div>
         </div>
       </div>
@@ -77,19 +120,19 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="./image 19.png" alt="" width="100%" height="100%" />
+              <img src="../../assets/img/Fotos Carros/image 16.png" alt="" />
             </div>
             <div class="swiper-slide">
-              <img src="./image 19.png" alt="" width="100%" height="100%" />
+              <img src="../../assets/img/Fotos Carros/image 18.png" alt="" />
             </div>
             <div class="swiper-slide">
-              <img src="./image 19.png" alt="" width="100%" height="100%" />
+              <img src="../../assets/img/Fotos Carros/image 19.png" alt="" />
             </div>
             <div class="swiper-slide">
-              <img src="./image 19.png" alt="" width="100%" height="100%" />
+              <img src="../../assets/img/Fotos Carros/image 16.png" alt="" />
             </div>
             <div class="swiper-slide">
-              <img src="./image 19.png" alt="" width="100%" height="100%" />
+              <img src="../../assets/img/Fotos Carros/image 18.png" alt="" />
             </div>
           </div>
           <div class="swiper-button-next">
@@ -109,6 +152,7 @@
           if (param.matches) {
             var swiper = new Swiper(".mySwiper", {
               slidesPerView: 1,
+
               spaceBetween: 1,
               navigation: {
                 nextEl: ".swiper-button-next",
@@ -243,34 +287,27 @@
                 </div>
               </div>
             </div>
-            <div class="container-detalhes-veiculo">
-              <div class="content-detalhes-veiculo">
-                <div class="div-title-descrição">
-                  <h2 class="title-descrição-carro">Compra segura</h2>
-                </div>
-              </div>
-            </div>
           </div>
           <aside class="container-form-mensagem">
             <div class="content-form-mensagem">
               <div class="header-form">
-                <i class="ri-question-answer-line"></i>
-                <p class="text-form-mensagem">Contate o vendedor</p>
+                <!-- <i class="ri-question-answer-line"></i> -->
+                <p class="title-descrição-carro">Contate o vendedor</p>
               </div>
               <form action="" class="form-mensagem">
                 <input
                   type="text"
-                  class="input-form-mensagem"
+                  class="input-form-mensagem nome"
                   placeholder="Nome"
                 />
                 <input
                   type="text"
-                  class="input-form-mensagem"
+                  class="input-form-mensagem telefone"
                   placeholder="Telefone"
                 />
                 <input
                   type="text"
-                  class="input-form-mensagem"
+                  class="input-form-mensagem email"
                   placeholder="E-mail"
                 />
                 <textarea
@@ -278,9 +315,18 @@
                   id=""
                   cols="30"
                   rows="10"
-                  class="input-form-mensagem"
+                  class="input-form-mensagem input-text-area"
                   placeholder="Mensagem"
-                ></textarea>
+                >
+Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
+              </textarea
+                >
+                <div>
+                  <p class="text-small-form">
+                    Ao clicar em "Enviar" você concorda com a nossa
+                    <a class="text-underline">politica de privacidade.</a>
+                  </p>
+                </div>
                 <input
                   type="submit"
                   class="input-submit-mensagem"
@@ -291,7 +337,189 @@
           </aside>
         </div>
       </div>
+      <div class="container-veiculos-relacionados">
+        <div class="content-veiculos-relacionados">
+          <div class="title-veiculos-relacionados">
+            <h2>Confira outras opções</h2>
+          </div>
+          <div class="veiculos-relacionados">
+            <main class="grid-carros-destaque">
+              <!-- card carro -->
+              <div class="card-carro">
+                <img
+                  src="../../assets/img/carro-1.png"
+                  alt="Tesla 2022"
+                  class="img-carro"
+                />
+                <div class="informações-carro">
+                  <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
+                  <h3 class="valor-carro">R$ 59.900,00</h3>
+                  <div class="linha-card-carros"></div>
+                  <div class="caracteristica-carro">
+                    <div class="caracteristica-carro-1-col">
+                      <div class="descricao-caracteristica-carro">
+                        <img
+                          src="../../assets/img/Calendar.svg"
+                          alt=""
+                          width="18px"
+                          height="18px"
+                        />
+                        <p>2022/2023</p>
+                      </div>
+                      <div class="descricao-caracteristica-carro">
+                        <img
+                          src="../../assets/img/Speedometer.svg"
+                          alt=""
+                          width="18px"
+                          height="18px"
+                        />
+                        <p>140.000 km</p>
+                      </div>
+                    </div>
+                    <div class="caracteristica-carro-2-col">
+                      <div class="descricao-caracteristica-carro">
+                        <img
+                          src="../../assets/img/Manual transmission.svg"
+                          alt=""
+                          width="18px"
+                          height="18px"
+                        />
+                        <p>Automatico</p>
+                      </div>
+                      <div class="descricao-caracteristica-carro">
+                        <img
+                          src="../../assets/img/Gasoline pump.svg"
+                          alt=""
+                          width="18px"
+                          height="18px"
+                        />
+                        <p>Eletrico</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-carro">
+                <img
+                  src="../../assets/img/carro-1.png"
+                  alt="Tesla 2022"
+                  class="img-carro"
+                />
+                <div class="informações-carro">
+                  <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
+                  <h3 class="valor-carro">R$ 59.900,00</h3>
+                  <div class="linha-card-carros"></div>
+                  <div class="caracteristica-carro">
+                    <div class="caracteristica-carro-1-col">
+                      <div class="descricao-caracteristica-carro">
+                        <img
+                          src="../../assets/img/Calendar.svg"
+                          alt=""
+                          width="18px"
+                          height="18px"
+                        />
+                        <p>2022/2023</p>
+                      </div>
+                      <div class="descricao-caracteristica-carro">
+                        <img
+                          src="../../assets/img/Speedometer.svg"
+                          alt=""
+                          width="18px"
+                          height="18px"
+                        />
+                        <p>140.000 km</p>
+                      </div>
+                    </div>
+                    <div class="caracteristica-carro-2-col">
+                      <div class="descricao-caracteristica-carro">
+                        <img
+                          src="../../assets/img/Manual transmission.svg"
+                          alt=""
+                          width="18px"
+                          height="18px"
+                        />
+                        <p>Automatico</p>
+                      </div>
+                      <div class="descricao-caracteristica-carro">
+                        <img
+                          src="../../assets/img/Gasoline pump.svg"
+                          alt=""
+                          width="18px"
+                          height="18px"
+                        />
+                        <p>Eletrico</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-carro">
+                <img
+                  src="../../assets/img/carro-1.png"
+                  alt="Tesla 2022"
+                  class="img-carro"
+                />
+                <div class="informações-carro">
+                  <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
+                  <h3 class="valor-carro">R$ 59.900,00</h3>
+                  <div class="linha-card-carros"></div>
+                  <div class="caracteristica-carro">
+                    <div class="caracteristica-carro-1-col">
+                      <div class="descricao-caracteristica-carro">
+                        <img
+                          src="../../assets/img/Calendar.svg"
+                          alt=""
+                          width="18px"
+                          height="18px"
+                        />
+                        <p>2022/2023</p>
+                      </div>
+                      <div class="descricao-caracteristica-carro">
+                        <img
+                          src="../../assets/img/Speedometer.svg"
+                          alt=""
+                          width="18px"
+                          height="18px"
+                        />
+                        <p>140.000 km</p>
+                      </div>
+                    </div>
+                    <div class="caracteristica-carro-2-col">
+                      <div class="descricao-caracteristica-carro">
+                        <img
+                          src="../../assets/img/Manual transmission.svg"
+                          alt=""
+                          width="18px"
+                          height="18px"
+                        />
+                        <p>Automatico</p>
+                      </div>
+                      <div class="descricao-caracteristica-carro">
+                        <img
+                          src="../../assets/img/Gasoline pump.svg"
+                          alt=""
+                          width="18px"
+                          height="18px"
+                        />
+                        <p>Eletrico</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- fim card carro -->
+            </main>
+          </div>
+        </div>
+      </div>
+      <footer class="container-footer">
+        <div>
+          <img src="" alt="LOGO REVENDA" />
+        </div>
+        <div>
+          <p>© 1995-2023 NOME concessionaria Todos os direitos reservados.</p>
+        </div>
+      </footer>
     </main>
-    <script src="../../assets/js/main.js"></script>
   </body>
 </html>
