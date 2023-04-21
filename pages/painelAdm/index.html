@@ -7,7 +7,67 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Painel de controle</title>
+    
     <script src="app.js"></script>
+    <!-- calendario -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js'></script>
+    
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+          var calendarEl = document.getElementById('calendar');
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            buttonText: {
+                today:    'hoje',
+                month:    'mes',
+                week:     'semana',
+                day:      'dia',
+                list:     'lista'
+            },
+            locale: 'pt-br'
+          });
+          calendar.render();
+        });
+  
+      </script>
+
+    <!-- calendario -->
+    <!-- grafico -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+  
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Mês', 'Vendas'],
+            ['Jan',  2],
+            ['Fev',  5],
+            ['Mar',  4],
+            ['Abri',  7],
+            ['Mai',  2],
+            ['Mai',  7],
+            ['Mai',  7],
+            ['Mai',  7],
+            ['Mai',  7],
+            ['Mai',  7],
+            ['Mai',  7],
+            ['Mai',  7]
+          ]);
+  
+          var options = {
+            title: 'Vendas por mês',
+            // curveType: 'function',
+            legend: { position: 'bottom' }
+          };
+  
+          var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+  
+          chart.draw(data, options);
+        }
+      </script>
+      <!-- grafico -->
 </head>
 <body>
     <header>
@@ -46,15 +106,17 @@
                     </div>
                 </div>
                 <div class="conteudo-left-bottom">
-                    <div class="grafico">grafico</div>
+                    <div id="curve_chart"></div>
                 </div>
             </div>
             <div class="conteudo-rigth">
-                <div class="calendario">calendario</div>
+                <div id="calendar"></div>
             </div>
-    
+            
         </section>
     </div>
     
 </body>
 </html>
+
+  
