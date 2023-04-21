@@ -68,32 +68,34 @@
             <i class="ri-close-fill icon-close"></i>
           </button>
         </div>
-        <form action="" class="popup-form-mensagem" id="formOverlay">
+        <form action="" class="popup-form-mensagem" id="formBody">
           <div class="container-input">
-            <span class="span-requiredOverlay">Informe seu nome</span>
+            <span class="span-required">Informe seu nome</span>
             <input
               type="text"
-              class="input-form-popup nome"
+              class="input-form-mensagem nome requiredInput"
               placeholder="Nome"
-              oninput=""
+              oninput="nameValidate()"
             />
           </div>
           <div class="container-input">
-            <span class="span-requiredOverlay">Número Inválido</span>
+            <span class="span-required">Número Inválido</span>
             <input
               type="text"
-              class="input-form-popup telefone"
+              class="input-form-mensagem telefone requiredInput"
               placeholder="Telefone"
               onkeyup="handlePhone(event)"
+              oninput="numeroValidate()"
               maxlength="15"
             />
           </div>
           <div class="container-input">
-            <span class="span-requiredOverlay">Email Invalido</span>
+            <span class="span-required">Email Invalido</span>
             <input
               type="text"
-              class="input-form-popup email"
+              class="input-form-mensagem email requiredInput"
               placeholder="E-mail"
+              oninput="emailValidate()"
             />
           </div>
           <textarea
@@ -101,7 +103,7 @@
             id=""
             cols="30"
             rows="10"
-            class="input-form-popup input-text-area"
+            class="input-form-mensagem input-text-area"
             placeholder="Mensagem"
           >
 Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
@@ -319,14 +321,13 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                 <!-- <i class="ri-question-answer-line"></i> -->
                 <p class="title-descrição-carro">Contate o vendedor</p>
               </div>
-              <form action="" class="form-mensagem" id="formBody">
+              <form action="" class="form-mensagem" id="">
                 <div class="container-input">
                   <span class="span-required">Informe seu nome</span>
                   <input
                     type="text"
                     class="input-form-mensagem nome requiredInput"
                     placeholder="Nome"
-                    oninput="nameValidate()"
                   />
                 </div>
                 <div class="container-input">
@@ -336,7 +337,6 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                     class="input-form-mensagem telefone requiredInput"
                     placeholder="Telefone"
                     onkeyup="handlePhone(event)"
-                    oninput="numeroValidate()"
                     maxlength="15"
                   />
                 </div>
@@ -346,7 +346,6 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                     type="text"
                     class="input-form-mensagem email requiredInput"
                     placeholder="E-mail"
-                    oninput="emailValidate()"
                   />
                 </div>
                 <textarea
