@@ -68,19 +68,43 @@
             <i class="ri-close-fill icon-close"></i>
           </button>
         </div>
-        <form action="" class="popup-form-mensagem">
-          <input type="text" class="input-form-popup" placeholder="Nome" />
-          <input type="text" class="input-form-popup" placeholder="E-mail" />
-          <input type="text" class="input-form-popup" placeholder="Telefone" />
+        <form action="" class="popup-form-mensagem" id="formOverlay">
+          <div class="container-input">
+            <span class="span-requiredOverlay">Informe seu nome</span>
+            <input
+              type="text"
+              class="input-form-popup nome"
+              placeholder="Nome"
+              oninput=""
+            />
+          </div>
+          <div class="container-input">
+            <span class="span-requiredOverlay">Número Inválido</span>
+            <input
+              type="text"
+              class="input-form-popup telefone"
+              placeholder="Telefone"
+              onkeyup="handlePhone(event)"
+              maxlength="15"
+            />
+          </div>
+          <div class="container-input">
+            <span class="span-requiredOverlay">Email Invalido</span>
+            <input
+              type="text"
+              class="input-form-popup email"
+              placeholder="E-mail"
+            />
+          </div>
           <textarea
             name=""
             id=""
             cols="30"
             rows="10"
-            class="input-form-popup"
+            class="input-form-popup input-text-area"
             placeholder="Mensagem"
           >
-Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!       
+Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
         </textarea
           >
           <div>
@@ -94,6 +118,7 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
             class="input-submit-mensagem"
             value="Enviar mensagem"
           />
+          <script src="../../assets/js/validaoFormOverlay.js"></script>
         </form>
       </div>
     </section>
@@ -294,22 +319,36 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                 <!-- <i class="ri-question-answer-line"></i> -->
                 <p class="title-descrição-carro">Contate o vendedor</p>
               </div>
-              <form action="" class="form-mensagem">
-                <input
-                  type="text"
-                  class="input-form-mensagem nome"
-                  placeholder="Nome"
-                />
-                <input
-                  type="text"
-                  class="input-form-mensagem telefone"
-                  placeholder="Telefone"
-                />
-                <input
-                  type="text"
-                  class="input-form-mensagem email"
-                  placeholder="E-mail"
-                />
+              <form action="" class="form-mensagem" id="formBody">
+                <div class="container-input">
+                  <span class="span-required">Informe seu nome</span>
+                  <input
+                    type="text"
+                    class="input-form-mensagem nome requiredInput"
+                    placeholder="Nome"
+                    oninput="nameValidate()"
+                  />
+                </div>
+                <div class="container-input">
+                  <span class="span-required">Número Inválido</span>
+                  <input
+                    type="text"
+                    class="input-form-mensagem telefone requiredInput"
+                    placeholder="Telefone"
+                    onkeyup="handlePhone(event)"
+                    oninput="numeroValidate()"
+                    maxlength="15"
+                  />
+                </div>
+                <div class="container-input">
+                  <span class="span-required">Email Invalido</span>
+                  <input
+                    type="text"
+                    class="input-form-mensagem email requiredInput"
+                    placeholder="E-mail"
+                    oninput="emailValidate()"
+                  />
+                </div>
                 <textarea
                   name=""
                   id=""
@@ -333,6 +372,7 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                   value="Enviar mensagem"
                 />
               </form>
+              <script src="../../assets/js/validacaoForm.js"></script>
             </div>
           </aside>
         </div>
@@ -399,6 +439,7 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                   </div>
                 </div>
               </div>
+              <!-- card carro -->
               <div class="card-carro">
                 <img
                   src="../../assets/img/carro-1.png"

@@ -564,6 +564,7 @@ main#openFormActiveOpacity.activeBlur {
   border-radius: 5px;
   padding: 0.8rem;
   font-size: 14px;
+  width: 100%;
 }
 
 .input-form-mensagem:focus {
@@ -735,4 +736,26 @@ main#openFormActiveOpacity.activeBlur {
 .container-footer p {
   font-size: 13px;
   font-weight: 500;
+}
+
+.container-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.span-required {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: red;
+  display: none;
+  font-weight: 600;
+}
+
+.span-requiredOverlay {
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: red;
+  display: none;
+  font-weight: 600;
 }
