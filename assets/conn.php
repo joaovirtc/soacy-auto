@@ -1,7 +1,7 @@
 <?php
 
 $servername = "localhost";
-$database = "sistema-carro";
+$database = "loja_de_carros";
 $username = "root";
 $password = "";
 // Create connection

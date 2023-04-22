@@ -142,6 +142,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro");
           </div>
           <main class="grid-carros-destaque">
             <!-- card carro -->
+            
             <div class="card-carro">
               <img
                 src="./assets/img/carro-1.png"
@@ -204,9 +205,10 @@ $dt_carros =  $conn->query("SELECT * FROM carro");
                 $valor = $row["valor"];
                 $valor = number_format($valor, 2,',', '.');
                 echo("
+                <a href=\"./pages/veiculo/index.html?id={$row["id_carro"]}\">
                     <div class=\"card-carro\">
                   <img
-                    src=\"./assets/img/foto/$ft[0].webp\"
+                    src=\"./assets/img/foto/$ft[1]\"
                     alt=\"{$row["modelo"]} {$row["ano"]}\"
                     class=\"img-carro\"
                   />
@@ -258,6 +260,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro");
                     </div>
                   </div>
                 </div>
+                </a>
                 ");
 
               }
