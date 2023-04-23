@@ -1,8 +1,7 @@
-<?php
+<!-- <?php
 include_once('./assets/conn.php');
 
-$dt_carros =  $conn->query("SELECT * FROM carro");
-?>
+$dt_carros =  $conn->query("SELECT * FROM carro"); ?> -->
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -32,7 +31,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro");
             <ul class="list-links">
               <li><a class="nav-link" href="./index.html">Início</a></li>
               <li>
-                <a class="nav-link" href="./pages/veiculo/index.php"
+                <a class="nav-link" href="./pages/veiculos/index.html"
                   >Veículos</a
                 >
               </li>
@@ -142,13 +141,17 @@ $dt_carros =  $conn->query("SELECT * FROM carro");
           </div>
           <main class="grid-carros-destaque">
             <!-- card carro -->
-            
+
             <div class="card-carro">
-              <img
-                src="./assets/img/carro-1.png"
-                alt="Tesla 2022"
-                class="img-carro"
-              />
+              <div class="div-img-card">
+                <img
+                  src="./assets/img/carro-1.png"
+                  alt="Tesla 2022"
+                  class="img-carro"
+                  width="330px"
+                  height="210px"
+                />
+              </div>
               <div class="informações-carro">
                 <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
                 <h3 class="valor-carro">R$ 59.900,00</h3>
@@ -198,17 +201,16 @@ $dt_carros =  $conn->query("SELECT * FROM carro");
               </div>
             </div>
             <!-- fim de um card -->
-            <?php
+             <?php
               foreach ($dt_carros as $row) {
                 
                 $ft =  mysqli_fetch_array($conn->query("SELECT * FROM foto where id_carro = {$row["id_carro"]} ORDER BY id_foto ASC"));
                 $valor = $row["valor"];
                 $valor = number_format($valor, 2,',', '.');
                 echo("
-                <a href=\"./pages/veiculo/index.php?id={$row["id_carro"]}\">
                     <div class=\"card-carro\">
                   <img
-                    src=\"./assets/img/foto/$ft[1]\"
+                    src=\"./assets/img/foto/$ft[0].webp\"
                     alt=\"{$row["modelo"]} {$row["ano"]}\"
                     class=\"img-carro\"
                   />
@@ -260,11 +262,10 @@ $dt_carros =  $conn->query("SELECT * FROM carro");
                     </div>
                   </div>
                 </div>
-                </a>
                 ");
 
               }
-            ?>
+            ?> 
           </main>
           <div class="div-link-ver-todos">
             <a href="" class="link-ver-todos">
