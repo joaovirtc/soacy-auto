@@ -32,7 +32,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro");
             <ul class="list-links">
               <li><a class="nav-link" href="./index.html">Início</a></li>
               <li>
-                <a class="nav-link" href="./pages/veiculos/index.html"
+                <a class="nav-link" href="./pages/veiculo/index.php"
                   >Veículos</a
                 >
               </li>
