@@ -9,7 +9,9 @@
   list-style: none;
   font-family: "Inter", sans-serif;
 }
-
+a {
+  color: #000;
+}
 :root {
   --primary-color: #f30d0d;
   --background-color: #f2f2f2;

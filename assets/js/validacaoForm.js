@@ -11,7 +11,6 @@ formBody.addEventListener("submit", (event) => {
   function nameValidate() {
     if (campos[0].value.length < 1) {
       event.preventDefault();
-
       setError(0);
     } else {
       removeError(0);
