@@ -205,7 +205,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro");
                 $valor = $row["valor"];
                 $valor = number_format($valor, 2,',', '.');
                 echo("
-                <a href=\"./pages/veiculo/index.html?id={$row["id_carro"]}\">
+                <a href=\"./pages/veiculo/index.php?id={$row["id_carro"]}\">
                     <div class=\"card-carro\">
                   <img
                     src=\"./assets/img/foto/$ft[1]\"

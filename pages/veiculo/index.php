@@ -1,3 +1,22 @@
+<?php
+include_once('../../assets/conn.php');
+$id = $_GET['id'];
+
+
+// definiçoes para usar na pagina
+$dt_carro =  $conn->query("SELECT * FROM carro where id_carro=$id;");
+$dt_car = mysqli_fetch_array($dt_carro);
+
+$valor = $dt_car['valor'];
+$valor = number_format($valor, 2,',', '.');
+
+$dt_ft = $conn->query("SELECT * FROM foto where id_carro=$id;");
+$dt_adicional = $conn->query("SELECT * FROM adicional where id_carro=$id;");
+
+$carroceria = $dt_car['carroceria'];
+$cambio = $dt_car['cambio'];
+$dt_similar =  $conn->query("SELECT * FROM carro where carroceria = '$carroceria' and id_carro != $id or marca = '$cambio' and id_carro != $id LIMIT 3;");
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -17,7 +36,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
-    <title>NOME CARRO</title>
+    <title><?php echo($dt_car['modelo'] . ' ' . $dt_car['versao']); ?></title>
   </head>
   <body>
     <header>
@@ -130,10 +149,10 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
       <div class="container-header-info-veiculo">
         <div class="content-header-info-veiculo">
           <div>
-            <h2 class="nome-header-veiculo">VOLKSWAGEN JETTA</h2>
-            <h2 class="preço-header-veiculo">R$ 129.990</h2>
+            <h2 class="nome-header-veiculo"><?php echo($dt_car['marca'] . ' ' .$dt_car['modelo']) ?></h2>
+            <h2 class="preço-header-veiculo"><?php echo('R$'.$valor); ?></h2>
             <p class="description-header-veiculo">
-              1.4 250 TSI TOTAL FLEX COMFORTLINE
+            <?php echo($dt_car['motor'].' '.$dt_car['modelo'].' '.$dt_car['versao'] . ' ' .$dt_car['ano']) ?>
             </p>
           </div>
           <div class="div-button-action-open-form">
@@ -146,21 +165,16 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
       <div class="container-slider-img-carro">
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="../../assets/img/Fotos Carros/image 16.png" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img src="../../assets/img/Fotos Carros/image 18.png" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img src="../../assets/img/Fotos Carros/image 19.png" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img src="../../assets/img/Fotos Carros/image 16.png" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img src="../../assets/img/Fotos Carros/image 18.png" alt="" />
-            </div>
+            <?php
+              foreach($dt_ft as $ft){
+                echo("
+                  <div class=\"swiper-slide\">
+                    <img src=\"../../assets/img/foto/{$ft['path']}\" alt=\"imagem {$dt_car['modelo']}\" />
+                  </div>
+                ");
+                
+              }
+            ?>
           </div>
           <div class="swiper-button-next">
             <i class="ri-arrow-right-line arrow-slider"></i>
@@ -226,27 +240,27 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                 <div class="lista-info-descrição-carro">
                   <li>
                     <p class="title-descrição">Ano</p>
-                    <p class="descrição">2023</p>
+                    <p class="descrição"><?php echo($dt_car['ano']) ?></p>
                   </li>
                   <li>
                     <p class="title-descrição">Km</p>
-                    <p class="descrição">190.000</p>
+                    <p class="descrição"><?php echo($dt_car['quilometragem']) ?></p>
                   </li>
                   <li>
                     <p class="title-descrição">Câmbio</p>
-                    <p class="descrição">Automático</p>
+                    <p class="descrição"><?php echo($dt_car['cambio']) ?></p>
                   </li>
                   <li>
                     <p class="title-descrição">Combustível</p>
-                    <p class="descrição">Gasolina</p>
+                    <p class="descrição"><?php echo($dt_car['combustivel']) ?></p>
                   </li>
                   <li>
                     <p class="title-descrição">Portas</p>
-                    <p class="descrição">4 portas</p>
+                    <p class="descrição"><?php echo($dt_car['portas']) ?> portas</p>
                   </li>
                   <li>
                     <p class="title-descrição">Cor</p>
-                    <p class="descrição">Azul</p>
+                    <p class="descrição"><?php echo($dt_car['cor']) ?></p>
                   </li>
                   <li>
                     <p class="title-descrição">Placa</p>
@@ -254,7 +268,7 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                   </li>
                   <li>
                     <p class="title-descrição">Carroceria</p>
-                    <p class="descrição">Sedan</p>
+                    <p class="descrição"><?php echo($dt_car['carroceria']) ?></p>
                   </li>
                 </div>
               </div>
@@ -265,30 +279,14 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                   <h2 class="title-descrição-carro">Itens do veículo</h2>
                 </div>
                 <div class="lista-info-descrição-carro">
-                  <li>
-                    <p class="descrição-detalhes">Ar quente</p>
-                  </li>
-                  <li>
-                    <p class="descrição-detalhes">Airbag</p>
-                  </li>
-                  <li>
-                    <p class="descrição-detalhes">Multimidia</p>
-                  </li>
-                  <li>
-                    <p class="descrição-detalhes">Alarme</p>
-                  </li>
-                  <li>
-                    <p class="descrição-detalhes">Ar quente</p>
-                  </li>
-                  <li>
-                    <p class="descrição-detalhes">Airbag</p>
-                  </li>
-                  <li>
-                    <p class="descrição-detalhes">Multimidia</p>
-                  </li>
-                  <li>
-                    <p class="descrição-detalhes">Alarme</p>
-                  </li>
+                
+                        <li>
+                          <p class="descrição-detalhes">sla</p>
+                        </li>
+                 
+                
+                  
+                  
                 </div>
               </div>
             </div>
@@ -307,9 +305,12 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                     juros, carros revisados e com garantia de quilometragem
                     real, viabilizamos a troca do seu carro usado e entregamos
                     seu novo carro na segurança de sua casa! Agende já seu
-                    atendimento! Outros Opcionais: Farol de neblina, Comando de
-                    áudio no volante, Controle de estabilidade, Distribuição
-                    eletrônica de frenagem, Kit Multimídia.
+                    atendimento! Outros Opcionais: <?php
+                    foreach($dt_adicional as $adicional){
+                      echo($adicional['nome']. ", ");
+                      
+                    }
+                  ?>
                   </p>
                 </div>
               </div>
@@ -383,171 +384,71 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
           </div>
           <div class="veiculos-relacionados">
             <main class="grid-carros-destaque">
-              <!-- card carro -->
-              <div class="card-carro">
-                <img
-                  src="../../assets/img/carro-1.png"
-                  alt="Tesla 2022"
-                  class="img-carro"
-                />
-                <div class="informações-carro">
-                  <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
-                  <h3 class="valor-carro">R$ 59.900,00</h3>
-                  <div class="linha-card-carros"></div>
-                  <div class="caracteristica-carro">
-                    <div class="caracteristica-carro-1-col">
-                      <div class="descricao-caracteristica-carro">
+              <?php
+                foreach($dt_similar as $similar){
+                  $similar_ft = mysqli_fetch_array($conn->query("SELECT * FROM foto where id_carro=$id;"));
+                  echo("
+                      <!-- card carro -->
+                      <div class=\"card-carro\">
                         <img
-                          src="../../assets/img/Calendar.svg"
-                          alt=""
-                          width="18px"
-                          height="18px"
+                          src=\"../../assets/img/carro-1.png\"
+                          alt=\"Tesla 2022\"
+                          class=\"img-carro\"
                         />
-                        <p>2022/2023</p>
+                        <div class=\"informações-carro\">
+                          <h3 class=\"nome-carro\">Tesla Model S Paid 2022</h3>
+                          <h3 class=\"valor-carro\">R$ 59.900,00</h3>
+                          <div class=\"linha-card-carros\"></div>
+                          <div class=\"caracteristica-carro\">
+                            <div class=\"caracteristica-carro-1-col\">
+                              <div class=\"descricao-caracteristica-carro\">
+                                <img
+                                  src=\"../../assets/img/Calendar.svg\"
+                                  alt=\"\"
+                                  width=\"18px\"
+                                  height=\"18px\"
+                                />
+                                <p>2022/2023</p>
+                              </div>
+                              <div class=\"descricao-caracteristica-carro\">
+                                <img
+                                  src=\"../../assets/img/Speedometer.svg\"
+                                  alt=\"\"
+                                  width=\"18px\"
+                                  height=\"18px\"
+                                />
+                                <p>140.000 km</p>
+                              </div>
+                            </div>
+                            <div class=\"caracteristica-carro-2-col\">
+                              <div class=\"descricao-caracteristica-carro\">
+                                <img
+                                  src=\"../../assets/img/Manual transmission.svg\"
+                                  alt=\"\"
+                                  width=\"18px\"
+                                  height=\"18px\"
+                                />
+                                <p>Automatico</p>
+                              </div>
+                              <div class=\"descricao-caracteristica-carro\">
+                                <img
+                                  src=\"../../assets/img/Gasoline pump.svg\"
+                                  alt=\"\"
+                                  width=\"18px\"
+                                  height=\"18px\"
+                                />
+                                <p>Eletrico</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="descricao-caracteristica-carro">
-                        <img
-                          src="../../assets/img/Speedometer.svg"
-                          alt=""
-                          width="18px"
-                          height="18px"
-                        />
-                        <p>140.000 km</p>
-                      </div>
-                    </div>
-                    <div class="caracteristica-carro-2-col">
-                      <div class="descricao-caracteristica-carro">
-                        <img
-                          src="../../assets/img/Manual transmission.svg"
-                          alt=""
-                          width="18px"
-                          height="18px"
-                        />
-                        <p>Automatico</p>
-                      </div>
-                      <div class="descricao-caracteristica-carro">
-                        <img
-                          src="../../assets/img/Gasoline pump.svg"
-                          alt=""
-                          width="18px"
-                          height="18px"
-                        />
-                        <p>Eletrico</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- card carro -->
-              <div class="card-carro">
-                <img
-                  src="../../assets/img/carro-1.png"
-                  alt="Tesla 2022"
-                  class="img-carro"
-                />
-                <div class="informações-carro">
-                  <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
-                  <h3 class="valor-carro">R$ 59.900,00</h3>
-                  <div class="linha-card-carros"></div>
-                  <div class="caracteristica-carro">
-                    <div class="caracteristica-carro-1-col">
-                      <div class="descricao-caracteristica-carro">
-                        <img
-                          src="../../assets/img/Calendar.svg"
-                          alt=""
-                          width="18px"
-                          height="18px"
-                        />
-                        <p>2022/2023</p>
-                      </div>
-                      <div class="descricao-caracteristica-carro">
-                        <img
-                          src="../../assets/img/Speedometer.svg"
-                          alt=""
-                          width="18px"
-                          height="18px"
-                        />
-                        <p>140.000 km</p>
-                      </div>
-                    </div>
-                    <div class="caracteristica-carro-2-col">
-                      <div class="descricao-caracteristica-carro">
-                        <img
-                          src="../../assets/img/Manual transmission.svg"
-                          alt=""
-                          width="18px"
-                          height="18px"
-                        />
-                        <p>Automatico</p>
-                      </div>
-                      <div class="descricao-caracteristica-carro">
-                        <img
-                          src="../../assets/img/Gasoline pump.svg"
-                          alt=""
-                          width="18px"
-                          height="18px"
-                        />
-                        <p>Eletrico</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-carro">
-                <img
-                  src="../../assets/img/carro-1.png"
-                  alt="Tesla 2022"
-                  class="img-carro"
-                />
-                <div class="informações-carro">
-                  <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
-                  <h3 class="valor-carro">R$ 59.900,00</h3>
-                  <div class="linha-card-carros"></div>
-                  <div class="caracteristica-carro">
-                    <div class="caracteristica-carro-1-col">
-                      <div class="descricao-caracteristica-carro">
-                        <img
-                          src="../../assets/img/Calendar.svg"
-                          alt=""
-                          width="18px"
-                          height="18px"
-                        />
-                        <p>2022/2023</p>
-                      </div>
-                      <div class="descricao-caracteristica-carro">
-                        <img
-                          src="../../assets/img/Speedometer.svg"
-                          alt=""
-                          width="18px"
-                          height="18px"
-                        />
-                        <p>140.000 km</p>
-                      </div>
-                    </div>
-                    <div class="caracteristica-carro-2-col">
-                      <div class="descricao-caracteristica-carro">
-                        <img
-                          src="../../assets/img/Manual transmission.svg"
-                          alt=""
-                          width="18px"
-                          height="18px"
-                        />
-                        <p>Automatico</p>
-                      </div>
-                      <div class="descricao-caracteristica-carro">
-                        <img
-                          src="../../assets/img/Gasoline pump.svg"
-                          alt=""
-                          width="18px"
-                          height="18px"
-                        />
-                        <p>Eletrico</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- fim card carro -->
+                      <!-- card carro -->
+                  ");
+                };
+              ?>
+              
+
             </main>
           </div>
         </div>
