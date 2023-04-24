@@ -12,10 +12,14 @@ $valor = number_format($valor, 2,',', '.');
 
 $dt_ft = $conn->query("SELECT * FROM foto where id_carro=$id;");
 $dt_adicional = $conn->query("SELECT * FROM adicional where id_carro=$id;");
+$dt_adc = mysqli_fetch_array($dt_adicional);
 
 $carroceria = $dt_car['carroceria'];
 $cambio = $dt_car['cambio'];
+
 $dt_similar =  $conn->query("SELECT * FROM carro where carroceria = '$carroceria' and id_carro != $id or marca = '$cambio' and id_carro != $id LIMIT 3;");
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -306,10 +310,19 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                     real, viabilizamos a troca do seu carro usado e entregamos
                     seu novo carro na segurança de sua casa! Agende já seu
                     atendimento! Outros Opcionais: <?php
+                    $count = 1;
+                    $max = $dt_adicional->num_rows;
                     foreach($dt_adicional as $adicional){
-                      echo($adicional['nome']. ", ");
+                      if($count == $max){
+                        echo($adicional['nome']. ".");
+                      }else{
+                        echo($adicional['nome']. ", ");
+                        $count = $count + 1;
+                      }
+
                       
-                    }
+                    };
+                    
                   ?>
                   </p>
                 </div>
@@ -386,18 +399,22 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
             <main class="grid-carros-destaque">
               <?php
                 foreach($dt_similar as $similar){
-                  $similar_ft = mysqli_fetch_array($conn->query("SELECT * FROM foto where id_carro=$id;"));
+                  $similar_ft = mysqli_fetch_array($conn->query("SELECT * FROM foto where id_carro = {$similar["id_carro"]};"));
+                  $valor_similar = $similar['valor'];
+                  $valor_similar = number_format($valor_similar, 2,',', '.');
                   echo("
+                  
                       <!-- card carro -->
+                      <a href=\"./index.php?id={$similar["id_carro"]}\">
                       <div class=\"card-carro\">
                         <img
-                          src=\"../../assets/img/carro-1.png\"
-                          alt=\"Tesla 2022\"
+                          src=\"../../assets/img/foto/{$similar_ft[1]}\"
+                          alt=\"imagem {$similar['marca']}\"
                           class=\"img-carro\"
                         />
                         <div class=\"informações-carro\">
-                          <h3 class=\"nome-carro\">Tesla Model S Paid 2022</h3>
-                          <h3 class=\"valor-carro\">R$ 59.900,00</h3>
+                          <h3 class=\"nome-carro\">{$similar['marca']} {$similar['modelo']}</h3>
+                          <h3 class=\"valor-carro\">R$ {$valor_similar}</h3>
                           <div class=\"linha-card-carros\"></div>
                           <div class=\"caracteristica-carro\">
                             <div class=\"caracteristica-carro-1-col\">
@@ -408,7 +425,7 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                                   width=\"18px\"
                                   height=\"18px\"
                                 />
-                                <p>2022/2023</p>
+                                <p>{$similar['ano']}</p>
                               </div>
                               <div class=\"descricao-caracteristica-carro\">
                                 <img
@@ -417,7 +434,7 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                                   width=\"18px\"
                                   height=\"18px\"
                                 />
-                                <p>140.000 km</p>
+                                <p>{$similar['quilometragem']} km</p>
                               </div>
                             </div>
                             <div class=\"caracteristica-carro-2-col\">
@@ -428,7 +445,7 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                                   width=\"18px\"
                                   height=\"18px\"
                                 />
-                                <p>Automatico</p>
+                                <p>{$similar['cambio']}</p>
                               </div>
                               <div class=\"descricao-caracteristica-carro\">
                                 <img
@@ -437,12 +454,13 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                                   width=\"18px\"
                                   height=\"18px\"
                                 />
-                                <p>Eletrico</p>
+                                <p>{$similar['combustivel']}</p>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
+                      </a>
                       <!-- card carro -->
                   ");
                 };
