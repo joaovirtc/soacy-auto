@@ -2,6 +2,8 @@
 include_once('./assets/conn.php');
 
 $dt_carros =  $conn->query("SELECT * FROM carro limit 6;"); ?> -->
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -17,7 +19,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro limit 6;"); ?> -->
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <title>Início</title>
+    <title>Início </title>
   </head>
   <body>
     <main>
