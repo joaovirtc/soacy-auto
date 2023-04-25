@@ -9,7 +9,7 @@
   list-style: none;
   font-family: "Inter", sans-serif;
 }
-a.link-card{
+a.link-card {
   text-decoration: none;
   color: #000;
 }
@@ -33,7 +33,6 @@ header {
   width: 100%;
   height: 4rem;
   z-index: 1000;
-  top: 0;
 }
 
 .navbar {
@@ -168,7 +167,6 @@ header {
   background-image: url("../../assets/img/banner.png");
   z-index: -2;
   position: relative;
-  margin-top: 65px;
 }
 
 .container-search-main {
@@ -336,14 +334,14 @@ header {
 }
 
 .slider-marcas img {
-  opacity: 70%;
+  opacity: 30%;
   cursor: pointer;
   transition: opacity 200ms ease;
   position: relative;
 }
 
 .slider-marcas img:hover {
-  opacity: 100%;
+  opacity: 90%;
 }
 
 .slider-marcas::-webkit-scrollbar {
@@ -460,6 +458,7 @@ header {
   object-fit: cover;
   border-radius: 10px 10px 0px 0px;
   cursor: pointer;
+  position: relative;
   transition: transform 200ms;
 }
 
@@ -480,11 +479,7 @@ header {
 }
 
 .valor-carro {
-<<<<<<< HEAD
-  font-weight: 700;
-=======
   font-weight: 600;
->>>>>>> f7a704cd4a0ad319a6227a9994779bf64025ed5f
   font-size: 19px;
   line-height: 17px;
   color: var(--primary-color);
@@ -517,7 +512,6 @@ header {
 
 .descricao-caracteristica-carro {
   display: flex;
-  color: #000;
 }
 
 .descricao-caracteristica-carro img {
