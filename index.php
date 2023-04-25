@@ -1,7 +1,7 @@
 <!-- <?php
 include_once('./assets/conn.php');
 
-$dt_carros =  $conn->query("SELECT * FROM carro"); ?> -->
+$dt_carros =  $conn->query("SELECT * FROM carro limit 6;"); ?> -->
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
