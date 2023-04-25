@@ -200,6 +200,8 @@ $dt_carros =  $conn->query("SELECT * FROM carro limit 6;"); ?> -->
                 </div>
               </div>
             </div>
+            
+            
             <!-- fim de um card -->
               <?php
               foreach ($dt_carros as $row) {
@@ -208,16 +210,20 @@ $dt_carros =  $conn->query("SELECT * FROM carro limit 6;"); ?> -->
                 $valor = $row["valor"];
                 $valor = number_format($valor, 2,',', '.');
                 echo("
-                <a href=\"./pages/veiculo/index.php?id={$row["id_carro"]}\">
-                    <div class=\"card-carro\">
-                  <img
-                    src=\"./assets/img/foto/$ft[1]\"
-                    alt=\"{$row["modelo"]} {$row["ano"]}\"
-                    class=\"img-carro\"
-                  />
+                <a class=\"link-card card-carro\" href=\"./pages/veiculo/index.php?id={$row["id_carro"]}\">
+                    
+                    <div class=\"div-img-card\">
+                    <img
+                      src=\"./assets/img/foto/$ft[1]\"
+                      alt=\"{$row["modelo"]} {$row["ano"]}\"
+                      class=\"img-carro\"
+                      width=\"330px\"
+                      height=\"210px\"
+
+                    />
+                  </div>
                   <div class=\"informações-carro\">
                     <h3 class=\"nome-carro\">{$row["marca"]} {$row["modelo"]}</h3>
-                    <h3 class=\"nome-carro\">{$row["ano"]}</h3>
                     <h3 class=\"valor-carro\">R$ {$valor}</h3>
                     <div class=\"linha-card-carros\"></div>
                     <div class=\"caracteristica-carro\">
@@ -263,7 +269,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro limit 6;"); ?> -->
                       </div>
                     </div>
                   </div>
-                </div>
+                
                 </a>
                 ");
 

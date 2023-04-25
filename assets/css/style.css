@@ -9,7 +9,10 @@
   list-style: none;
   font-family: "Inter", sans-serif;
 }
-
+a.link-card{
+  text-decoration: none;
+  color: #000;
+}
 :root {
   --primary-color: #f30d0d;
   --background-color: #f2f2f2;
@@ -446,6 +449,7 @@ header {
   background-color: var(--container-color);
   width: 95%;
   overflow: hidden;
+  height: 100%;
 }
 
 .img-carro {
@@ -468,15 +472,15 @@ header {
 
 .nome-carro {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 30px;
   color: #000000;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .valor-carro {
-  font-weight: 800;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 19px;
   line-height: 17px;
   color: var(--primary-color);
 }
