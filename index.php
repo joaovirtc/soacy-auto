@@ -142,7 +142,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro"); ?> -->
           <main class="grid-carros-destaque">
             <!-- card carro -->
 
-           
+            <a href="" class="card-carro">
               <div class="div-img-card">
                 <img
                   src="./assets/img/foto/uhf8censcixc.webp"
@@ -201,8 +201,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro"); ?> -->
                   </div>
                 </div>
               </div>
-            
-
+            </a>
             <!-- fim de um card -->
             <?php
               foreach ($dt_carros as $row) {

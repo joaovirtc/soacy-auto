@@ -627,7 +627,10 @@ main#openFormActiveOpacity.activeBlur {
   margin-top: 20px;
   place-items: center;
 }
-
+a.link-card{
+  text-decoration: none;
+  color: #000;
+}
 .card-carro {
   border-radius: 10px;
   background-color: var(--container-color);

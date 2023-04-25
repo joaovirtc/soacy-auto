@@ -9,7 +9,10 @@
   list-style: none;
   font-family: "Inter", sans-serif;
 }
-
+a.link-card{
+  text-decoration: none;
+  color: #000;
+}
 :root {
   --primary-color: #f30d0d;
   --background-color: #f2f2f2;
@@ -477,7 +480,11 @@ header {
 }
 
 .valor-carro {
+<<<<<<< HEAD
   font-weight: 700;
+=======
+  font-weight: 600;
+>>>>>>> f7a704cd4a0ad319a6227a9994779bf64025ed5f
   font-size: 19px;
   line-height: 17px;
   color: var(--primary-color);

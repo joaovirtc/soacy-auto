@@ -173,7 +173,8 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
               foreach($dt_ft as $ft){
                 echo("
                   <div class=\"swiper-slide\">
-                    <img src=\"../../assets/img/foto/{$ft['path']}\" alt=\"imagem {$dt_car['modelo']}\" />
+                    <img 
+                     src=\"../../assets/img/foto/{$ft['path']}\" alt=\"imagem {$dt_car['modelo']}\" />
                   </div>
                 ");
                 
@@ -283,13 +284,19 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                   <h2 class="title-descrição-carro">Itens do veículo</h2>
                 </div>
                 <div class="lista-info-descrição-carro">
+                <?php
+                       
+                      foreach($dt_adicional as $adicional){
+                      echo("
+                      <li>
+                        <p class=\"descrição-detalhes\">{$adicional["nome"]}</p>
+                      </li>
+                      ");
+                        
+                      
+                    };
                 
-                        <li>
-                          <p class="descrição-detalhes">sla</p>
-                        </li>
-                 
-                
-                  
+                  ?>
                   
                 </div>
               </div>
@@ -405,12 +412,13 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                   echo("
                   
                       <!-- card carro -->
-                      <a href=\"./index.php?id={$similar["id_carro"]}\">
-                      <div class=\"card-carro\">
+                      <a class=\"link-card card-carro\" href=\"./pages/veiculo/index.php?id={$similar["id_carro"]}\">
                         <img
                           src=\"../../assets/img/foto/{$similar_ft[1]}\"
                           alt=\"imagem {$similar['marca']}\"
                           class=\"img-carro\"
+                          width=\"330px\"
+                          height=\"210px\"
                         />
                         <div class=\"informações-carro\">
                           <h3 class=\"nome-carro\">{$similar['marca']} {$similar['modelo']}</h3>
@@ -459,7 +467,7 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                             </div>
                           </div>
                         </div>
-                      </div>
+                      
                       </a>
                       <!-- card carro -->
                   ");
