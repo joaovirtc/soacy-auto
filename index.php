@@ -1,7 +1,9 @@
 <!-- <?php
 include_once('./assets/conn.php');
 
-$dt_carros =  $conn->query("SELECT * FROM carro"); ?> -->
+$dt_carros =  $conn->query("SELECT * FROM carro limit 6;"); ?> -->
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -17,7 +19,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro"); ?> -->
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <title>Início</title>
+    <title>Início </title>
   </head>
   <body>
     <main>
@@ -89,43 +91,43 @@ $dt_carros =  $conn->query("SELECT * FROM carro"); ?> -->
           </div>
           <div class="slider-marcas">
             <img
-              src="./assets/img/LogosColoridas/Fiat_logo logo.svg"
+              src="./assets/img/Fiat_logo logo.svg"
               alt=""
               width="60px"
               height="60px"
             />
             <img
-              src="./assets/img/LogosColoridas/Chevrolet logo.svg"
+              src="./assets/img/ford logo.svg"
               alt=""
               width="60px"
               height="60px"
             />
             <img
-              src="./assets/img/LogosColoridas/Ford logo.svg"
+              src="./assets/img/honda logo.svg"
               alt=""
               width="60px"
               height="60px"
             />
             <img
-              src="./assets/img/LogosColoridas/Honda logo.svg"
+              src="./assets/img/hyundai logo.svg"
               alt=""
               width="60px"
               height="60px"
             />
             <img
-              src="./assets/img/LogosColoridas/Peugeot logo.svg"
+              src="./assets/img/toyota logo.svg"
               alt=""
               width="60px"
               height="60px"
             />
             <img
-              src="./assets/img/LogosColoridas/Toyota logo.svg"
+              src="./assets/img/Vector.svg"
               alt=""
               width="60px"
               height="60px"
             />
             <img
-              src="./assets/img/LogosColoridas/hyundai-logo.svg"
+              src="./assets/img/Volkswagen logo.svg"
               alt=""
               width="60px"
               height="60px"
@@ -142,10 +144,10 @@ $dt_carros =  $conn->query("SELECT * FROM carro"); ?> -->
           <main class="grid-carros-destaque">
             <!-- card carro -->
 
-            <a href="" class="card-carro">
+            <div class="card-carro">
               <div class="div-img-card">
                 <img
-                  src="./assets/img/foto/uhf8censcixc.webp"
+                  src="./assets/img/carro-1.png"
                   alt="Tesla 2022"
                   class="img-carro"
                   width="330px"
@@ -153,9 +155,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro"); ?> -->
                 />
               </div>
               <div class="informações-carro">
-                <div>
-                  <h3 class="nome-carro">Toyota Corolla</h3>
-                </div>
+                <h3 class="nome-carro">Tesla Model S Paid 2022</h3>
                 <h3 class="valor-carro">R$ 59.900,00</h3>
                 <div class="linha-card-carros"></div>
                 <div class="caracteristica-carro">
@@ -201,25 +201,31 @@ $dt_carros =  $conn->query("SELECT * FROM carro"); ?> -->
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
+            
+            
             <!-- fim de um card -->
-            <?php
+              <?php
               foreach ($dt_carros as $row) {
                 
                 $ft =  mysqli_fetch_array($conn->query("SELECT * FROM foto where id_carro = {$row["id_carro"]} ORDER BY id_foto ASC"));
                 $valor = $row["valor"];
                 $valor = number_format($valor, 2,',', '.');
                 echo("
-                <a href=\"./pages/veiculo/index.php?id={$row["id_carro"]}\">
-                    <div class=\"card-carro\">
-                  <img
-                    src=\"./assets/img/foto/$ft[1]\"
-                    alt=\"{$row["modelo"]} {$row["ano"]}\"
-                    class=\"img-carro\"
-                  />
+                <a class=\"link-card card-carro\" href=\"./pages/veiculo/index.php?id={$row["id_carro"]}\">
+                    
+                    <div class=\"div-img-card\">
+                    <img
+                      src=\"./assets/img/foto/$ft[1]\"
+                      alt=\"{$row["modelo"]} {$row["ano"]}\"
+                      class=\"img-carro\"
+                      width=\"330px\"
+                      height=\"210px\"
+
+                    />
+                  </div>
                   <div class=\"informações-carro\">
                     <h3 class=\"nome-carro\">{$row["marca"]} {$row["modelo"]}</h3>
-                    <h3 class=\"nome-carro\">{$row["ano"]}</h3>
                     <h3 class=\"valor-carro\">R$ {$valor}</h3>
                     <div class=\"linha-card-carros\"></div>
                     <div class=\"caracteristica-carro\">
@@ -265,7 +271,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro"); ?> -->
                       </div>
                     </div>
                   </div>
-                </div>
+                
                 </a>
                 ");
 
