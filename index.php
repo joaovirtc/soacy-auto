@@ -63,11 +63,15 @@ $dt_carros =  $conn->query("SELECT * FROM carro limit 6;"); ?> -->
           </a>
         </nav>
       </header>
-      <section class="container-banner"></section>
+      <section class="container-banner">
+       
+      </section>
 
       <section class="container-search-main">
         <div class="container-search">
-          <h2 class="title-home">Encontre seu carro</h2>
+          <div class="header-search">
+             <h2 class="title-home">Encontre seu carro</h2>
+          </div>
           <div class="container-form-search">
             <form action="" class="form-search">
               <div class="content-search">
@@ -78,7 +82,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro limit 6;"); ?> -->
                   placeholder="Pesquise por marca ou modelo do carro "
                 />
               </div>
-              <input type="submit" value="Buscar" class="search-submit" />
+              <input type="submit" value="BUSCAR" class="search-submit" />
             </form>
           </div>
         </div>
@@ -91,46 +95,46 @@ $dt_carros =  $conn->query("SELECT * FROM carro limit 6;"); ?> -->
           </div>
           <div class="slider-marcas">
             <img
-              src="./assets/img/Fiat_logo logo.svg"
+              src="./assets/img/LogosColoridas/Volkslogo.svg"
               alt=""
-              width="60px"
-              height="60px"
+              width="70px"
+              height="70px"
             />
             <img
-              src="./assets/img/ford logo.svg"
+              src="./assets/img/LogosColoridas/Fiat_logo logo.svg"
               alt=""
-              width="60px"
-              height="60px"
+              width="70px"
+              height="70px"
             />
             <img
-              src="./assets/img/honda logo.svg"
+              src="./assets/img/LogosColoridas/Ford logo.svg"
               alt=""
-              width="60px"
-              height="60px"
+              width="70px"
+              height="70px"
             />
             <img
-              src="./assets/img/hyundai logo.svg"
+              src="./assets/img/LogosColoridas/Honda logo.svg"
               alt=""
-              width="60px"
-              height="60px"
+              width="70px"
+              height="70px"
             />
             <img
-              src="./assets/img/toyota logo.svg"
+              src="./assets/img/LogosColoridas/Toyota logo.svg"
               alt=""
-              width="60px"
-              height="60px"
+              width="70px"
+              height="70px"
             />
             <img
-              src="./assets/img/Vector.svg"
+              src="./assets/img/LogosColoridas/Peugeot logo.svg"
               alt=""
-              width="60px"
-              height="60px"
+              width="70px"
+              height="70px"
             />
             <img
-              src="./assets/img/Volkswagen logo.svg"
+              src="./assets/img/LogosColoridas/hyundai-logo.svg"
               alt=""
-              width="60px"
-              height="60px"
+              width="70px"
+              height="70px"
             />
           </div>
         </div>
