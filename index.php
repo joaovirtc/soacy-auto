@@ -147,7 +147,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro limit 6;"); ?> -->
           </div>
           <main class="grid-carros-destaque">
             <!-- card carro -->
-
+<!-- 
             <div class="card-carro">
               <div class="div-img-card">
                 <img
@@ -207,7 +207,7 @@ $dt_carros =  $conn->query("SELECT * FROM carro limit 6;"); ?> -->
               </div>
             </div>
             
-            
+             -->
             <!-- fim de um card -->
               <?php
               foreach ($dt_carros as $row) {
