@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login em Painel de Controle</title>
+    <title>Dashboard</title>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -16,49 +16,109 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <main class="container">
-      <div class="content">
-        <h1 class="title">Painel De Controle</h1>
-        <form action="" class="form-login" id="formLogin">
-          <div class="input-group">
-            <label for="user">Usuário</label>
-            <input
-              type="text"
-              placeholder="Usuário"
-              class="requiredInput"
-              oninput="nameValidate()"
-            />
-            <span class="span-required">Usuário não existe</span>
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="content-sidebar">
+          <div class="header-sidebar">
+            <p>LOGO</p>
           </div>
-          <div class="input-group">
-            <label for="senha">Senha</label>
-            <input
-              type="password"
-              placeholder="Senha"
-              class="requiredInput"
-              oninput="passwordValidate()"
-            />
-            <span class="span-required">Senha incorreta</span>
-          </div>
-          <div class="input-group">
-            <a onclick="showMensageForgetPassword()" class="link"
-              >Esqueci minha senha</a
-            >
-            <div>
-              <p id="mensagem">
-                Por questões de segurança, enviamos um email para
-                <span class="link mensagem">***@gmail.com</span><br />
-                leia e siga todas instruções solicitadas.
-              </p>
+          <div class="menu">
+            <div class="menu-principal">
+              <div>
+                <p class="title-small">Menu Principal</p>
+              </div>
+              <div class="nav-link active">
+                <i class="ri-function-line icon-nav-link"></i>
+                <p class="title-nav-link">Dashboard</p>
+              </div>
+              <div class="nav-link">
+                <i class="ri-car-line icon-nav-link"></i>
+                <p class="title-nav-link">Estoque</p>
+              </div>
+              <div class="nav-link">
+                <i class="ri-money-dollar-circle-line icon-nav-link"></i>
+                <p class="title-nav-link">Vendas</p>
+              </div>
+            </div>
+            <div class="nav-link">
+              <i class="ri-logout-circle-line icon-nav-link"></i>
+              <p class="title-nav-link">Sair</p>
             </div>
           </div>
-          <div class="input-group">
-            <input type="submit" class="input-submit" />
+        </div>
+      </aside>
+      <section class="container-body">
+        <div class="content-body">
+          <header class="header-body">
+            <div class="content-logo-concessionaria">
+              <img src="../../assets/img/logo-Icon-Preto 1.png" alt="" />
+              <p class="title">SoacyCars</p>
+            </div>
+            <div>
+              <button class="botao-primario">
+                <i class="ri-add-line icon-botao"></i>
+                Novo Veículo
+              </button>
+            </div>
+          </header>
+
+          <div class="container-visao-geral">
+            <div>
+              <p class="subtitle-body">Visão Geral</p>
+            </div>
+            <div class="container-info-visao-geral">
+              <!-- CARD -->
+              <div class="card-visao-geral">
+                <div class="header-card">
+                  <i class="ri-car-line icon-card"></i>
+                  <p class="title-card">Total veículos cadastrados</p>
+                </div>
+                <div class="content-card">
+                  <div>
+                    <p class="descriçao-card">60 Veículos</p>
+                  </div>
+                  <div class="descriçao-card-add">
+                    <p>+60</p>
+                  </div>
+                </div>
+              </div>
+              <!-- CARD -->
+              <!-- CARD -->
+              <div class="card-visao-geral">
+                <div class="header-card">
+                  <i class="ri-money-dollar-circle-line icon-card"></i>
+                  <p class="title-card">Total veículos vendidos</p>
+                </div>
+                <div class="content-card">
+                  <div>
+                    <p class="descriçao-card">6 Veículos</p>
+                  </div>
+                  <div class="descriçao-card-add">
+                    <p>+R$ 109.770,00</p>
+                  </div>
+                </div>
+              </div>
+              <!-- CARD -->
+              <!-- CARD -->
+              <div class="card-visao-geral">
+                <div class="header-card">
+                  <i class="ri-exchange-dollar-line icon-card"></i>
+                  <p class="title-card">Faturamento</p>
+                </div>
+                <div class="content-card">
+                  <div>
+                    <p class="descriçao-card">R$ 109.880,90</p>
+                  </div>
+                  <div class="descriçao-card-add">
+                    <p>+23,80%</p>
+                  </div>
+                </div>
+              </div>
+              <!-- CARD -->
+            </div>
           </div>
-          <script src="./assets/js/formValidate.js"></script>
-        </form>
-      </div>
-      <script src="./assets/js/app.js"></script>
+        </div>
+      </section>
     </main>
   </body>
 </html>
