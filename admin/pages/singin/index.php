@@ -1,5 +1,13 @@
 <?php
+// carregando dependencias
 include_once('../../assets/conn.php');
+session_start();
+
+// codigo
+
+if(isset($_SESSION["userID"])){
+  header('location: http://localhost/sistemadecarro/admin/');
+}
 
 ?>
 
@@ -24,7 +32,7 @@ include_once('../../assets/conn.php');
     <main class="container">
       <div class="content">
         <h1 class="title">Painel De Controle</h1>
-        <form action="login.php" method="POST" class="form-login" id="formLogin">
+        <form action="../../assets/php/login.php" method="POST" class="form-login" id="formLogin">
           <div class="input-group">
             <label for="user">Usuário</label>
             <input
