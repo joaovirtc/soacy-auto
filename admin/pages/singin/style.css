@@ -144,3 +144,6 @@ input:focus {
   color: #f30d0d;
   display: none;
 }
+.span-required.on {
+  display: block;
+}
