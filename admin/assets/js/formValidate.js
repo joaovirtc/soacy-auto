@@ -27,6 +27,7 @@ formLogin.addEventListener("submit", (event) => {
 function setError(index) {
   campos[index].style.border = "1px solid #F30D0D";
   spans[index].style.display = "block";
+
 }
 
 function removeError(index) {

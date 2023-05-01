@@ -1,3 +1,8 @@
+<?php
+include_once('../../assets/conn.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -19,7 +24,7 @@
     <main class="container">
       <div class="content">
         <h1 class="title">Painel De Controle</h1>
-        <form action="" class="form-login" id="formLogin">
+        <form action="login.php" method="POST" class="form-login" id="formLogin">
           <div class="input-group">
             <label for="user">Usuário</label>
             <input
@@ -27,8 +32,9 @@
               placeholder="Usuário"
               class="requiredInput"
               oninput="nameValidate()"
+              name="usuario"
             />
-            <span class="span-required">Usuário não existe</span>
+            <span class="span-required">Informe um nome de usuario</span>
           </div>
           <div class="input-group">
             <label for="senha">Senha</label>
@@ -37,13 +43,20 @@
               placeholder="Senha"
               class="requiredInput"
               oninput="passwordValidate()"
+              name="senha"
             />
             <span class="span-required">Senha incorreta</span>
+            <?php
+              if(isset($_GET['err'])){
+                echo("<p class=\"span-required on\">Dados de usuario invalido</p>");
+              }
+            ?>
           </div>
           <div class="input-group">
             <a onclick="showMensageForgetPassword()" class="link"
               >Esqueci minha senha</a
             >
+            
             <div>
               <p id="mensagem">
                 Por questões de segurança, enviamos um email para
@@ -55,10 +68,10 @@
           <div class="input-group">
             <input type="submit" class="input-submit" />
           </div>
-          <script src="./assets/js/formValidate.js"></script>
+          <script src="../../assets/js/formValidate.js"></script>
         </form>
       </div>
-      <script src="./assets/js/app.js"></script>
+      <script src="../../assets/js/app.js"></script>
     </main>
   </body>
 </html>
