@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NOME DO VEICULO</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="layout" id="openFormActiveOpacity">
+      <aside class="sidebar">
+        <div class="content-sidebar">
+          <div class="header-sidebar">
+            <p>LOGO</p>
+          </div>
+          <div class="menu">
+            <div class="menu-principal">
+              <div>
+                <p class="title-small">Menu Principal</p>
+              </div>
+              <a href="../../index.html" class="nav-link">
+                <i class="ri-function-line icon-nav-link"></i>
+                <p class="title-nav-link">Dashboard</p>
+              </a>
+              <a href="../estoque/index.html" class="nav-link">
+                <i class="ri-car-line icon-nav-link"></i>
+                <p class="title-nav-link">Estoque</p>
+              </a>
+              <a href="../financeiro/index.html" class="nav-link">
+                <i class="ri-money-dollar-circle-line icon-nav-link"></i>
+                <p class="title-nav-link">Vendas</p>
+              </a>
+            </div>
+            <a href="./assets/php/logout.php" class="nav-link"
+              ><!-- esse link leva ao processo de logout com php -->
+
+              <i class="ri-logout-circle-line icon-nav-link"></i>
+
+              <p class="title-nav-link">Sair</p>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <section class="popup-aviso" id="popup-aviso">
+        <div class="content-popup-aviso">
+          <div class="header-popup-aviso">
+            <p class="title">DESEJA EXCLUIR ESSE VEÍCULO ?</p>
+          </div>
+          <div class="descrição-popup-aviso">
+            <p>
+              Este veículo será excluído permanentemente, não podendo
+              recupera-lo depois
+            </p>
+          </div>
+          <div class="action-btn-aviso">
+            <button class="btn-action-aviso" onclick="closePopup()">
+              Cancelar
+            </button>
+            <button class="btn-action-aviso btn-delete" onclick="closePopup()">
+              Excluir
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="container-body">
+        <div class="content-body">
+          <header class="header-body">
+            <div class="content-info-veiculo">
+              <p class="title">ID: 1</p>
+              <h3 class="title">VOLKSWAGEM JETTA</h3>
+              <p>1.4 250 TSI TOTAL FLEX COMFORTLINE TIPTRONIC</p>
+              <span class="status-on">online</span>
+            </div>
+            <div class="content-actions">
+              <button class="botao-primario">
+                <i class="ri-pencil-line"></i>
+                Editar Veículo
+              </button>
+              <button class="action-btn">
+                <i class="ri-money-dollar-circle-line icon-action-sale"></i>
+              </button>
+              <button class="action-btn" onclick="openPopup()">
+                <i class="ri-delete-bin-line icon-action-delete"></i>
+              </button>
+              <script src="app.js"></script>
+            </div>
+          </header>
+
+          <div class="content-fotos-veiculo">
+            <header class="">
+              <p class="subtitle-body">FOTOS DO VEÍCULO</p>
+            </header>
+            <div class="fotos-veiculo">
+              <img src="../../assets/img/image 20.png" alt="" />
+              <img src="../../assets/img/image 21.png" alt="" />
+              <img src="../../assets/img/image 22.png" alt="" />
+              <img src="../../assets/img/image 22.png" alt="" />
+              <img src="../../assets/img/image 22.png" alt="" />
+            </div>
+          </div>
+
+          <div class="content-dados-veiculos">
+            <header class="">
+              <p class="subtitle-body">DADOS DO VEÍCULO</p>
+            </header>
+            <div class="dados-veiculo">
+              <div class="input-group">
+                <label for="">Placa</label>
+                <input type="text" value="AJF-123" class="input-dados" />
+              </div>
+              <div class="input-group">
+                <label for="">Marca</label>
+                <input type="text" value="Volkswagem" class="input-dados" />
+              </div>
+              <div class="input-group">
+                <label for="">Nome do Veículo</label>
+                <input type="text" value="Jetta" class="input-dados" />
+              </div>
+              <div class="input-group">
+                <label for="">Versão do veiculo</label>
+                <input
+                  type="text"
+                  value="TSI Confortline"
+                  class="input-dados"
+                />
+              </div>
+              <div class="input-group">
+                <label for="">Ano do Veículo</label>
+                <input type="text" value="2022" class="input-dados" />
+              </div>
+              <div class="input-group">
+                <label for="">Valor do Veículo</label>
+                <input type="text" value="R$ 129.990" class="input-dados" />
+              </div>
+              <div class="input-group">
+                <label for="">Status</label>
+                <input type="text" value="online" class="input-dados" />
+              </div>
+            </div>
+            <header class="header-dados-veiculo">
+              <p class="subtitle-body">DADOS MECÂNICOS DO VEÍCULO</p>
+            </header>
+            <div class="dados-veiculo">
+              <div class="input-group">
+                <label for="">Motor</label>
+                <input type="text" value="2.0" class="input-dados" />
+              </div>
+              <div class="input-group">
+                <label for="">Carroceria</label>
+                <input type="text" value="Sedan" class="input-dados" />
+              </div>
+              <div class="input-group">
+                <label for="">Quilometragem</label>
+                <input type="text" value="330.300" class="input-dados" />
+              </div>
+              <div class="input-group">
+                <label for="">Combustível</label>
+                <input type="text" value="Gasolina" class="input-dados" />
+              </div>
+              <div class="input-group">
+                <label for="">Câmbio</label>
+                <input type="text" value="Automático" class="input-dados" />
+              </div>
+            </div>
+            <header class="header-dados-veiculo">
+              <p class="subtitle-body">DADOS ESTÉTICA DO VEÍCULO</p>
+            </header>
+            <div class="dados-veiculo">
+              <div class="input-group">
+                <label for="">Cor</label>
+                <input type="text" value="Prata" class="input-dados" />
+              </div>
+              <div class="input-group">
+                <label for="">Portas</label>
+                <input type="text" value="4 portas" class="input-dados" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
