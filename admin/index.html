@@ -1,5 +1,4 @@
-
-<?php
+<!-- <?php
 // carregando dependencias
 include_once('./assets/conn.php');
 session_start();
@@ -10,7 +9,7 @@ if(!isset($_SESSION["userID"])){
   header('location: http://localhost/sistemadecarro/admin/pages/singin');
 }
 
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -54,10 +53,11 @@ if(!isset($_SESSION["userID"])){
                 <p class="title-nav-link">Vendas</p>
               </div>
             </div>
-            <a href="./assets/php/logout.php" class="nav-link"><!-- esse link leva ao processo de logout com php -->
-            
+            <a href="./assets/php/logout.php" class="nav-link"
+              ><!-- esse link leva ao processo de logout com php -->
+
               <i class="ri-logout-circle-line icon-nav-link"></i>
-              
+
               <p class="title-nav-link">Sair</p>
             </a>
           </div>
@@ -67,7 +67,7 @@ if(!isset($_SESSION["userID"])){
         <div class="content-body">
           <header class="header-body">
             <div class="content-logo-concessionaria">
-              <img src="../../assets/img/logo-Icon-Preto 1.png" alt="" />
+              <img src="./assets/img/logo-Icon-Pretabela" alt="" />
               <p class="title">SoacyCars</p>
             </div>
             <div>
@@ -131,6 +131,65 @@ if(!isset($_SESSION["userID"])){
                 </div>
               </div>
               <!-- CARD -->
+            </div>
+          </div>
+          <div class="container-tabela">
+            <header class="">
+              <p class="subtitle-body">Últimos veículos cadastrados</p>
+            </header>
+            <div class="content-tabela">
+              <table>
+                <!-- HEADER PLANILHA -->
+                <tr class="header-tabela">
+                  <th class="title-tabela ID">ID</th>
+                  <th class="title-tabela Nome">Nome Veículo</th>
+                  <th class="title-tabela Placa">Placa</th>
+                  <th class="title-tabela Km">KM</th>
+                  <th class="title-tabela Ano">Ano</th>
+                  <th class="title-tabela Status">Status</th>
+                  <th class="title-tabela Ações"></th>
+                </tr>
+                <!-- HEADER PLANILHA -->
+
+                <!-- DESCRIÇÃO PLANILHA -->
+                <tr>
+                  <td class="descricao-tabela id">1</td>
+                  <td class="descricao-tabela nome">
+                    Mercedes-benz GLE 63 AMG
+                  </td>
+                  <td class="descricao-tabela placa">IAS-212</td>
+                  <td class="descricao-tabela km">200.000</td>
+                  <td class="descricao-tabela ano">2022</td>
+                  <td class="descricao-tabela status">
+                    <span class="status-on">online</span>
+                  </td>
+                  <td class="descricao-tabela ações">
+                    <span class="edit">
+                      <i class="ri-pencil-line"></i>
+                    </span>
+                  </td>
+                </tr>
+                <!-- DESCRIÇÃO PLANILHA -->
+                <!-- DESCRIÇÃO PLANILHA -->
+                <tr>
+                  <td class="descricao-tabela id">1</td>
+                  <td class="descricao-tabela nome">
+                    Mercedes-benz GLE 63 AMG
+                  </td>
+                  <td class="descricao-tabela placa">IAS-212</td>
+                  <td class="descricao-tabela km">200.000</td>
+                  <td class="descricao-tabela ano">2022</td>
+                  <td class="descricao-tabela status">
+                    <span class="status-off">offline</span>
+                  </td>
+                  <td class="descricao-tabela ações">
+                    <span class="edit">
+                      <i class="ri-pencil-line"></i>
+                    </span>
+                  </td>
+                </tr>
+                <!-- DESCRIÇÃO PLANILHA -->
+              </table>
             </div>
           </div>
         </div>
