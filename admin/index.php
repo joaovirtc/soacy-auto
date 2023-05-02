@@ -1,3 +1,17 @@
+
+<?php
+// carregando dependencias
+include_once('./assets/conn.php');
+session_start();
+
+// codigo
+
+if(!isset($_SESSION["userID"])){
+  header('location: http://localhost/sistemadecarro/admin/pages/singin');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -40,10 +54,12 @@
                 <p class="title-nav-link">Vendas</p>
               </div>
             </div>
-            <div class="nav-link">
+            <a href="./assets/php/logout.php" class="nav-link"><!-- esse link leva ao processo de logout com php -->
+            
               <i class="ri-logout-circle-line icon-nav-link"></i>
+              
               <p class="title-nav-link">Sair</p>
-            </div>
+            </a>
           </div>
         </div>
       </aside>
