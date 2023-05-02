@@ -80,7 +80,7 @@ body {
 }
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
@@ -171,7 +171,7 @@ body {
   flex: 1 1 auto;
   height: 100%;
   margin-left: 290px;
-  padding: 3.625rem 1rem 1rem 1rem;
+  padding: 3rem 1rem 1rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -285,5 +285,106 @@ body {
 
   .card-visao-geral {
     width: 46%;
+  }
+}
+
+.container-tabela {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.content-tabela {
+  width: 100%;
+  background-color: var(--container-color);
+  border: var(--border);
+
+  border-radius: 10px;
+  margin-top: 39px;
+  max-height: 430px;
+  overflow-y: scroll;
+}
+
+.content-tabela::-webkit-scrollbar {
+  width: 5px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.title-tabela {
+  padding: 22px 21px;
+  border-bottom: var(--border);
+  position: sticky;
+  top: 0;
+  background-color: var(--container-color);
+  z-index: 1;
+  font-size: var(--font-size-medium);
+  color: var(--text-color-opacity);
+  font-weight: 600;
+}
+.descricao-tabela {
+  padding: 19px 21px;
+  border-bottom: var(--border);
+  font-size: var(--font-size-medium);
+}
+
+.status-on {
+  background-color: var(--color-background-status-on);
+  display: flexbox;
+  padding: 6px 15px;
+  width: 62px;
+  font-size: 13px;
+  border-radius: 3px;
+  color: var(--color-text-status-on);
+}
+
+.status-off {
+  background-color: var(--color-background-status-off);
+  display: flexbox;
+  padding: 6px 15px;
+  width: 62px;
+  font-size: 13px;
+  border-radius: 3px;
+  color: var(--color-text-status-of);
+}
+
+.edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: var(--color-background-edit);
+  color: var(--color-text-edit);
+  border-radius: 10px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.edit i {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 1148px) {
+  .Ano,
+  .ano {
+    display: none;
+  }
+
+  .descricao-tabela {
+    font-size: var(--font-size-small);
   }
 }
