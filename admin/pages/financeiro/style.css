@@ -360,6 +360,15 @@ table {
   border-radius: 3px;
   color: var(--color-text-status-of);
 }
+.status-sale {
+  background-color: var(--color-background-status-sale);
+  display: flexbox;
+  padding: 6px 15px;
+  width: 62px;
+  font-size: 13px;
+  border-radius: 3px;
+  color: var(--color-text-status-sale);
+}
 
 .edit {
   display: flex;
