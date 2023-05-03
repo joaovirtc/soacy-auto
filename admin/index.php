@@ -1,7 +1,28 @@
-<!-- <?php
+<?php
 // carregando dependencias
 include_once('./assets/conn.php');
 session_start();
+
+// query's no banco de dados
+  // numero de quantos carros tem registrado no banco de dados
+  $qtd_veiculos_estq = mysqli_fetch_array($conn->query("select count(1) from carro where status != 'vendido'; "));
+  // numero de veiculos adicionados esse mes
+  $ano_atual = date('Y');
+  $mes_atual = date('m');
+  $qtd_veiculos_mes = mysqli_fetch_array($conn->query("SELECT count(1) FROM carro 
+                                         WHERE YEAR(dt_cadastro) = '{$ano_atual}'
+                                         AND MONTH(dt_cadastro) = '{$mes_atual}';"));
+  // numero de veiculos vendidos esse mes
+  $qtd_vendas_mes = mysqli_fetch_assoc($conn->query(" SELECT *
+  FROM vendidos
+  INNER JOIN carro
+  ON vendidos.id_carro = carro.id_carro 
+WHERE YEAR(dt_venda) = '2023'
+AND MONTH(dt_venda) = '5';"));
+
+// definindo variaveis
+
+
 
 // codigo
 
@@ -9,7 +30,7 @@ if(!isset($_SESSION["userID"])){
   header('location: http://localhost/sistemadecarro/admin/pages/singin');
 }
 
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -55,9 +76,7 @@ if(!isset($_SESSION["userID"])){
             </div>
             <a href="./assets/php/logout.php" class="nav-link"
               ><!-- esse link leva ao processo de logout com php -->
-
               <i class="ri-logout-circle-line icon-nav-link"></i>
-
               <p class="title-nav-link">Sair</p>
             </a>
           </div>
@@ -68,7 +87,9 @@ if(!isset($_SESSION["userID"])){
           <header class="header-body">
             <div class="content-logo-concessionaria">
               <img src="./assets/img/logo-Icon-Pretabela" alt="" />
-              <p class="title">SoacyCars</p>
+              <!-- <p class="title">SoacyCars</p> -->
+              
+              
             </div>
             <div>
               <button class="botao-primario">
@@ -136,6 +157,11 @@ if(!isset($_SESSION["userID"])){
           <div class="container-tabela">
             <header class="">
               <p class="subtitle-body">Últimos veículos cadastrados</p>
+              
+              <?php 
+              echo("<pre>");
+               var_dump($qtd_vendas_mes);
+               ?>
             </header>
             <div class="content-tabela">
               <table>
