@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOME DO VEICULO</title>
+    <title>Editar NOME DO VEICULO</title>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <main class="layout" id="openFormActiveOpacity">
@@ -27,7 +27,7 @@
               <div>
                 <p class="title-small">Menu Principal</p>
               </div>
-              <a href="../../index.html" class="nav-link">
+              <a href="../../index.php" class="nav-link">
                 <i class="ri-function-line icon-nav-link"></i>
                 <p class="title-nav-link">Dashboard</p>
               </a>
@@ -51,28 +51,6 @@
         </div>
       </aside>
 
-      <section class="popup-aviso" id="popup-aviso">
-        <div class="content-popup-aviso">
-          <div class="header-popup-aviso">
-            <p class="title">DESEJA EXCLUIR ESSE VEÍCULO ?</p>
-          </div>
-          <div class="descrição-popup-aviso">
-            <p>
-              Este veículo será excluído permanentemente, não podendo
-              recupera-lo depois
-            </p>
-          </div>
-          <div class="action-btn-aviso">
-            <button class="btn-action-aviso" onclick="closePopup()">
-              Cancelar
-            </button>
-            <button class="btn-action-aviso btn-delete" onclick="closePopup()">
-              Excluir
-            </button>
-          </div>
-        </div>
-      </section>
-
       <section class="container-body">
         <div class="content-body">
           <header class="header-body">
@@ -85,26 +63,27 @@
             <div class="content-actions">
               <button class="botao-primario">
                 <i class="ri-pencil-line"></i>
-                Editar Veículo
+                Salvar alterações
               </button>
-              <button class="action-btn">
-                <i class="ri-money-dollar-circle-line icon-action-sale"></i>
-              </button>
-              <button class="action-btn" onclick="openPopup()">
-                <i class="ri-delete-bin-line icon-action-delete"></i>
-              </button>
-              <script src="app.js"></script>
             </div>
           </header>
 
+          <header class="">
+            <p class="subtitle-body">FOTOS DO VEÍCULO</p>
+          </header>
           <div class="content-fotos-veiculo">
-            <header class="">
-              <p class="subtitle-body">FOTOS DO VEÍCULO</p>
-            </header>
             <div class="fotos-veiculo">
+              <button class="btn-deletar-foto">
+                <i class="ri-delete-bin-line"></i>
+              </button>
               <img src="../../assets/img/image 20.png" alt="" />
+
               <img src="../../assets/img/image 20.png" alt="" />
+
               <img src="../../assets/img/image 20.png" alt="" />
+
+              <img src="../../assets/img/image 20.png" alt="" />
+
               <img src="../../assets/img/image 20.png" alt="" />
             </div>
           </div>
@@ -120,23 +99,33 @@
               </div>
               <div class="input-group">
                 <label for="">Marca</label>
-                <input type="text" value="Volkswagem" class="input-dados" />
+                <select name="" id="" class="input-dados">
+                  <option value="">Volkswagem</option>
+                  <option value="">Fiat</option>
+                  <option value="">Toytota</option>
+                  <option value="">Renault</option>
+                </select>
               </div>
               <div class="input-group">
                 <label for="">Nome do Veículo</label>
-                <input type="text" value="Jetta" class="input-dados" />
+                <input type="text" value="Jetta" class="input-dados name" />
               </div>
               <div class="input-group">
                 <label for="">Versão do veiculo</label>
                 <input
                   type="text"
                   value="TSI Confortline"
-                  class="input-dados"
+                  class="input-dados versao"
                 />
               </div>
               <div class="input-group">
                 <label for="">Ano do Veículo</label>
-                <input type="text" value="2022" class="input-dados" />
+                <select name="" id="" class="input-dados">
+                  <option value="">2023</option>
+                  <option value="">2022</option>
+                  <option value="">2021</option>
+                  <option value="">2020</option>
+                </select>
               </div>
               <div class="input-group">
                 <label for="">Valor do Veículo</label>
@@ -144,7 +133,10 @@
               </div>
               <div class="input-group">
                 <label for="">Status</label>
-                <input type="text" value="online" class="input-dados" />
+                <select name="" id="" class="input-dados">
+                  <option value="">online</option>
+                  <option value="">offline</option>
+                </select>
               </div>
             </div>
             <header class="header-dados-veiculo">
@@ -153,11 +145,19 @@
             <div class="dados-veiculo">
               <div class="input-group">
                 <label for="">Motor</label>
-                <input type="text" value="2.0" class="input-dados" />
+                <select name="" id="" class="input-dados">
+                  <option value="">3.0</option>
+                  <option value="">2.0</option>
+                  <option value="">1.5</option>
+                  <option value="">1.0</option>
+                </select>
               </div>
               <div class="input-group">
                 <label for="">Carroceria</label>
-                <input type="text" value="Sedan" class="input-dados" />
+                <select name="" id="" class="input-dados">
+                  <option value="">Sedan</option>
+                  <option value="">SUV</option>
+                </select>
               </div>
               <div class="input-group">
                 <label for="">Quilometragem</label>
@@ -165,11 +165,17 @@
               </div>
               <div class="input-group">
                 <label for="">Combustível</label>
-                <input type="text" value="Gasolina" class="input-dados" />
+                <select name="" id="" class="input-dados">
+                  <option value="">Gasolina</option>
+                  <option value="">Eletrico</option>
+                </select>
               </div>
               <div class="input-group">
                 <label for="">Câmbio</label>
-                <input type="text" value="Automático" class="input-dados" />
+                <select name="" id="" class="input-dados">
+                  <option value="">Automático</option>
+                  <option value="">Manual</option>
+                </select>
               </div>
             </div>
             <header class="header-dados-veiculo">
@@ -182,7 +188,12 @@
               </div>
               <div class="input-group">
                 <label for="">Portas</label>
-                <input type="text" value="4 portas" class="input-dados" />
+                <select name="" id="" class="input-dados">
+                  <option value="">4 portas</option>
+                  <option value="">2 portas</option>
+                  <option value="">4 Portas</option>
+                  <option value="">6 Portas</option>
+                </select>
               </div>
             </div>
           </div>
