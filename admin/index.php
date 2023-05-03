@@ -9,18 +9,24 @@ session_start();
   // numero de veiculos adicionados esse mes
   $ano_atual = date('Y');
   $mes_atual = date('m');
-  $qtd_veiculos_mes = mysqli_fetch_array($conn->query("SELECT count(1) FROM carro 
-                                         WHERE YEAR(dt_cadastro) = '{$ano_atual}'
-                                         AND MONTH(dt_cadastro) = '{$mes_atual}';"));
+  $qtd_veiculos_mes = mysqli_fetch_array($conn->query("SELECT count(1) FROM carro WHERE YEAR(dt_cadastro) = '{$ano_atual}' AND MONTH(dt_cadastro) = '{$mes_atual}';"));
   // numero de veiculos vendidos esse mes
-  $qtd_vendas_mes = mysqli_fetch_assoc($conn->query(" SELECT *
-  FROM vendidos
-  INNER JOIN carro
-  ON vendidos.id_carro = carro.id_carro 
-WHERE YEAR(dt_venda) = '2023'
-AND MONTH(dt_venda) = '5';"));
+  $qtd_vendas_mes = $conn->query(" SELECT * FROM vendidos INNER JOIN carro ON vendidos.id_carro = carro.id_carro WHERE YEAR(dt_venda) = '2023' AND MONTH(dt_venda) = '5';");
+
 
 // definindo variaveis
+  
+$qtd_veiculos_estq = $qtd_veiculos_estq[0];
+$qtd_veiculos_mes = $qtd_veiculos_mes[0];
+$num_vendas_mes = mysqli_fetch_array($qtd_vendas_mes);
+$num_vendas_mes = $qtd_vendas_mes->num_rows;
+$vendas_mes = 0;
+    foreach($qtd_vendas_mes as $venda){
+    
+      $vendas_mes = $vendas_mes + $venda["valor"];
+      
+    }
+$vendas_mes = number_format($vendas_mes, 2,',', '.');
 
 
 
@@ -87,7 +93,7 @@ if(!isset($_SESSION["userID"])){
           <header class="header-body">
             <div class="content-logo-concessionaria">
               <img src="./assets/img/logo-Icon-Pretabela" alt="" />
-              <!-- <p class="title">SoacyCars</p> -->
+              <p class="title">SoacyCars</p>
               
               
             </div>
@@ -112,10 +118,10 @@ if(!isset($_SESSION["userID"])){
                 </div>
                 <div class="content-card">
                   <div>
-                    <p class="descriçao-card">60 Veículos</p>
+                    <p class="descriçao-card"><?php echo($qtd_veiculos_estq) ?> Veículos</p>
                   </div>
                   <div class="descriçao-card-add">
-                    <p>+60</p>
+                    <p>+<?php echo($qtd_veiculos_mes) ?></p>
                   </div>
                 </div>
               </div>
@@ -128,10 +134,10 @@ if(!isset($_SESSION["userID"])){
                 </div>
                 <div class="content-card">
                   <div>
-                    <p class="descriçao-card">6 Veículos</p>
+                    <p class="descriçao-card"><?php echo($num_vendas_mes) ?> Veículos</p>
                   </div>
                   <div class="descriçao-card-add">
-                    <p>+R$ 109.770,00</p>
+                    <p>+R$ <?php echo($vendas_mes) ?></p>
                   </div>
                 </div>
               </div>
@@ -157,11 +163,7 @@ if(!isset($_SESSION["userID"])){
           <div class="container-tabela">
             <header class="">
               <p class="subtitle-body">Últimos veículos cadastrados</p>
-              
-              <?php 
-              echo("<pre>");
-               var_dump($qtd_vendas_mes);
-               ?>
+            
             </header>
             <div class="content-tabela">
               <table>
