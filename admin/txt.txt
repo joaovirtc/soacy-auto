@@ -1,0 +1,7 @@
+
+UPDATE `carro` SET `notificacao`='1';
+select count(\*) from Produtos;  para contar linhas
+
+SELECT * FROM carro 
+WHERE YEAR(dt_cadastro) = 2023
+AND MONTH(dt_cadastro) = 04;
