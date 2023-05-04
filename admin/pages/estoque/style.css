@@ -367,7 +367,7 @@ table {
   font-size: var(--font-size-medium);
 }
 
-.status-on {
+.status-online {
   background-color: var(--color-background-status-on);
   display: flexbox;
   padding: 6px 15px;
@@ -377,7 +377,7 @@ table {
   color: var(--color-text-status-on);
 }
 
-.status-off {
+.status-offline {
   background-color: var(--color-background-status-off);
   display: flexbox;
   padding: 6px 15px;
