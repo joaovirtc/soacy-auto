@@ -3,13 +3,33 @@
 include_once('../../assets/conn.php');
 session_start();
 
-// query´s
-$dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline'");
+
+
+//variaveis
+$selected = isset($_GET["ordenar"]) ? $_GET["ordenar"] : "mais recente";
+echo($selected);
 // codigo
 
 if(!isset($_SESSION["userID"])){
   header('location: http://localhost/sistemadecarro/admin/pages/singin');
 }
+  // query´s
+  if($selected == "mais recente"){
+    $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline' ORDER BY `carro`.`dt_cadastro` DESC");
+  }
+  elseif($selected == "maior valor"){
+    $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline' ORDER BY `carro`.`valor` DESC");
+  }
+  elseif($selected == "menor valor"){
+    $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline' ORDER BY `carro`.`valor` ASC");
+  }
+  elseif($selected == "ano"){
+    $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline' ORDER BY `carro`.`ano` DESC");
+  }
+  else{
+    $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline' ORDER BY `carro`.`dt_cadastro` DESC");
+  }
+
 
 ?>
 <!DOCTYPE html>
@@ -30,6 +50,8 @@ if(!isset($_SESSION["userID"])){
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+
+
     <main class="layout">
       <aside class="sidebar">
         <div class="content-sidebar">
@@ -86,11 +108,14 @@ if(!isset($_SESSION["userID"])){
               </div>
               <div class="content-ordernar-por">
                 <p class="subtitle-body">Ordernar por:</p>
-                <select name="" id="">
-                  <option value="">Mais recente</option>
-                  <option value="">Maior valor</option>
-                  <option value="">Menor valor</option>
+                <form action="" method="get">
+                <select name="ordenar" id="ordenar" onchange="this.form.submit()">
+                  <option value="mais recente" <?php if($selected == "mais recente"){ echo("selected");} ?>>Mais recente</option>
+                  <option value="maior valor" <?php if($selected == "maior valor"){ echo("selected");} ?>>Maior valor</option>
+                  <option value="menor valor" <?php if($selected == "menor valor"){ echo("selected");} ?>>Menor valor</option>
+                  <option value="ano" <?php if($selected == "ano"){ echo("selected");} ?>>Ano lançamento</option>
                 </select>
+                </form>
               </div>
             </header>
             <div class="content-tabela">
@@ -100,7 +125,7 @@ if(!isset($_SESSION["userID"])){
                   <th class="title-tabela ID">ID</th>
                   <th class="title-tabela Nome">Nome Veículo</th>
                   <th class="title-tabela Placa">Placa</th>
-                  <th class="title-tabela Km">KM</th>
+                  <th class="title-tabela Km">Preço</th>
                   <th class="title-tabela Ano">Ano</th>
                   <th class="title-tabela Status">Status</th>
                   <th class="title-tabela Ações"></th>
@@ -109,6 +134,7 @@ if(!isset($_SESSION["userID"])){
 
                 <?php 
                   foreach($dt_registros as $registro){
+                    $valor = number_format($registro["valor"], 2,',', '.');
                     echo("
                     <!-- DESCRIÇÃO PLANILHA -->
                     <tr>
@@ -117,13 +143,13 @@ if(!isset($_SESSION["userID"])){
                         {$registro["marca"]} {$registro["modelo"]} {$registro["versao"]}
                       </td>
                       <td class=\"descricao-tabela placa\">{$registro["placa"]}</td>
-                      <td class=\"descricao-tabela km\">{$registro["quilometragem"]}</td>
+                      <td class=\"descricao-tabela km\">R$ {$valor}</td>
                       <td class=\"descricao-tabela ano\">{$registro["ano"]}</td>
                       <td class=\"descricao-tabela status\">
                         <span class=\"status-{$registro["status"]}\">{$registro["status"]}</span>
                       </td>
                       <td class=\"descricao-tabela ações\">
-                        <a class=\"edit\" href=\"./pages/visualizar-veiculo?id={$registro["id_carro"]}\">
+                        <a class=\"edit\" href=\"../visualizar-veiculo?id={$registro["id_carro"]}\">
                           <i class=\"ri-pencil-line\"></i>
                         </a>
                       </td>
