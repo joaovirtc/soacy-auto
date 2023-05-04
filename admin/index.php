@@ -65,7 +65,7 @@ if(!isset($_SESSION["userID"])){
           <div class="menu">
             <div class="menu-principal">
               <div>
-                <p class="title-small">Menu Principal</p>
+                <p class="title-small-sidebar">Menu Principal</p>
               </div>
               <a href="index.html" class="nav-link active">
                 <i class="ri-function-line icon-nav-link"></i>
@@ -75,9 +75,13 @@ if(!isset($_SESSION["userID"])){
                 <i class="ri-car-line icon-nav-link"></i>
                 <p class="title-nav-link">Estoque</p>
               </a>
-              <a href="pages/financeiro/" class="nav-link">
+              <a href="pages/financeiro/index.html" class="nav-link">
                 <i class="ri-money-dollar-circle-line icon-nav-link"></i>
                 <p class="title-nav-link">Vendas</p>
+              </a>
+              <a href="pages/leads/" class="nav-link">
+                <i class="ri-team-line icon-nav-link"></i>
+                <p class="title-nav-link">Gerenciamento de Leads</p>
               </a>
             </div>
             <a href="./assets/php/logout.php" class="nav-link"

@@ -86,7 +86,7 @@ body {
   left: 0;
   width: 270px;
   height: 100%;
-  padding: 43px 1rem;
+  padding: 43px 16px;
   background-color: var(--container-color);
 }
 
@@ -125,34 +125,39 @@ body {
 
 .nav-link {
   display: flex;
-  gap: 25px;
+  gap: 14.33px;
   justify-content: flex-start;
   align-items: center;
-  padding: 0.9rem 1.188rem;
+  padding: 8px 14px;
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 200ms ease;
 }
 
 .nav-link:hover {
-  background-color: var(--background-color);
+  background-color: #e8e8e8;
 }
 
 .nav-link.active {
-  background-color: var(--background-color);
+  background-color: #e8e8e8;
 }
 
 .icon-nav-link {
-  font-size: 23px;
+  font-size: 20px;
   text-decoration: none;
   color: #000;
 }
 
 .title-nav-link {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: #000;
   text-decoration: none;
+}
+
+.title-small-sidebar {
+  font-size: 12px;
+  color: var(--text-color-opacity);
 }
 
 .title-small {
