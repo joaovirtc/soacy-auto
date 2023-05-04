@@ -12,7 +12,7 @@ session_start();
   $qtd_veiculos_mes = mysqli_fetch_array($conn->query("SELECT count(1) FROM carro WHERE YEAR(dt_cadastro) = '{$ano_atual}' AND MONTH(dt_cadastro) = '{$mes_atual}';"));
   // numero de veiculos vendidos esse mes
   $qtd_vendas_mes = $conn->query(" SELECT * FROM vendidos INNER JOIN carro ON vendidos.id_carro = carro.id_carro WHERE YEAR(dt_venda) = '2023' AND MONTH(dt_venda) = '5';");
-
+  $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline'");
 
 // definindo variaveis
   
@@ -180,7 +180,7 @@ if(!isset($_SESSION["userID"])){
                 <!-- HEADER PLANILHA -->
 
                 <!-- DESCRIÇÃO PLANILHA -->
-                <tr>
+                <!-- <tr>
                   <td class="descricao-tabela id">1</td>
                   <td class="descricao-tabela nome">
                     Mercedes-benz GLE 63 AMG
@@ -189,34 +189,40 @@ if(!isset($_SESSION["userID"])){
                   <td class="descricao-tabela km">200.000</td>
                   <td class="descricao-tabela ano">2022</td>
                   <td class="descricao-tabela status">
-                    <span class="status-on">online</span>
+                    <span class="status-online">online</span>
                   </td>
                   <td class="descricao-tabela ações">
                     <span class="edit">
                       <i class="ri-pencil-line"></i>
                     </span>
                   </td>
-                </tr>
+                </tr> -->
                 <!-- DESCRIÇÃO PLANILHA -->
-                <!-- DESCRIÇÃO PLANILHA -->
-                <tr>
-                  <td class="descricao-tabela id">1</td>
-                  <td class="descricao-tabela nome">
-                    Mercedes-benz GLE 63 AMG
-                  </td>
-                  <td class="descricao-tabela placa">IAS-212</td>
-                  <td class="descricao-tabela km">200.000</td>
-                  <td class="descricao-tabela ano">2022</td>
-                  <td class="descricao-tabela status">
-                    <span class="status-off">offline</span>
-                  </td>
-                  <td class="descricao-tabela ações">
-                    <span class="edit">
-                      <i class="ri-pencil-line"></i>
-                    </span>
-                  </td>
-                </tr>
-                <!-- DESCRIÇÃO PLANILHA -->
+                <?php 
+                  foreach($dt_registros as $registro){
+                    echo("
+                    <!-- DESCRIÇÃO PLANILHA -->
+                    <tr>
+                      <td class=\"descricao-tabela id\">{$registro["id_carro"]}</td>
+                      <td class=\"descricao-tabela nome\">
+                        {$registro["marca"]} {$registro["modelo"]} {$registro["versao"]}
+                      </td>
+                      <td class=\"descricao-tabela placa\">{$registro["placa"]}</td>
+                      <td class=\"descricao-tabela km\">{$registro["quilometragem"]}</td>
+                      <td class=\"descricao-tabela ano\">{$registro["ano"]}</td>
+                      <td class=\"descricao-tabela status\">
+                        <span class=\"status-{$registro["status"]}\">{$registro["status"]}</span>
+                      </td>
+                      <td class=\"descricao-tabela ações\">
+                        <a class=\"edit\" href=\"./pages/visualizar-veiculo?id={$registro["id_carro"]}\">
+                          <i class=\"ri-pencil-line\"></i>
+                        </a>
+                      </td>
+                    </tr>
+                    <!-- DESCRIÇÃO PLANILHA -->    
+                    ");
+                  }
+                ?>  
               </table>
             </div>
           </div>
