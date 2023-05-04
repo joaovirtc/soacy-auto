@@ -1,3 +1,17 @@
+<?php
+// carregando dependencias
+include_once('../../assets/conn.php');
+session_start();
+
+// query´s
+$dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline'");
+// codigo
+
+if(!isset($_SESSION["userID"])){
+  header('location: http://localhost/sistemadecarro/admin/pages/singin');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -93,27 +107,33 @@
                 </tr>
                 <!-- HEADER PLANILHA -->
 
+                <?php 
+                  foreach($dt_registros as $registro){
+                    echo("
+                    <!-- DESCRIÇÃO PLANILHA -->
+                    <tr>
+                      <td class=\"descricao-tabela id\">{$registro["id_carro"]}</td>
+                      <td class=\"descricao-tabela nome\">
+                        {$registro["marca"]} {$registro["modelo"]} {$registro["versao"]}
+                      </td>
+                      <td class=\"descricao-tabela placa\">{$registro["placa"]}</td>
+                      <td class=\"descricao-tabela km\">{$registro["quilometragem"]}</td>
+                      <td class=\"descricao-tabela ano\">{$registro["ano"]}</td>
+                      <td class=\"descricao-tabela status\">
+                        <span class=\"status-{$registro["status"]}\">{$registro["status"]}</span>
+                      </td>
+                      <td class=\"descricao-tabela ações\">
+                        <a class=\"edit\" href=\"./pages/visualizar-veiculo?id={$registro["id_carro"]}\">
+                          <i class=\"ri-pencil-line\"></i>
+                        </a>
+                      </td>
+                    </tr>
+                    <!-- DESCRIÇÃO PLANILHA -->    
+                    ");
+                  }
+                ?> 
                 <!-- DESCRIÇÃO PLANILHA -->
-                <tr>
-                  <td class="descricao-tabela id">1</td>
-                  <td class="descricao-tabela nome">
-                    Mercedes-benz GLE 63 AMG
-                  </td>
-                  <td class="descricao-tabela placa">IAS-212</td>
-                  <td class="descricao-tabela km">200.000</td>
-                  <td class="descricao-tabela ano">2022</td>
-                  <td class="descricao-tabela status">
-                    <span class="status-on">online</span>
-                  </td>
-                  <td class="descricao-tabela ações">
-                    <a href="" class="edit">
-                      <i class="ri-pencil-line"></i>
-                    </a>
-                  </td>
-                </tr>
-                <!-- DESCRIÇÃO PLANILHA -->
-                <!-- DESCRIÇÃO PLANILHA -->
-                <tr>
+                <!-- <tr>
                   <td class="descricao-tabela id">1</td>
                   <td class="descricao-tabela nome">
                     Mercedes-benz GLE 63 AMG
@@ -129,7 +149,7 @@
                       <i class="ri-pencil-line"></i>
                     </a>
                   </td>
-                </tr>
+                </tr> -->
                 <!-- DESCRIÇÃO PLANILHA -->
               </table>
             </div>
