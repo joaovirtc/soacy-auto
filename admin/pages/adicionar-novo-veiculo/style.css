@@ -54,8 +54,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 12px 20px 12px 12px;
-  gap: 10px;
+  padding: 12px 20px;
   background: #0066cc;
   border-radius: 20px;
   border: none;
@@ -64,7 +63,6 @@ body {
   line-height: 19px;
   color: #fff;
   cursor: pointer;
-  max-height: 40px;
 }
 
 .icon-botao {
@@ -206,6 +204,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  align-items: center;
 }
 
 .content-info-veiculo {
@@ -287,7 +286,6 @@ body {
   display: flex;
   gap: 10px;
   border: var(--border);
-  border-style: dashed;
   border-radius: 10px;
   min-height: 200px;
   max-height: 200px;
