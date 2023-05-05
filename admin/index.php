@@ -67,11 +67,11 @@ if(!isset($_SESSION["userID"])){
               <div>
                 <p class="title-small-sidebar">Menu Principal</p>
               </div>
-              <a href="index.html" class="nav-link active">
+              <a href="index.php" class="nav-link active">
                 <i class="ri-function-line icon-nav-link"></i>
                 <p class="title-nav-link">Dashboard</p>
               </a>
-              <a href="./pages/estoque/index.html" class="nav-link">
+              <a href="./pages/estoque/index.php" class="nav-link">
                 <i class="ri-car-line icon-nav-link"></i>
                 <p class="title-nav-link">Estoque</p>
               </a>
