@@ -63,17 +63,19 @@
           <div class="descrição-popup-aviso">
             <p>
               Este veículo será excluído permanentemente, não podendo
-              recupera-lo depois
+              recuperá-lo depois.
             </p>
           </div>
-          <div class="action-btn-aviso">
+          <form class="action-btn-aviso">
             <button class="btn-action-aviso" onclick="closePopup()">
               Cancelar
             </button>
-            <button class="btn-action-aviso btn-delete" onclick="closePopup()">
-              Excluir
-            </button>
-          </div>
+            <input
+              type="submit"
+              class="btn-action-aviso btn-delete"
+              value="Excluir"
+            />
+          </form>
         </div>
       </section>
 
@@ -91,10 +93,14 @@
                 <i class="ri-pencil-line"></i>
                 Editar Veículo
               </button>
-              <button class="action-btn">
+              <button class="action-btn" data-tooltip="Marcar como vendido">
                 <i class="ri-money-dollar-circle-line icon-action-sale"></i>
               </button>
-              <button class="action-btn" onclick="openPopup()">
+              <button
+                class="action-btn-excluir"
+                onclick="openPopup()"
+                data-tooltip="Excluir veículo"
+              >
                 <i class="ri-delete-bin-line icon-action-delete"></i>
               </button>
               <script src="app.js"></script>
