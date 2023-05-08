@@ -16,6 +16,29 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <script>
+              String.prototype.reverse = function(){
+          return this.split('').reverse().join(''); 
+        };
+
+        function mascaraMoeda(campo,evento){
+          var tecla = (!evento) ? window.event.keyCode : evento.which;
+          var valor  =  campo.value.replace(/[^\d]+/gi,'').reverse();
+          var resultado  = "";
+          var mascara = "##.###.###,##".reverse();
+          for (var x=0, y=0; x<mascara.length && y<valor.length;) {
+            if (mascara.charAt(x) != '#') {
+              resultado += mascara.charAt(x);
+              x++;
+            } else {
+              resultado += valor.charAt(y);
+              y++;
+              x++;
+            }
+          }
+          campo.value = resultado.reverse();
+        }
+    </script>
     <main class="layout" id="openFormActiveOpacity">
       <aside class="sidebar">
         <div class="content-sidebar">
@@ -39,7 +62,7 @@
                 <i class="ri-money-dollar-circle-line icon-nav-link"></i>
                 <p class="title-nav-link">Vendas</p>
               </a>
-              <a href="../../pages/leads/" class="nav-link">
+              <a href="../../pages/gerenciar-leads/" class="nav-link">
                 <i class="ri-team-line icon-nav-link"></i>
                 <p class="title-nav-link">Gerenciamento de Leads</p>
               </a>
@@ -56,7 +79,7 @@
       </aside>
 
       <section class="container-body">
-        <form class="content-body">
+        <form class="content-body" action="../../assets/php/adicionar-veiculo.php" method="post" enctype="multipart/form-data">
           <header class="header-body">
             <div class="content-info-veiculo">
               <p class="title">Adicionar novo veículo</p>
@@ -97,20 +120,20 @@
             <div class="dados-veiculo">
               <div class="input-group">
                 <label for="">Placa</label>
-                <input type="text" value="" class="input-dados" />
+                <input type="text" value="" maxlength="7" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Marca</label>
-                <select name="" id="" class="input-dados">
+                <select name="marca" id="" class="input-dados">
                   <option value=""></option>
-                  <option value="">Volkswagem</option>
-                  <option value="">Fiat</option>
-                  <option value="">Toytota</option>
-                  <option value="">Renault</option>
+                  <option value="Volkswagem">Volkswagem</option>
+                  <option value="Fiat">Fiat</option>
+                  <option value="Toytota">Toytota</option>
+                  <option value="Renault">Renault</option>
                 </select>
               </div>
               <div class="input-group">
-                <label for="">Nome do Veículo</label>
+                <label for="">Modelo do Veículo</label>
                 <input type="text" value="" class="input-dados name" />
               </div>
               <div class="input-group">
@@ -128,13 +151,13 @@
               </div>
               <div class="input-group">
                 <label for="">Valor do Veículo</label>
-                <input type="text" value="" class="input-dados" />
+                <input type="text" size="12" name="valor" onKeyUp="mascaraMoeda(this, event)"  value="" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Status</label>
                 <select name="" id="" class="input-dados">
-                  <option value="">online</option>
-                  <option value="">offline</option>
+                  <option value="online">online</option>
+                  <option value="offline">offline</option>
                 </select>
               </div>
             </div>

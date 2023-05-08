@@ -75,7 +75,7 @@ if(!isset($_SESSION["userID"])){
                 <i class="ri-money-dollar-circle-line icon-nav-link"></i>
                 <p class="title-nav-link">Vendas</p>
               </a>
-              <a href="../../pages/leads/" class="nav-link">
+              <a href="../../pages/gerenciar-leads/" class="nav-link">
                 <i class="ri-team-line icon-nav-link"></i>
                 <p class="title-nav-link">Gerenciamento de Leads</p>
               </a>
