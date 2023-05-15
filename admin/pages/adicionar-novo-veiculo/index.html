@@ -17,51 +17,51 @@
   </head>
   <body>
     <script>
-          String.prototype.reverse = function(){
-          return this.split('').reverse().join(''); 
-        };
+      String.prototype.reverse = function () {
+        return this.split("").reverse().join("");
+      };
 
-        function mascaraMoeda(campo,evento){
-          var tecla = (!evento) ? window.event.keyCode : evento.which;
-          var valor  =  campo.value.replace(/[^\d]+/gi,'').reverse();
-          var resultado  = "";
-          var mascara = "##.###.###,##".reverse();
-          for (var x=0, y=0; x<mascara.length && y<valor.length;) {
-            if (mascara.charAt(x) != '#') {
-              resultado += mascara.charAt(x);
-              x++;
-            } else {
-              resultado += valor.charAt(y);
-              y++;
-              x++;
-            }
+      function mascaraMoeda(campo, evento) {
+        var tecla = !evento ? window.event.keyCode : evento.which;
+        var valor = campo.value.replace(/[^\d]+/gi, "").reverse();
+        var resultado = "";
+        var mascara = "##.###.###,##".reverse();
+        for (var x = 0, y = 0; x < mascara.length && y < valor.length; ) {
+          if (mascara.charAt(x) != "#") {
+            resultado += mascara.charAt(x);
+            x++;
+          } else {
+            resultado += valor.charAt(y);
+            y++;
+            x++;
           }
-          campo.value = resultado.reverse();
         }
-        function mascaraQuilom(campo,evento){
-          var tecla = (!evento) ? window.event.keyCode : evento.which;
-          var valor  =  campo.value.replace(/[^\d]+/gi,'').reverse();
-          var resultado  = "";
-          var mascara = "###.###.###".reverse();
-          for (var x=0, y=0; x<mascara.length && y<valor.length;) {
-            if (mascara.charAt(x) != '#') {
-              resultado += mascara.charAt(x);
-              x++;
-            } else {
-              resultado += valor.charAt(y);
-              y++;
-              x++;
-            }
+        campo.value = resultado.reverse();
+      }
+      function mascaraQuilom(campo, evento) {
+        var tecla = !evento ? window.event.keyCode : evento.which;
+        var valor = campo.value.replace(/[^\d]+/gi, "").reverse();
+        var resultado = "";
+        var mascara = "###.###.###".reverse();
+        for (var x = 0, y = 0; x < mascara.length && y < valor.length; ) {
+          if (mascara.charAt(x) != "#") {
+            resultado += mascara.charAt(x);
+            x++;
+          } else {
+            resultado += valor.charAt(y);
+            y++;
+            x++;
           }
-          campo.value = resultado.reverse();
         }
-        function handleInput(e) {
-          var ss = e.target.selectionStart;
-          var se = e.target.selectionEnd;
-          e.target.value = e.target.value.toUpperCase();
-          e.target.selectionStart = ss;
-          e.target.selectionEnd = se;
-        }
+        campo.value = resultado.reverse();
+      }
+      function handleInput(e) {
+        var ss = e.target.selectionStart;
+        var se = e.target.selectionEnd;
+        e.target.value = e.target.value.toUpperCase();
+        e.target.selectionStart = ss;
+        e.target.selectionEnd = se;
+      }
     </script>
     <main class="layout" id="openFormActiveOpacity">
       <aside class="sidebar">
@@ -103,7 +103,12 @@
       </aside>
 
       <section class="container-body">
-        <form class="content-body" action="../../assets/php/adicionar-veiculo.php" method="post" enctype="multipart/form-data">
+        <form
+          class="content-body"
+          action="../../assets/php/adicionar-veiculo.php"
+          method="post"
+          enctype="multipart/form-data"
+        >
           <header class="header-body">
             <div class="content-info-veiculo">
               <p class="title">Adicionar novo veículo</p>
@@ -118,14 +123,53 @@
           </header>
 
           <header class="">
-            <p class="subtitle-body">FOTOS DO VEÍCULO</p>
+            <p class="subtitle-body">
+              ADICIONE FOTOS DO VEÍCULO
+              <span class="obs"> (Max. 5 Fotos) </span>
+            </p>
           </header>
           <div class="content-fotos-veiculo">
             <div class="fotos-veiculo">
-              <!-- <label class="botao-primario" for="arquivo">
-                <i class="ri-upload-cloud-2-line"></i>
-                Escolher aquivos</label
-              > -->
+              <input
+                type="file"
+                class="input-enviar-arquivos"
+                name="arquivo[]"
+                id="arquivo"
+                multiple="multiple"
+                accept=".jpeg,.png"
+              />
+            </div>
+            <div class="fotos-veiculo">
+              <input
+                type="file"
+                class="input-enviar-arquivos"
+                name="arquivo[]"
+                id="arquivo"
+                multiple="multiple"
+                accept=".jpeg,.png"
+              />
+            </div>
+            <div class="fotos-veiculo">
+              <input
+                type="file"
+                class="input-enviar-arquivos"
+                name="arquivo[]"
+                id="arquivo"
+                multiple="multiple"
+                accept=".jpeg,.png"
+              />
+            </div>
+            <div class="fotos-veiculo">
+              <input
+                type="file"
+                class="input-enviar-arquivos"
+                name="arquivo[]"
+                id="arquivo"
+                multiple="multiple"
+                accept=".jpeg,.png"
+              />
+            </div>
+            <div class="fotos-veiculo">
               <input
                 type="file"
                 class="input-enviar-arquivos"
@@ -144,7 +188,14 @@
             <div class="dados-veiculo">
               <div class="input-group">
                 <label for="placa">Placa</label>
-                <input name="placa" oninput="handleInput(event)" type="text" placeholder="Ex: MM4V272" maxlength="7" class="input-dados" />
+                <input
+                  name="placa"
+                  oninput="handleInput(event)"
+                  type="text"
+                  placeholder="Ex: MM4V272"
+                  maxlength="7"
+                  class="input-dados"
+                />
               </div>
               <div class="input-group">
                 <label for="">Marca</label>
@@ -158,11 +209,21 @@
               </div>
               <div class="input-group">
                 <label for="">Modelo do Veículo</label>
-                <input type="text" placeholder="Ex: Gol" name="modelo" class="input-dados name" />
+                <input
+                  type="text"
+                  placeholder="Ex: Gol"
+                  name="modelo"
+                  class="input-dados name"
+                />
               </div>
               <div class="input-group">
                 <label for="">Versão do veiculo</label>
-                <input type="text" placeholder="Ex: G3" name="versao" class="input-dados versao" />
+                <input
+                  type="text"
+                  placeholder="Ex: G3"
+                  name="versao"
+                  class="input-dados versao"
+                />
               </div>
               <div class="input-group">
                 <label for="">Ano do Veículo</label>
@@ -175,7 +236,15 @@
               </div>
               <div class="input-group">
                 <label for="">Valor do Veículo</label>
-                <input name="valor" type="text" size="12" name="valor" onKeyUp="mascaraMoeda(this, event)"  value="" class="input-dados" />
+                <input
+                  name="valor"
+                  type="text"
+                  size="12"
+                  name="valor"
+                  onKeyUp="mascaraMoeda(this, event)"
+                  value=""
+                  class="input-dados"
+                />
               </div>
               <div class="input-group">
                 <label for="">Status</label>
@@ -207,7 +276,13 @@
               </div>
               <div class="input-group">
                 <label for="">Quilometragem</label>
-                <input type="text" placeholder="Ex: 162.000" onKeyUp="mascaraQuilom(this, event)" name="quilometragem" class="input-dados" />
+                <input
+                  type="text"
+                  placeholder="Ex: 162.000"
+                  onKeyUp="mascaraQuilom(this, event)"
+                  name="quilometragem"
+                  class="input-dados"
+                />
               </div>
               <div class="input-group">
                 <label for="">Combustível</label>
