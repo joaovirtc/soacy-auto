@@ -11,3 +11,5 @@ SELECT *
   ON vendidos.id_carro = carro.id_carro
 WHERE YEAR(dt_venda) = '2023'
 AND MONTH(dt_venda) = '5';
+
+$db_user = $conn->query("INSERT INTO `teste`(`idteste`, `teste`) VALUES (idteste,'{$foto['name']}')");
