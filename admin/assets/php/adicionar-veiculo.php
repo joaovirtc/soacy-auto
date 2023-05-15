@@ -4,7 +4,7 @@ include_once('../../assets/conn.php'); // puxando arquivo de conexao com o banco
 session_start(); // carregando sessoes
 
 // definindo variaveis
-$fotos = $_FILES["arquivo"];
+
 $marca = $_POST["marca"];
 $valor = $_POST["valor"];
 $valor = str_replace('.', '', $valor);
@@ -13,7 +13,19 @@ $valor = str_replace(',', '.', $valor);
 
 
 // codigo
-echo("<pre>");
-var_dump($_FILES, $marca, $valor);
+
+
+
+if(isset($_FILES['arquivo'])){
+
+    for($i=0; $i < strlen($_FILES['arquivo']); $i++){
+        echo($_FILES['arquivo']['name'][$i]);
+
+       
+        
+    }
+}
+
+
 
 ?>

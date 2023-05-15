@@ -17,7 +17,7 @@
   </head>
   <body>
     <script>
-              String.prototype.reverse = function(){
+          String.prototype.reverse = function(){
           return this.split('').reverse().join(''); 
         };
 
@@ -37,6 +37,30 @@
             }
           }
           campo.value = resultado.reverse();
+        }
+        function mascaraQuilom(campo,evento){
+          var tecla = (!evento) ? window.event.keyCode : evento.which;
+          var valor  =  campo.value.replace(/[^\d]+/gi,'').reverse();
+          var resultado  = "";
+          var mascara = "###.###.###".reverse();
+          for (var x=0, y=0; x<mascara.length && y<valor.length;) {
+            if (mascara.charAt(x) != '#') {
+              resultado += mascara.charAt(x);
+              x++;
+            } else {
+              resultado += valor.charAt(y);
+              y++;
+              x++;
+            }
+          }
+          campo.value = resultado.reverse();
+        }
+        function handleInput(e) {
+          var ss = e.target.selectionStart;
+          var se = e.target.selectionEnd;
+          e.target.value = e.target.value.toUpperCase();
+          e.target.selectionStart = ss;
+          e.target.selectionEnd = se;
         }
     </script>
     <main class="layout" id="openFormActiveOpacity">
@@ -119,13 +143,13 @@
             </header>
             <div class="dados-veiculo">
               <div class="input-group">
-                <label for="">Placa</label>
-                <input type="text" value="" maxlength="7" class="input-dados" />
+                <label for="placa">Placa</label>
+                <input name="placa" oninput="handleInput(event)" type="text" placeholder="Ex: MM4V272" maxlength="7" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Marca</label>
                 <select name="marca" id="" class="input-dados">
-                  <option value=""></option>
+                  <option selected value=""></option>
                   <option value="Volkswagem">Volkswagem</option>
                   <option value="Fiat">Fiat</option>
                   <option value="Toytota">Toytota</option>
@@ -134,29 +158,29 @@
               </div>
               <div class="input-group">
                 <label for="">Modelo do Veículo</label>
-                <input type="text" value="" class="input-dados name" />
+                <input type="text" placeholder="Ex: Gol" name="modelo" class="input-dados name" />
               </div>
               <div class="input-group">
                 <label for="">Versão do veiculo</label>
-                <input type="text" value="" class="input-dados versao" />
+                <input type="text" placeholder="Ex: G3" name="versao" class="input-dados versao" />
               </div>
               <div class="input-group">
                 <label for="">Ano do Veículo</label>
-                <select name="" id="" class="input-dados">
-                  <option value="">2023</option>
-                  <option value="">2022</option>
-                  <option value="">2021</option>
-                  <option value="">2020</option>
+                <select name="ano" id="" class="input-dados">
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
                 </select>
               </div>
               <div class="input-group">
                 <label for="">Valor do Veículo</label>
-                <input type="text" size="12" name="valor" onKeyUp="mascaraMoeda(this, event)"  value="" class="input-dados" />
+                <input name="valor" type="text" size="12" name="valor" onKeyUp="mascaraMoeda(this, event)"  value="" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Status</label>
-                <select name="" id="" class="input-dados">
-                  <option value="online">online</option>
+                <select name="status" id="" class="input-dados">
+                  <option selected value="online">online</option>
                   <option value="offline">offline</option>
                 </select>
               </div>
@@ -167,34 +191,34 @@
             <div class="dados-veiculo">
               <div class="input-group">
                 <label for="">Motor</label>
-                <select name="" id="" class="input-dados">
-                  <option value="">3.0</option>
-                  <option value="">2.0</option>
-                  <option value="">1.5</option>
-                  <option value="">1.0</option>
+                <select name="motor" id="" class="input-dados">
+                  <option value="3.0">3.0</option>
+                  <option value="2.0">2.0</option>
+                  <option value="1.5">1.5</option>
+                  <option selected value="1.0">1.0</option>
                 </select>
               </div>
               <div class="input-group">
                 <label for="">Carroceria</label>
-                <select name="" id="" class="input-dados">
+                <select name="carroceria" id="" class="input-dados">
                   <option value="">Sedan</option>
                   <option value="">SUV</option>
                 </select>
               </div>
               <div class="input-group">
                 <label for="">Quilometragem</label>
-                <input type="text" value="" class="input-dados" />
+                <input type="text" placeholder="Ex: 162.000" onKeyUp="mascaraQuilom(this, event)" name="quilometragem" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Combustível</label>
-                <select name="" id="" class="input-dados">
+                <select name="combustivel" id="" class="input-dados">
                   <option value="">Gasolina</option>
                   <option value="">Eletrico</option>
                 </select>
               </div>
               <div class="input-group">
                 <label for="">Câmbio</label>
-                <select name="" id="" class="input-dados">
+                <select name="cambio" id="" class="input-dados">
                   <option value="">Automático</option>
                   <option value="">Manual</option>
                 </select>
@@ -206,14 +230,13 @@
             <div class="dados-veiculo">
               <div class="input-group">
                 <label for="">Cor</label>
-                <input type="text" value="" class="input-dados" />
+                <input type="text" value="" name="cor" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Portas</label>
-                <select name="" id="" class="input-dados">
-                  <option value="">4 portas</option>
+                <select name="portas" id="" class="input-dados">
                   <option value="">2 portas</option>
-                  <option value="">4 Portas</option>
+                  <option selected value="">4 Portas</option>
                   <option value="">6 Portas</option>
                 </select>
               </div>
