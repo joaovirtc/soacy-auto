@@ -207,6 +207,10 @@ body {
   align-items: center;
 }
 
+.obs {
+  font-size: 10px;
+}
+
 .content-info-veiculo {
   display: flex;
   gap: 10px;
@@ -272,7 +276,8 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  gap: 15px;
 }
 
 /* input[type="file"] {
@@ -280,7 +285,7 @@ body {
 } */
 
 .fotos-veiculo {
-  width: 60%;
+  width: 20%;
   margin-top: 20px;
   overflow: hidden;
   display: flex;
@@ -291,6 +296,7 @@ body {
   max-height: 200px;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
 
 .fotos-veiculo img {
@@ -301,21 +307,6 @@ body {
   -o-object-fit: cover;
   object-fit: cover;
 }
-
-/* .input-enviar-arquivos {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--primary-color);
-  padding: 10px 12px;
-  border-radius: 20px;
-  color: #fff;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  cursor: pointer;
-} */
 
 .content-dados-veiculos {
   width: 100%;
