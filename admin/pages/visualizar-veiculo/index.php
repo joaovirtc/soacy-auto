@@ -83,16 +83,13 @@ $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
               recuperá-lo depois.
             </p>
           </div>
-          <form class="action-btn-aviso">
+          <div class="action-btn-aviso" >
             <button class="btn-action-aviso" onclick="closePopup()">
               Cancelar
             </button>
-            <input
-              type="submit"
-              class="btn-action-aviso btn-delete"
-              value="Excluir"
-            />
-          </form>
+            <a href="../../assets/php/excluirVeiculo.php?id=<?php echo($idCarro) ?> " class="btn-action-aviso btn-delete">Excluir</a>
+            
+          </div>
         </div>
       </section>
 
