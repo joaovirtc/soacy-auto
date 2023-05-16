@@ -1,10 +1,27 @@
+<?php 
+
+// carregando dependencias
+include_once('../../assets/conn.php');
+session_start();
+
+// variaveis
+$idCarro = $_GET["id"];
+
+
+// query´s
+$veiculo = $conn->query("SELECT * from carro where id_carro = $idCarro;");
+$dt_car = mysqli_fetch_array($veiculo);
+$fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOME DO VEICULO</title>
+    <title><?php echo($dt_car['modelo'] . ' ' . $dt_car['versao']) ?></title>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -66,16 +83,13 @@
               recuperá-lo depois.
             </p>
           </div>
-          <form class="action-btn-aviso">
+          <div class="action-btn-aviso" >
             <button class="btn-action-aviso" onclick="closePopup()">
               Cancelar
             </button>
-            <input
-              type="submit"
-              class="btn-action-aviso btn-delete"
-              value="Excluir"
-            />
-          </form>
+            <a href="../../assets/php/excluirVeiculo.php?id=<?php echo($idCarro) ?> " class="btn-action-aviso btn-delete">Excluir</a>
+            
+          </div>
         </div>
       </section>
 
@@ -83,19 +97,19 @@
         <div class="content-body">
           <header class="header-body">
             <div class="content-info-veiculo">
-              <p class="title">ID: 1</p>
-              <h3 class="title">VOLKSWAGEM JETTA</h3>
-              <p>1.4 250 TSI TOTAL FLEX COMFORTLINE TIPTRONIC</p>
+              <p class="title">ID: <?php echo($dt_car['id_carro']) ?></p>
+              <h3 class="title"><?php echo($dt_car['marca'] . ' ' . $dt_car['modelo']) ?></h3>
+              <p><?php echo($dt_car['motor'] . ' ' . $dt_car['versao']) ?></p>
               <span class="status-on">online</span>
             </div>
             <div class="content-actions">
-              <button class="botao-primario">
+              <a href="http://localhost/sistemadecarro/admin/pages/editar-veiculo/?id=<?php echo($dt_car['id_carro']) ?>" class="botao-primario">
                 <i class="ri-pencil-line"></i>
                 Editar Veículo
-              </button>
-              <button class="action-btn" data-tooltip="Marcar como vendido">
+              </a>
+              <a href="../../assets/php/vendaVeiculo.php?id=<?php echo($idCarro) ?> " class="action-btn" data-tooltip="Marcar como vendido">
                 <i class="ri-money-dollar-circle-line icon-action-sale"></i>
-              </button>
+              </a>
               <button
                 class="action-btn-excluir"
                 onclick="openPopup()"
@@ -112,10 +126,12 @@
               <p class="subtitle-body">FOTOS DO VEÍCULO</p>
             </header>
             <div class="fotos-veiculo">
-              <img src="../../assets/img/image 20.png" alt="" />
-              <img src="../../assets/img/image 20.png" alt="" />
-              <img src="../../assets/img/image 20.png" alt="" />
-              <img src="../../assets/img/image 20.png" alt="" />
+              <?php
+                foreach($fotos as $foto){
+                  echo("<img src=\"../../../imagens/{$foto['path']}\" alt=\"\" />");
+                }
+              ?>
+              
             </div>
           </div>
 
@@ -126,35 +142,37 @@
             <div class="dados-veiculo">
               <div class="input-group">
                 <label for="">Placa</label>
-                <input type="text" value="AJF-123" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['placa']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Marca</label>
-                <input type="text" value="Volkswagem" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['marca']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
-                <label for="">Nome do Veículo</label>
-                <input type="text" value="Jetta" class="input-dados" />
+                <label for="">Modelo do Veículo</label>
+                <input type="text" value="<?php echo($dt_car['modelo']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Versão do veiculo</label>
                 <input
                   type="text"
-                  value="TSI Confortline"
+                  value="<?php echo($dt_car['versao']) ?>"
                   class="input-dados"
                 />
               </div>
               <div class="input-group">
                 <label for="">Ano do Veículo</label>
-                <input type="text" value="2022" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['ano']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Valor do Veículo</label>
-                <input type="text" value="R$ 129.990" class="input-dados" />
+                <input type="text" value="R$ <?php
+                 $valor = number_format($dt_car["valor"], 2,',', '.');
+                echo($valor) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Status</label>
-                <input type="text" value="online" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['status']) ?>" class="input-dados" />
               </div>
             </div>
             <header class="header-dados-veiculo">
@@ -163,23 +181,23 @@
             <div class="dados-veiculo">
               <div class="input-group">
                 <label for="">Motor</label>
-                <input type="text" value="2.0" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['motor']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Carroceria</label>
-                <input type="text" value="Sedan" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['carroceria']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Quilometragem</label>
-                <input type="text" value="330.300" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['quilometragem']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Combustível</label>
-                <input type="text" value="Gasolina" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['combustivel']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Câmbio</label>
-                <input type="text" value="Automático" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['cambio']) ?>" class="input-dados" />
               </div>
             </div>
             <header class="header-dados-veiculo">
@@ -188,11 +206,11 @@
             <div class="dados-veiculo">
               <div class="input-group">
                 <label for="">Cor</label>
-                <input type="text" value="Prata" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['cor']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Portas</label>
-                <input type="text" value="4 portas" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['portas']) ?> portas" class="input-dados" />
               </div>
             </div>
           </div>

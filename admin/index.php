@@ -12,7 +12,7 @@ session_start();
   $qtd_veiculos_mes = mysqli_fetch_array($conn->query("SELECT count(1) FROM carro WHERE YEAR(dt_cadastro) = '{$ano_atual}' AND MONTH(dt_cadastro) = '{$mes_atual}';"));
   // numero de veiculos vendidos esse mes
   $qtd_vendas_mes = $conn->query(" SELECT * FROM vendidos INNER JOIN carro ON vendidos.id_carro = carro.id_carro WHERE YEAR(dt_venda) = '2023' AND MONTH(dt_venda) = '5';");
-  $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline'");
+  $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline'  ORDER BY `carro`.`id_carro` desc");
 
 // definindo variaveis
   

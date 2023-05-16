@@ -174,7 +174,7 @@ Olá, vi seu veículo no seu site e tenho interesse. Aguardo seu contato!
                 echo("
                   <div class=\"swiper-slide\">
                     <img 
-                     src=\"../../assets/img/foto/{$ft['path']}\" alt=\"imagem {$dt_car['modelo']}\" />
+                     src=\"../../../imagens/{$ft['path']}\" alt=\"imagem {$dt_car['modelo']}\" />
                   </div>
                 ");
                 
