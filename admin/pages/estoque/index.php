@@ -15,7 +15,7 @@ if(!isset($_SESSION["userID"])){
 }
   // query´s
   if($selected == "mais recente"){
-    $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline' ORDER BY `carro`.`dt_cadastro` DESC");
+    $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline' ORDER BY `carro`.`id_carro` DESC");
   }
   elseif($selected == "maior valor"){
     $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline' ORDER BY `carro`.`valor` DESC");
@@ -27,7 +27,7 @@ if(!isset($_SESSION["userID"])){
     $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline' ORDER BY `carro`.`ano` DESC");
   }
   else{
-    $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline' ORDER BY `carro`.`dt_cadastro` DESC");
+    $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline' ORDER BY `carro`.`id_carro` DESC");
   }
 
 
