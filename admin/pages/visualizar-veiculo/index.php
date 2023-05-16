@@ -110,9 +110,9 @@ $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
                 <i class="ri-pencil-line"></i>
                 Editar Veículo
               </a>
-              <button class="action-btn" data-tooltip="Marcar como vendido">
+              <a href="../../assets/php/vendaVeiculo.php?id=<?php echo($idCarro) ?> " class="action-btn" data-tooltip="Marcar como vendido">
                 <i class="ri-money-dollar-circle-line icon-action-sale"></i>
-              </button>
+              </a>
               <button
                 class="action-btn-excluir"
                 onclick="openPopup()"
