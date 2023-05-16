@@ -48,6 +48,6 @@ $pasta = "../../../imagens/";
         }
     }
 
-
+    header('location: http://localhost/sistemadecarro/admin/pages/estoque/')
 
 ?>
