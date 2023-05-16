@@ -18,11 +18,8 @@ $valor = str_replace(',', '.', $valor);
 
 if(isset($_FILES['arquivo'])){
 
-    for($i=0; $i < strlen($_FILES['arquivo']); $i++){
-        echo($_FILES['arquivo']['name'][$i]);
-
-       
-        
+    for($i=0; $i < count($_FILES['arquivo']["name"]); $i++){
+        echo($_FILES['arquivo']['name'][$i] . "<br>");  
     }
 }
 
