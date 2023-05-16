@@ -145,35 +145,37 @@ $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
             <div class="dados-veiculo">
               <div class="input-group">
                 <label for="">Placa</label>
-                <input type="text" value="AJF-123" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['placa']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Marca</label>
-                <input type="text" value="Volkswagem" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['marca']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
-                <label for="">Nome do Veículo</label>
-                <input type="text" value="Jetta" class="input-dados" />
+                <label for="">Modelo do Veículo</label>
+                <input type="text" value="<?php echo($dt_car['modelo']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Versão do veiculo</label>
                 <input
                   type="text"
-                  value="TSI Confortline"
+                  value="<?php echo($dt_car['versao']) ?>"
                   class="input-dados"
                 />
               </div>
               <div class="input-group">
                 <label for="">Ano do Veículo</label>
-                <input type="text" value="2022" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['ano']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Valor do Veículo</label>
-                <input type="text" value="R$ 129.990" class="input-dados" />
+                <input type="text" value="R$ <?php
+                 $valor = number_format($dt_car["valor"], 2,',', '.');
+                echo($valor) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Status</label>
-                <input type="text" value="online" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['status']) ?>" class="input-dados" />
               </div>
             </div>
             <header class="header-dados-veiculo">
@@ -182,23 +184,23 @@ $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
             <div class="dados-veiculo">
               <div class="input-group">
                 <label for="">Motor</label>
-                <input type="text" value="2.0" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['motor']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Carroceria</label>
-                <input type="text" value="Sedan" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['carroceria']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Quilometragem</label>
-                <input type="text" value="330.300" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['quilometragem']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Combustível</label>
-                <input type="text" value="Gasolina" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['combustivel']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Câmbio</label>
-                <input type="text" value="Automático" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['cambio']) ?>" class="input-dados" />
               </div>
             </div>
             <header class="header-dados-veiculo">
@@ -207,11 +209,11 @@ $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
             <div class="dados-veiculo">
               <div class="input-group">
                 <label for="">Cor</label>
-                <input type="text" value="Prata" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['cor']) ?>" class="input-dados" />
               </div>
               <div class="input-group">
                 <label for="">Portas</label>
-                <input type="text" value="4 portas" class="input-dados" />
+                <input type="text" value="<?php echo($dt_car['portas']) ?> portas" class="input-dados" />
               </div>
             </div>
           </div>
