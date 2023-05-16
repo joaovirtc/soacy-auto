@@ -1,10 +1,27 @@
+<?php 
+
+// carregando dependencias
+include_once('../../assets/conn.php');
+session_start();
+
+// variaveis
+$idCarro = $_GET["id"];
+
+
+// query´s
+$veiculo = $conn->query("SELECT * from carro where id_carro = $idCarro;");
+$dt_car = mysqli_fetch_array($veiculo);
+$fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOME DO VEICULO</title>
+    <title><?php echo($dt_car['modelo'] . ' ' . $dt_car['versao']) ?></title>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -83,13 +100,13 @@
         <div class="content-body">
           <header class="header-body">
             <div class="content-info-veiculo">
-              <p class="title">ID: 1</p>
-              <h3 class="title">VOLKSWAGEM JETTA</h3>
-              <p>1.4 250 TSI TOTAL FLEX COMFORTLINE TIPTRONIC</p>
+              <p class="title">ID: <?php echo($dt_car['id_carro']) ?></p>
+              <h3 class="title"><?php echo($dt_car['marca'] . ' ' . $dt_car['modelo']) ?></h3>
+              <p><?php echo($dt_car['motor'] . ' ' . $dt_car['versao']) ?></p>
               <span class="status-on">online</span>
             </div>
             <div class="content-actions">
-              <a href="http://localhost/sistemadecarro/admin/pages/editar-veiculo/" class="botao-primario">
+              <a href="http://localhost/sistemadecarro/admin/pages/editar-veiculo/?id=<?php echo($dt_car['id_carro']) ?>" class="botao-primario">
                 <i class="ri-pencil-line"></i>
                 Editar Veículo
               </a>
@@ -112,10 +129,12 @@
               <p class="subtitle-body">FOTOS DO VEÍCULO</p>
             </header>
             <div class="fotos-veiculo">
-              <img src="../../assets/img/image 20.png" alt="" />
-              <img src="../../assets/img/image 20.png" alt="" />
-              <img src="../../assets/img/image 20.png" alt="" />
-              <img src="../../assets/img/image 20.png" alt="" />
+              <?php
+                foreach($fotos as $foto){
+                  echo("<img src=\"../../../imagens/{$foto['path']}\" alt=\"\" />");
+                }
+              ?>
+              
             </div>
           </div>
 

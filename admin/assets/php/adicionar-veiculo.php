@@ -22,8 +22,8 @@ $cambio = $_POST["cambio"];
 $cor = $_POST["cor"];
 $portas = $_POST["portas"];
 $hoje = date('Y,m,d');
-
-$pasta = "../../../imagens/";
+$raiz = $_SERVER['DOCUMENT_ROOT'];
+$pasta = $raiz . "/sistemadecarro/imagens/";
 // query's no banco de dados
 
 
