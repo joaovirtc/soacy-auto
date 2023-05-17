@@ -1,3 +1,21 @@
+<?php
+// carregando dependencias
+include_once('../../assets/conn.php');
+session_start();
+
+
+//variaveis
+$id = $_GET['id'];
+// query's
+
+
+
+// codigo
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
