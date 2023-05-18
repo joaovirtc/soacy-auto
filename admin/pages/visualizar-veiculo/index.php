@@ -100,7 +100,7 @@ $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
               <p class="title">ID: <?php echo($dt_car['id_carro']) ?></p>
               <h3 class="title"><?php echo($dt_car['marca'] . ' ' . $dt_car['modelo']) ?></h3>
               <p><?php echo($dt_car['motor'] . ' ' . $dt_car['versao']) ?></p>
-              <span class="status-on">online</span>
+              <span class="<?php echo($dt_car['status']) ?>"><?php echo($dt_car['status']) ?></span>
             </div>
             <div class="content-actions">
               <a href="http://localhost/sistemadecarro/admin/pages/editar-veiculo/?id=<?php echo($dt_car['id_carro']) ?>" class="botao-primario">

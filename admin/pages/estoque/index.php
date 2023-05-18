@@ -7,7 +7,6 @@ session_start();
 
 //variaveis
 $selected = isset($_GET["ordenar"]) ? $_GET["ordenar"] : "mais recente";
-echo($selected);
 // codigo
 
 if(!isset($_SESSION["userID"])){
