@@ -1,3 +1,34 @@
+<?php
+// carregando dependencias
+include_once('../../assets/conn.php');
+session_start();
+
+// query´s
+
+
+$dt_registros = $conn->query(" SELECT * FROM vendidos INNER JOIN carro ON vendidos.id_carro = carro.id_carro;");
+$num_vendas = mysqli_fetch_array($dt_registros);
+$num_vendas = $dt_registros->num_rows;
+$vendas = 0;
+    foreach($dt_registros as $venda){
+    
+      $vendas = $vendas + $venda["valor"];
+      
+    }
+$vendas = number_format($vendas, 2,',', '.');
+
+$qtd_vendas = mysqli_fetch_array($conn->query(" SELECT count(1) from vendidos; "));
+
+//variaveis
+
+// codigo
+
+if(!isset($_SESSION["userID"])){
+  header('location: http://localhost/sistemadecarro/admin/pages/singin');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -36,7 +67,7 @@
                 <p class="title-nav-link">Estoque</p>
               </a>
               <a
-                href="../../pages/financeiro/index.html"
+                href="../../pages/financeiro/"
                 class="nav-link active"
               >
                 <i class="ri-money-dollar-circle-line icon-nav-link"></i>
@@ -79,10 +110,10 @@
                 </div>
                 <div class="content-card">
                   <div>
-                    <p class="descriçao-card">6 Veículos</p>
+                    <p class="descriçao-card"><?php echo($qtd_vendas[0]) ?> Veículos</p>
                   </div>
                   <div class="descriçao-card-add">
-                    <p>+R$ 109.770,00</p>
+                    <p>+R$ <?php echo($vendas) ?></p>
                   </div>
                 </div>
               </div>
@@ -106,9 +137,36 @@
                   <th class="title-tabela Ações"></th>
                 </tr>
                 <!-- HEADER PLANILHA -->
-
+                  <?php 
+                  
+                  foreach($dt_registros as $registro) {
+                    echo("
+                        <!-- DESCRIÇÃO PLANILHA -->
+                        <tr>
+                          <td class=\"descricao-tabela id\">{$registro["id_carro"]}</td>
+                          <td class=\"descricao-tabela nome\">
+                            {$registro['marca']} {$registro['modelo']}
+                          </td>
+                          <td class=\"descricao-tabela placa\">{$registro["placa"]}</td>
+                          <td class=\"descricao-tabela km\">200.000</td>
+                          <td class=\"descricao-tabela ano\">{$registro["ano"]}</td>
+                          <td class=\"descricao-tabela status\">
+                            <span class=\"status-sale\">vendido</span>
+                          </td>
+                          <td class=\"descricao-tabela ações\">
+                            <a href=\"http://localhost/sistemadecarro/admin/visualizar-veiculo\" class=\"edit\">
+                              <i class=\"ri-pencil-line\"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <!-- DESCRIÇÃO PLANILHA -->
+                    ");
+                  }
+                  
+                  ?>
+                
                 <!-- DESCRIÇÃO PLANILHA -->
-                <tr>
+                <!-- <tr>
                   <td class="descricao-tabela id">1</td>
                   <td class="descricao-tabela nome">
                     Mercedes-benz GLE 63 AMG
@@ -124,26 +182,7 @@
                       <i class="ri-pencil-line"></i>
                     </span>
                   </td>
-                </tr>
-                <!-- DESCRIÇÃO PLANILHA -->
-                <!-- DESCRIÇÃO PLANILHA -->
-                <tr>
-                  <td class="descricao-tabela id">1</td>
-                  <td class="descricao-tabela nome">
-                    Mercedes-benz GLE 63 AMG
-                  </td>
-                  <td class="descricao-tabela placa">IAS-212</td>
-                  <td class="descricao-tabela km">200.000</td>
-                  <td class="descricao-tabela ano">2022</td>
-                  <td class="descricao-tabela status">
-                    <span class="status-sale">Vendido</span>
-                  </td>
-                  <td class="descricao-tabela ações">
-                    <span class="edit">
-                      <i class="ri-pencil-line"></i>
-                    </span>
-                  </td>
-                </tr>
+                </tr> -->
                 <!-- DESCRIÇÃO PLANILHA -->
               </table>
             </div>
