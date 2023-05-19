@@ -221,6 +221,7 @@ body {
   font-size: var(--font-size-big);
   line-height: 29px;
   color: #000;
+  text-transform: uppercase;
 }
 
 .subtitle-body {
@@ -243,6 +244,7 @@ body {
   outline: none;
   background-color: transparent;
   cursor: pointer;
+  color: #000;
 }
 
 .action-btn::before {
@@ -295,9 +297,11 @@ body {
   font-size: 30px;
 }
 
-.online {
+.status-on {
   background-color: var(--color-background-status-on);
-  display: flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 6px 15px;
   width: 62px;
   font-size: 13px;
@@ -305,7 +309,7 @@ body {
   color: var(--color-text-status-on);
 }
 
-.offline {
+.status-off {
   background-color: var(--color-background-status-off);
   display: flexbox;
   padding: 6px 15px;

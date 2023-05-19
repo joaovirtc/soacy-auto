@@ -104,7 +104,7 @@ if(!isset($_SESSION["userID"])){
             <a href="./pages/adicionar-novo-veiculo/">
               <button class="botao-primario">
                 <i class="ri-add-line icon-botao"></i>
-                Novo Veículo
+                Adicionar Veículo
               </button>
             </a>
           </header>

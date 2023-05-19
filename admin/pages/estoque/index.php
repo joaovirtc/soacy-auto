@@ -99,7 +99,7 @@ if(!isset($_SESSION["userID"])){
             <div>
               <button class="botao-primario">
                 <i class="ri-add-line icon-botao"></i>
-                Cadastrar novo veículo
+                Adiconar Veículo
               </button>
             </div>
           </header>

@@ -83,10 +83,17 @@ if(!isset($_SESSION["userID"])){
       </aside>
       <section class="container-body">
         <div class="content-body">
-          <header class="header-body">
-            <div class="content-logo-concessionaria">
-              <img src="./assets/img/logo-Icon-Pretabela" alt="" />
-              <p class="title">Gerenciamento de leads</p>
+        <header class="header-body">
+            <div class="content-header-body">
+              <div>
+                <p class="title">Gerenciamento de leads</p>
+              </div>
+              <div>
+                <a href="" class="botao-primario">
+                  <i class="ri-loop-left-line"></i>
+                  Atualizar Leads
+                </a>
+              </div>
             </div>
           </header>
 
@@ -106,9 +113,10 @@ if(!isset($_SESSION["userID"])){
                     <p class="descriçao-card"><?php echo($qtd_leads[0]) ?> leads</p>
                   </div>
                   <div class="descriçao-card-add">
-                    <p><?php echo('+' . $qtd_leads_hoje[0])?>/hoje</p>
+                    <p><?php echo('+' . $qtd_leads_hoje[0])?> hoje</p>
                   </div>
                 </div>
+                
               </div>
               <!-- CARD -->
             </div>
@@ -129,7 +137,7 @@ if(!isset($_SESSION["userID"])){
                           <header class=\"header-lead-novo\">
                             <span class=\"notificação-lead-novo\"> NOVO </span>
                             <a href=\"https://api.whatsapp.com/send?phone={$lead['telefone']}&text={$lead['mensagem']}\">
-                              <i class=\"ri-question-answer-line icon-mesagem-lead\"></i>
+                              <img src=\"../../assets/img/WhatsApp logo.png\" alt=\" Ir pro Whatsapp\" /> 
                             </a>
                           </header>
                           <div class=\"content-informações-leads\">
@@ -168,9 +176,7 @@ if(!isset($_SESSION["userID"])){
                             <div class=\"row-nome\">
                               <p class=\"nome-lead\">{$lead['nome']}</p>
                               <a href=\"\">
-                                <i
-                                  class=\"ri-question-answer-line icon-mesagem-lead\"
-                                ></i>
+                              <img src=\"../../assets/img/WhatsApp logo.png\" alt=\" Ir pro Whatsapp\" /> 
                               </a>
                             </div>
                             <div class=\"row\">

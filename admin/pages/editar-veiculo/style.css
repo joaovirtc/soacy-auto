@@ -220,6 +220,7 @@ body {
   font-size: var(--font-size-big);
   line-height: 29px;
   color: #000;
+  text-transform: uppercase;
 }
 
 .subtitle-body {
@@ -250,7 +251,10 @@ body {
 
 .online {
   background-color: var(--color-background-status-on);
-  display: flexbox;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 6px 15px;
   width: 62px;
   font-size: 13px;
@@ -260,7 +264,9 @@ body {
 
 .offline {
   background-color: var(--color-background-status-off);
-  display: flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 6px 15px;
   width: 62px;
   font-size: 13px;
@@ -373,7 +379,7 @@ body {
 }
 
 .fotos-veiculo img {
-  width: 350px;
+  width: 276px;
   height: 100%;
   min-height: 200px;
   max-height: 200px;
