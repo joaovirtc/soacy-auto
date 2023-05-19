@@ -11,7 +11,7 @@ session_start();
   $mes_atual = date('m');
   $qtd_veiculos_mes = mysqli_fetch_array($conn->query("SELECT count(1) FROM carro WHERE YEAR(dt_cadastro) = '{$ano_atual}' AND MONTH(dt_cadastro) = '{$mes_atual}';"));
   // numero de veiculos vendidos esse mes
-  $qtd_vendas_mes = $conn->query(" SELECT * FROM vendidos INNER JOIN carro ON vendidos.id_carro = carro.id_carro WHERE YEAR(dt_venda) = '2023' AND MONTH(dt_venda) = '5';");
+  $qtd_vendas_mes = $conn->query(" SELECT * FROM vendidos INNER JOIN carro ON vendidos.id_carro = carro.id_carro WHERE YEAR(dt_venda) = '{$ano_atual}' AND MONTH(dt_venda) = '{$mes_atual}';");
   $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline'  ORDER BY `carro`.`id_carro` desc");
 
 // definindo variaveis
@@ -75,7 +75,7 @@ if(!isset($_SESSION["userID"])){
                 <i class="ri-car-line icon-nav-link"></i>
                 <p class="title-nav-link">Estoque</p>
               </a>
-              <a href="pages/financeiro/index.html" class="nav-link">
+              <a href="pages/financeiro/" class="nav-link">
                 <i class="ri-money-dollar-circle-line icon-nav-link"></i>
                 <p class="title-nav-link">Vendas</p>
               </a>

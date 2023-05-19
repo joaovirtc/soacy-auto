@@ -7,7 +7,6 @@ session_start();
 
 //variaveis
 $selected = isset($_GET["ordenar"]) ? $_GET["ordenar"] : "mais recente";
-echo($selected);
 // codigo
 
 if(!isset($_SESSION["userID"])){
@@ -71,7 +70,7 @@ if(!isset($_SESSION["userID"])){
                 <i class="ri-car-line icon-nav-link"></i>
                 <p class="title-nav-link">Estoque</p>
               </a>
-              <a href="../../pages/financeiro/index.html" class="nav-link">
+              <a href="../../pages/financeiro/" class="nav-link">
                 <i class="ri-money-dollar-circle-line icon-nav-link"></i>
                 <p class="title-nav-link">Vendas</p>
               </a>
