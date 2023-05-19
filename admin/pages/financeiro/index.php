@@ -6,7 +6,7 @@ session_start();
 // query´s
 
 
-$dt_registros = $conn->query(" SELECT * FROM vendidos INNER JOIN carro ON vendidos.id_carro = carro.id_carro;");
+$dt_registros = $conn->query(" SELECT * FROM vendidos INNER JOIN carro ON vendidos.id_carro = carro.id_carro ORDER BY `vendidos`.`dt_venda` DESC;");
 $num_vendas = mysqli_fetch_array($dt_registros);
 $num_vendas = $dt_registros->num_rows;
 $vendas = 0;
