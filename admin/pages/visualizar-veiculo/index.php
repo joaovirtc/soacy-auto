@@ -173,7 +173,7 @@ $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
               </div>
               <div class="input-group">
                 <label for="">Status</label>
-                <input readonly type="text" value="<?php echo($dt_car['status']) ?>" class="input-dados <?php echo($dt_car['status']) ?>" />
+                <input readonly type="text" value="<?php echo($dt_car['status']) ?>" class="input-dados" />
               </div>
             </div>
             <header class="header-dados-veiculo">
@@ -212,6 +212,15 @@ $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
               <div class="input-group">
                 <label for="">Portas</label>
                 <input readonly type="text" value="<?php echo($dt_car['portas']) ?> portas" class="input-dados" />
+              </div>
+            </div>
+            <header class="header-dados-veiculo">
+              <p class="subtitle-body">DIGA MAIS SOBRE O VEICULO</p>
+            </header>
+            <div class="dados-veiculo">
+              <div class="input-group">
+                <label for="">Sobre o veiculo</label>
+                <textarea class="text-sobre" readonly rows="4" cols="50"><?php echo($dt_car['sobre']) ?></textarea>
               </div>
             </div>
           </div>
