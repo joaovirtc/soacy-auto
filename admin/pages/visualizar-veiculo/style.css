@@ -297,7 +297,7 @@ body {
   font-size: 30px;
 }
 
-.status-on {
+.online {
   background-color: var(--color-background-status-on);
   display: flex;
   align-items: center;
@@ -309,7 +309,7 @@ body {
   color: var(--color-text-status-on);
 }
 
-.status-off {
+.offline {
   background-color: var(--color-background-status-off);
   display: flexbox;
   padding: 6px 15px;

@@ -173,7 +173,7 @@ $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
               </div>
               <div class="input-group">
                 <label for="">Status</label>
-                <input readonly type="text" value="<?php echo($dt_car['status']) ?>" class="input-dados" />
+                <input readonly type="text" value="<?php echo($dt_car['status']) ?>" class="input-dados <?php echo($dt_car['status']) ?>" />
               </div>
             </div>
             <header class="header-dados-veiculo">
