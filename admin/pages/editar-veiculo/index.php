@@ -152,7 +152,7 @@ $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
                 foreach($fotos as $foto){
                   echo("
                   <div class=\"div\">
-                   <a href=\"../../php/apagarImg.php?id={$foto['id_foto']}\" class=\"btn-deletar-foto\">
+                   <a href=\"../../assets/php/apagarImg.php?id={$foto['id_foto']}\" class=\"btn-deletar-foto\">
                       <i class=\"ri-delete-bin-line\"></i>
                    </a>
                    <img src=\"../../../imagens/{$foto["path"]}\" alt=\"veiculo {$dt_car["marca"]}\" />
