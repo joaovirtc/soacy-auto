@@ -152,7 +152,7 @@ $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
                 foreach($fotos as $foto){
                   echo("
                   <div class=\"div\">
-                   <a href=\"../../php/apagarImg.php?id={$foto['id_foto']}\" class=\"btn-deletar-foto\">
+                   <a href=\"../../assets/php/apagarImg.php?id={$foto['id_foto']}\" class=\"btn-deletar-foto\">
                       <i class=\"ri-delete-bin-line\"></i>
                    </a>
                    <img src=\"../../../imagens/{$foto["path"]}\" alt=\"veiculo {$dt_car["marca"]}\" />
@@ -273,6 +273,15 @@ $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
                   <option <?php echo ($dt_car['portas'] == "4") ? "selected" : '' ?> value="2">4 portas</option>
                   <option <?php echo ($dt_car['portas'] == "6") ? "selected" : '' ?> value="6">6 Portas</option>
                 </select>
+              </div>
+            </div>
+            <header class="header-dados-veiculo">
+              <p class="subtitle-body">DIGA MAIS SOBRE O VEICULO</p>
+            </header>
+            <div class="dados-veiculo">
+              <div class="input-group">
+                <label for="">Sobre o veiculo</label>
+                <textarea name="sobre" class="text-sobre" rows="4" cols="50"><?php echo($dt_car['sobre']) ?></textarea>
               </div>
             </div>
           </div>

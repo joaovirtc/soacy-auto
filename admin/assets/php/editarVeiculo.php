@@ -22,6 +22,7 @@ $combustivel = $_POST["combustivel"];
 $cambio = $_POST["cambio"];
 $cor = $_POST["cor"];
 $portas = $_POST["portas"];
+$sobre = $_POST["sobre"];
 $hoje = date('Y,m,d');
 $raiz = $_SERVER['DOCUMENT_ROOT'];
 $pasta = $raiz . "/sistemadecarro/imagens/";
@@ -31,7 +32,7 @@ $pasta = $raiz . "/sistemadecarro/imagens/";
 // codigo
     $conn->query("UPDATE `carro` SET `placa`='$placa',`valor`='$valor',`marca`='$marca',`modelo`='$modelo',`versao`='$versao',
     `motor`='$motor',`ano`='$ano',`cor`='$ano',`combustivel`='$combustivel',`cambio`='$cambio',`quilometragem`='$quilometragem',
-    `portas`='$portas',`carroceria`='$carroceria',`status`='$status' WHERE `carro`.`id_carro` = $id;");
+    `portas`='$portas',`carroceria`='$carroceria',`status`='$status', `sobre`='$sobre' WHERE `carro`.`id_carro` = $id;");
 
 
     header('location: http://localhost/sistemadecarro/admin/pages/estoque/')

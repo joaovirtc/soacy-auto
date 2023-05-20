@@ -13,7 +13,7 @@ $fotos = $conn->query("SELECT * FROM `foto` WHERE `foto`.`id_carro` = $id");
 foreach($fotos as $foto){
     unlink($pasta.$foto["path"]);
 }
-$conn->query("DELETE FROM `foto` WHERE `foto`.`id_carro` = $id");
+
 $conn->query("DELETE FROM `carro` WHERE `carro`.`id_carro` = $id");
 
 header('Location: http://localhost/sistemadecarro/admin/'); // mandando o usuario para o painel de controle

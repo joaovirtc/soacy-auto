@@ -214,6 +214,15 @@ $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
                 <input readonly type="text" value="<?php echo($dt_car['portas']) ?> portas" class="input-dados" />
               </div>
             </div>
+            <header class="header-dados-veiculo">
+              <p class="subtitle-body">DIGA MAIS SOBRE O VEICULO</p>
+            </header>
+            <div class="dados-veiculo">
+              <div class="input-group">
+                <label for="">Sobre o veiculo</label>
+                <textarea class="text-sobre" readonly rows="4" cols="50"><?php echo($dt_car['sobre']) ?></textarea>
+              </div>
+            </div>
           </div>
         </div>
       </section>

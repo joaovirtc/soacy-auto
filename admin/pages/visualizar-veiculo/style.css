@@ -297,7 +297,7 @@ body {
   font-size: 30px;
 }
 
-.status-on {
+.online {
   background-color: var(--color-background-status-on);
   display: flex;
   align-items: center;
@@ -309,7 +309,7 @@ body {
   color: var(--color-text-status-on);
 }
 
-.status-off {
+.offline {
   background-color: var(--color-background-status-off);
   display: flexbox;
   padding: 6px 15px;
@@ -461,7 +461,15 @@ body {
   background-color: var(--container-color);
   width: 140px;
 }
-
+.text-sobre{
+  padding: 10px 14px;
+  border: var(--border);
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: var(--container-color);
+}
 .header-dados-veiculo {
   margin-top: 34px;
 }
