@@ -7,12 +7,13 @@ session_start();
 $hoje = date('Y,m,d');
 $ano_atual = date('Y');
 $mes_atual = date('m');
+
 $dt_leads = $conn->query(" SELECT * FROM leads ORDER BY info DESC;");
 
 $leads = mysqli_fetch_array($dt_leads);
 
 $qtd_leads = mysqli_fetch_array($conn->query(" SELECT count(1) from leads; "));
-$qtd_leads_hoje = mysqli_fetch_array($conn->query(" SELECT count(1) from leads WHERE YEAR(info) = '{$ano_atual}' AND MONTH(info) = '{$mes_atual}';; "));
+$qtd_leads_hoje = mysqli_fetch_array($conn->query(" SELECT count(1) from leads WHERE date(info) = '{$hoje}'; "));
 
 //variaveis
 

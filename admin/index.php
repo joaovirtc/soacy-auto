@@ -9,11 +9,14 @@ session_start();
   // numero de veiculos adicionados esse mes
   $ano_atual = date('Y');
   $mes_atual = date('m');
+  $hoje = date('Y-m-d');
   $qtd_veiculos_mes = mysqli_fetch_array($conn->query("SELECT count(1) FROM carro WHERE YEAR(dt_cadastro) = '{$ano_atual}' AND MONTH(dt_cadastro) = '{$mes_atual}';"));
   // numero de veiculos vendidos esse mes
   $qtd_vendas_mes = $conn->query(" SELECT * FROM vendidos INNER JOIN carro ON vendidos.id_carro = carro.id_carro WHERE YEAR(dt_venda) = '{$ano_atual}' AND MONTH(dt_venda) = '{$mes_atual}';");
   $dt_registros = $conn->query("SELECT * from carro where status = 'online' or status = 'offline'  ORDER BY `carro`.`id_carro` desc");
 
+  $qtd_leads = mysqli_fetch_array($conn->query(" SELECT count(1) from leads; "));
+  $qtd_leads_hoje = mysqli_fetch_array($conn->query(" SELECT count(1) from leads WHERE date(info) = '{$hoje}'; "));
 // definindo variaveis
   
 $qtd_veiculos_estq = $qtd_veiculos_estq[0];
@@ -150,14 +153,14 @@ if(!isset($_SESSION["userID"])){
               <div class="card-visao-geral">
                 <div class="header-card">
                   <i class="ri-exchange-dollar-line icon-card"></i>
-                  <p class="title-card">Faturamento</p>
+                  <p class="title-card">Leads</p>
                 </div>
                 <div class="content-card">
                   <div>
-                    <p class="descriçao-card">R$ 109.880,90</p>
+                    <p class="descriçao-card"><?php echo($qtd_leads[0])?> Leads</p>
                   </div>
                   <div class="descriçao-card-add">
-                    <p>+23,80%</p>
+                    <p>+<?php echo($qtd_leads_hoje[0])?> hoje</p>
                   </div>
                 </div>
               </div>
