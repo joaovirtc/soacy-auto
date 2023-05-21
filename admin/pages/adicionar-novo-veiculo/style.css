@@ -374,7 +374,7 @@ body {
 }
 
 .menssagem-sucesso {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   z-index: 1000;
   left: 50%;
@@ -394,7 +394,7 @@ body {
 }
 
 .menssagem-erro {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   z-index: 1000;
   left: 50%;
