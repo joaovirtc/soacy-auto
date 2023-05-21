@@ -20,6 +20,7 @@ $quilometragem = $_POST["quilometragem"];
 $combustivel = $_POST["combustivel"];
 $cambio = $_POST["cambio"];
 $cor = $_POST["cor"];
+$sobre = $_POST['sobre'];
 $portas = $_POST["portas"];
 $hoje = date('Y,m,d');
 $raiz = $_SERVER['DOCUMENT_ROOT'];
@@ -29,11 +30,11 @@ $pasta = $raiz . "/sistemadecarro/imagens/";
 
 // codigo
 
-    $conn->query("INSERT INTO `carro` (`id_carro`, `placa`, `valor`, `marca`, `modelo`, `versao`, `motor`, `ano`, `cor`, `combustivel`, `cambio`, `quilometragem`, `portas`, `carroceria`, `notificacao`, `dt_cadastro`, `status`)
+    $conn->query("INSERT INTO `carro` (`id_carro`, `placa`, `valor`, `marca`, `modelo`, `versao`, `motor`, `ano`, `cor`, `combustivel`, `cambio`, `quilometragem`, `portas`, `carroceria`, `notificacao`, `dt_cadastro`,`sobre`, `status`)
      VALUES (NULL, '$placa', '$valor', '$marca', '$modelo', 
      '$versao', '$motor', '$ano', '$cor', '$combustivel',
       '$cambio', '$quilometragem', '$portas', '$carroceria',
-       NULL, '$hoje', '$status');");
+       NULL, '$hoje','$sobre', '$status');");
        $idCarro = $conn->insert_id;
     for($i=0; $i < count($_FILES['arquivo']["name"]); $i++){
         
