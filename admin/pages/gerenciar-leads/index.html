@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 // carregando dependencias
 include_once('../../assets/conn.php');
 session_start();
@@ -23,8 +23,7 @@ if(!isset($_SESSION["userID"])){
   header('location: http://localhost/sistemadecarro/admin/pages/singin');
 }
 
-?>
-
+?> -->
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -84,7 +83,7 @@ if(!isset($_SESSION["userID"])){
       </aside>
       <section class="container-body">
         <div class="content-body">
-        <header class="header-body">
+          <header class="header-body">
             <div class="content-header-body">
               <div>
                 <p class="title">Gerenciamento de leads</p>
@@ -111,13 +110,18 @@ if(!isset($_SESSION["userID"])){
                 </div>
                 <div class="content-card">
                   <div>
-                    <p class="descriçao-card"><?php echo($qtd_leads[0]) ?> leads</p>
+                    <p class="descriçao-card">
+                      <?php echo($qtd_leads[0]) ?>
+                      leads
+                    </p>
                   </div>
                   <div class="descriçao-card-add">
-                    <p><?php echo('+' . $qtd_leads_hoje[0])?> hoje</p>
+                    <p>
+                      <?php echo('+' . $qtd_leads_hoje[0])?>
+                      hoje
+                    </p>
                   </div>
                 </div>
-                
               </div>
               <!-- CARD -->
             </div>
@@ -127,86 +131,81 @@ if(!isset($_SESSION["userID"])){
               <p class="subtitle-body">TODOS OS LEADS</p>
             </header>
             <div class="content-leads">
-              <?php 
-                foreach($dt_leads as $lead){
-                  // card lead novo
-                  if($lead['visto'] == 0){
-                    echo("
-                            <!-- CONTAINER LEADS NOVOS  -->
-                      <div class=\"container-lead-novo\">
-                        <div class=\"content-lead-novo\">
-                          <header class=\"header-lead-novo\">
-                            <span class=\"notificação-lead-novo\"> NOVO </span>
-                            <a href=\"https://api.whatsapp.com/send?phone={$lead['telefone']}&text={$lead['mensagem']}\">
-                              <img src=\"../../assets/img/WhatsApp logo.png\" alt=\" Ir pro Whatsapp\" /> 
-                            </a>
-                          </header>
-                          <div class=\"content-informações-leads\">
-                            <div class=\"row\">
-                              <p class=\"nome-lead\">{$lead['nome']}</p>
-                            </div>
-                            <div class=\"row\">
-                              <i class=\"ri-mail-line\"></i>
-                              <p class=\"email-lead\">{$lead['email']}</p>
-                            </div>
-                            <div class=\"row\">
-                              <i class=\"ri-phone-line\"></i>
-                              <p class=\"numero-lead\">{$lead['telefone']}</p>
-                            </div>
-                            <div class=\"row\">
-                              <p class=\"mensage-lead\">
-                                <i class=\"ri-corner-down-right-line\"></i>
-                                {$lead['mensagem']}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- CONTAINER LEADS NOVOS -->
-                    
-                    ");
-                  }
-                  // card lead visto
-                  if($lead['visto'] == 1){
-                    echo("
-                       <!-- CONTAINER LEADS  -->
-                      <div class=\"container-lead\">
-                        <div class=\"content-lead\">
-                          <header class=\"header-lead\"></header>
-                          <div class=\"content-informações-leads\">
-                            <div class=\"row-nome\">
-                              <p class=\"nome-lead\">{$lead['nome']}</p>
-                              <a href=\"\">
-                              <img src=\"../../assets/img/WhatsApp logo.png\" alt=\" Ir pro Whatsapp\" /> 
-                              </a>
-                            </div>
-                            <div class=\"row\">
-                              <i class=\"ri-mail-line\"></i>
-                              <p class=\"email-lead\">{$lead['email']}</p>
-                            </div>
-                            <div class=\"row\">
-                              <i class=\"ri-phone-line\"></i>
-                              <p class=\"numero-lead\">{$lead['telefone']}</p>
-                            </div>
-                            <div class=\"row\">
-                              <p class=\"mensage-lead\">
-                                <i class=\"ri-corner-down-right-line\"></i>
-                                {$lead['mensagem']}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- CONTAINER LEADS  -->
+              <!-- CONTAINER LEADS NOVOS  -->
+              <div class="container-leads-novo">
+                <div class="informações-leads">
+                  <div class="lead-novo">NOVO</div>
+                  <div class="row">
+                    <p class="nome-lead">João Victor</p>
+                  </div>
+                  <div class="row">
+                    <i class="ri-mail-line"></i>
+                    <p class="email-lead">joaovictorcarmindo@gmail.com</p>
+                  </div>
+                  <div class="row">
+                    <i class="ri-phone-line"></i>
+                    <p class="telefone-lead">47 9 99777 2367</p>
+                  </div>
+                  <div class="row">
+                    <p class="mensagem-lead">
+                      Olá, vi seu veículo no seu site e tenho interesse. Aguardo
+                      seu contato!
+                    </p>
+                  </div>
+                </div>
+                <div class="action-leads">
+                  <a href="">
+                    <img
+                      src="../../assets/img/WhatsApp logo.png"
+                      alt=""
+                      width="30px"
+                      height="30px"
+                    />
+                  </a>
+                  <a href="">
+                    <i class="ri-check-double-line icon-marcar-como-visto"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- CONTAINER LEADS NOVOS -->
 
-                    ");
-                  };
-                }
+              <!-- CONTAINER LEADS  -->
+              <div class="container-leads">
+                <div class="informações-leads">
+                  <div class="row">
+                    <p class="nome-lead">João Victor</p>
+                  </div>
+                  <div class="row">
+                    <i class="ri-mail-line"></i>
+                    <p class="email-lead">joaovictorcarmindo@gmail.com</p>
+                  </div>
+                  <div class="row">
+                    <i class="ri-phone-line"></i>
+                    <p class="telefone-lead">47 9 99777 2367</p>
+                  </div>
+                  <div class="row">
+                    <p class="mensagem-lead">
+                      Olá, vi seu veículo no seu site e tenho interesse. Aguardo
+                      seu contato!
+                    </p>
+                  </div>
+                </div>
+                <div class="action-leads">
+                  <a href="">
+                    <img
+                      src="../../assets/img/WhatsApp logo.png"
+                      alt=""
+                      width="30px"
+                      height="30px"
+                    />
+                  </a>
 
-              ?>
-              
-
-              
+                  <button class="button-marcar-como-visto" disabled>
+                    <i class="ri-check-double-line icon-visto"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- CONTAINER LEADS  -->
             </div>
           </div>
         </div>
