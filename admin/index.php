@@ -11,14 +11,16 @@ session_start();
   $mes_atual = date('m');
   $hoje = date('Y-m-d');
   $hora_atual = date('H:i:s');
-  if($hora_atual >= '04:00:00' & $hora_atual < '12:00:00'){
-    $resp = "Bom dia";
-  }
-  else if($hora_atual >= '12:00:00' & $hora_atual < '18:00:00'){
-    $resp = "Boa tarde";
-  }
-  else{
-    $resp = "Boa noite";
+  // func de saudaçao
+  function saudacao() {
+    date_default_timezone_set('America/Sao_Paulo');
+    $hora = date('H');
+    if( $hora >= 5 && $hora <= 12 )
+      return 'Bom dia' ;
+    else if ( $hora > 12 && $hora <=18  )
+      return 'Boa tarde';
+    else
+      return 'Boa noite';
   }
   $qtd_veiculos_mes = mysqli_fetch_array($conn->query("SELECT count(1) FROM carro WHERE YEAR(dt_cadastro) = '{$ano_atual}' AND MONTH(dt_cadastro) = '{$mes_atual}';"));
   // numero de veiculos vendidos esse mes
@@ -110,7 +112,7 @@ if(!isset($_SESSION["userID"])){
           <header class="header-body">
             <div class="content-logo-concessionaria">
               <img src="./assets/img/logo-Icon-Pretabela" alt="" />
-              <p class="title"><?php echo($resp) ?> SoacyCars</p>
+              <p class="title"><?php echo(saudacao()) ?> SoacyCars</p>
               
               
             </div>

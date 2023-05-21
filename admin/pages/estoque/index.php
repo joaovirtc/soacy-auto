@@ -97,10 +97,12 @@ if(!isset($_SESSION["userID"])){
               <p class="title">Estoque</p>
             </div>
             <div>
-              <button class="botao-primario">
-                <i class="ri-add-line icon-botao"></i>
-                Adicionar Veículo
-              </button>
+              <a href="../adicionar-novo-veiculo/">
+                <button class="botao-primario">
+                  <i class="ri-add-line icon-botao"></i>
+                  Adicionar Veículo
+                </button>
+              </a>
             </div>
           </header>
 
