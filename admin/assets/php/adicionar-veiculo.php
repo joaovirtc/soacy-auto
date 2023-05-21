@@ -29,13 +29,24 @@ $pasta = $raiz . "/sistemadecarro/imagens/";
 
 
 // codigo
-
-    $conn->query("INSERT INTO `carro` (`id_carro`, `placa`, `valor`, `marca`, `modelo`, `versao`, `motor`, `ano`, `cor`, `combustivel`, `cambio`, `quilometragem`, `portas`, `carroceria`, `notificacao`, `dt_cadastro`,`sobre`, `status`)
+try {
+    //usamos o arroba para ocultar o possível erro retornado pelo PHP
+    $teste = $conn->query("INSERT INTO `carro` (`id_carro`, `placa`, `valor`, `marca`, `modelo`, `versao`, `motor`, `ano`, `cor`, `combustivel`, `cambio`, `quilometragem`, `portas`, `carroceria`, `notificacao`, `dt_cadastro`,`sobre`, `status`)
      VALUES (NULL, '$placa', '$valor', '$marca', '$modelo', 
      '$versao', '$motor', '$ano', '$cor', '$combustivel',
       '$cambio', '$quilometragem', '$portas', '$carroceria',
        NULL, '$hoje','$sobre', '$status');");
-       $idCarro = $conn->insert_id;
+       $idCarro = $conn->insert_id; 
+  
+    if (!$teste) { //se conexão falhar
+       throw new Exception("Erro ao realizar a conexão com o banco de dados");
+    }
+ }
+ catch (Exception $e) {
+    header('location: http://localhost/sistemadecarro/admin/pages/adicionar-novo-veiculo/?msgErr=Erro%20ao%20adicionar%20veiculo'); 
+    exit;
+ }
+    
     for($i=0; $i < count($_FILES['arquivo']["name"]); $i++){
         
         $nomeArquivo = $_FILES['arquivo']['name'][$i];
@@ -49,6 +60,6 @@ $pasta = $raiz . "/sistemadecarro/imagens/";
         }
     }
 
-    header('location: http://localhost/sistemadecarro/admin/pages/estoque/')
+    header('location: http://localhost/sistemadecarro/admin/pages/estoque/?msgSucess=Veiculo%20adicionado');
 
 ?>

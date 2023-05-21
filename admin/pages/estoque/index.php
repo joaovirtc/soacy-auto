@@ -50,8 +50,91 @@ if(!isset($_SESSION["userID"])){
   </head>
   <body>
 
+  <script>
+    (function(window) { 
+  'use strict'; 
+ 
+var noback = { 
+	 
+	//globals 
+	version: '0.0.1', 
+	history_api : typeof history.pushState !== 'undefined', 
+	 
+	init:function(){ 
+		window.location.hash = '#no-back'; 
+		noback.configure(); 
+	}, 
+	 
+	hasChanged:function(){ 
+		if (window.location.hash == '#no-back' ){ 
+			window.location.hash = '#BLOQUEIO';
+			//mostra mensagem que não pode usar o btn volta do browser
+			if($( "#msgAviso" ).css('display') =='none'){
+				$( "#msgAviso" ).slideToggle("slow");
+			}
+		} 
+	}, 
+	 
+	checkCompat: function(){ 
+		if(window.addEventListener) { 
+			window.addEventListener("hashchange", noback.hasChanged, false); 
+		}else if (window.attachEvent) { 
+			window.attachEvent("onhashchange", noback.hasChanged); 
+		}else{ 
+			window.onhashchange = noback.hasChanged; 
+		} 
+	}, 
+	 
+	configure: function(){ 
+		if ( window.location.hash == '#no-back' ) { 
+			if ( this.history_api ){ 
+				history.pushState(null, '', '#BLOQUEIO'); 
+			}else{  
+				window.location.hash = '#BLOQUEIO';
+				//mostra mensagem que não pode usar o btn volta do browser
+				if($( "#msgAviso" ).css('display') =='none'){
+					$( "#msgAviso" ).slideToggle("slow");
+				}
+			} 
+		} 
+		noback.checkCompat(); 
+		noback.hasChanged(); 
+	} 
+	 
+	}; 
+	 
+	// AMD support 
+	if (typeof define === 'function' && define.amd) { 
+		define( function() { return noback; } ); 
+	}  
+	// For CommonJS and CommonJS-like 
+	else if (typeof module === 'object' && module.exports) { 
+		module.exports = noback; 
+	}  
+	else { 
+		window.noback = noback; 
+	} 
+	noback.init();
+}(window)); 
 
+
+
+  </script>
     <main class="layout">
+      <?php 
+        if(isset($_GET['msgSucess'])){
+          echo("
+            <!-- MESAGEM SUCESSO  -->
+            <div class=\"menssagem-sucesso\">
+              <i class=\"ri-check-line icon-mensagem-sucesso\"></i>
+              <p class=\"title-mensagem-sucesso\">{$_GET['msgSucess']}</p>
+              <span class=\"notificantion__progress-sucesso\"></span>
+            </div>
+            <!-- MESAGEM SUCESSO -->
+          ");
+        }
+      ?>
+        
       <aside class="sidebar">
         <div class="content-sidebar">
           <div class="header-sidebar">

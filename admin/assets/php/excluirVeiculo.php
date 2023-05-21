@@ -16,5 +16,5 @@ foreach($fotos as $foto){
 
 $conn->query("DELETE FROM `carro` WHERE `carro`.`id_carro` = $id");
 
-header('Location: http://localhost/sistemadecarro/admin/'); // mandando o usuario para o painel de controle
+header('Location: http://localhost/sistemadecarro/admin/pages/estoque/?msgSucess=Veiculo%20excluido'); // mandando o usuario para o painel de controle
 
