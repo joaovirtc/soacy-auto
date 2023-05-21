@@ -66,7 +66,7 @@ if(!isset($_SESSION["userID"])){
                 <i class="ri-function-line icon-nav-link"></i>
                 <p class="title-nav-link">Dashboard</p>
               </a>
-              <a href="../../pages/estoque/index.php" class="nav-link active">
+              <a href="../../pages/estoque/" class="nav-link active">
                 <i class="ri-car-line icon-nav-link"></i>
                 <p class="title-nav-link">Estoque</p>
               </a>
@@ -79,7 +79,7 @@ if(!isset($_SESSION["userID"])){
                 <p class="title-nav-link">Gerenciamento de Leads</p>
               </a>
             </div>
-            <a href="./assets/php/logout.php" class="nav-link"
+            <a href="../../assets/php/logout.php" class="nav-link"
               ><!-- esse link leva ao processo de logout com php -->
 
               <i class="ri-logout-circle-line icon-nav-link"></i>
@@ -99,7 +99,7 @@ if(!isset($_SESSION["userID"])){
             <div>
               <button class="botao-primario">
                 <i class="ri-add-line icon-botao"></i>
-                Adiconar Veículo
+                Adicionar Veículo
               </button>
             </div>
           </header>
