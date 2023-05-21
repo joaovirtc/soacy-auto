@@ -10,6 +10,16 @@ session_start();
   $ano_atual = date('Y');
   $mes_atual = date('m');
   $hoje = date('Y-m-d');
+  $hora_atual = date('H:i:s');
+  if($hora_atual >= '04:00:00' & $hora_atual < '12:00:00'){
+    $resp = "Bom dia";
+  }
+  else if($hora_atual >= '12:00:00' & $hora_atual < '18:00:00'){
+    $resp = "Boa tarde";
+  }
+  else{
+    $resp = "Boa noite";
+  }
   $qtd_veiculos_mes = mysqli_fetch_array($conn->query("SELECT count(1) FROM carro WHERE YEAR(dt_cadastro) = '{$ano_atual}' AND MONTH(dt_cadastro) = '{$mes_atual}';"));
   // numero de veiculos vendidos esse mes
   $qtd_vendas_mes = $conn->query(" SELECT * FROM vendidos INNER JOIN carro ON vendidos.id_carro = carro.id_carro WHERE YEAR(dt_venda) = '{$ano_atual}' AND MONTH(dt_venda) = '{$mes_atual}';");
@@ -74,15 +84,15 @@ if(!isset($_SESSION["userID"])){
                 <i class="ri-function-line icon-nav-link"></i>
                 <p class="title-nav-link">Dashboard</p>
               </a>
-              <a href="./pages/estoque/index.php" class="nav-link">
+              <a href="./pages/estoque/" class="nav-link">
                 <i class="ri-car-line icon-nav-link"></i>
                 <p class="title-nav-link">Estoque</p>
               </a>
-              <a href="pages/financeiro/" class="nav-link">
+              <a href="./pages/financeiro/" class="nav-link">
                 <i class="ri-money-dollar-circle-line icon-nav-link"></i>
                 <p class="title-nav-link">Vendas</p>
               </a>
-              <a href="pages/gerenciar-leads/" class="nav-link">
+              <a href="./pages/gerenciar-leads/" class="nav-link">
                 <i class="ri-team-line icon-nav-link"></i>
                 <p class="title-nav-link">Gerenciamento de Leads</p>
               </a>
@@ -100,7 +110,7 @@ if(!isset($_SESSION["userID"])){
           <header class="header-body">
             <div class="content-logo-concessionaria">
               <img src="./assets/img/logo-Icon-Pretabela" alt="" />
-              <p class="title">SoacyCars</p>
+              <p class="title"><?php echo($resp) ?> SoacyCars</p>
               
               
             </div>

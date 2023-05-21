@@ -59,20 +59,20 @@ if(!isset($_SESSION["userID"])){
                 <i class="ri-function-line icon-nav-link"></i>
                 <p class="title-nav-link">Dashboard</p>
               </a>
-              <a href="../../pages/estoque/index.php" class="nav-link">
+              <a href="../estoque/" class="nav-link">
                 <i class="ri-car-line icon-nav-link"></i>
                 <p class="title-nav-link">Estoque</p>
               </a>
-              <a href="../../pages/financeiro/index.html" class="nav-link">
+              <a href="../financeiro/" class="nav-link">
                 <i class="ri-money-dollar-circle-line icon-nav-link"></i>
                 <p class="title-nav-link">Vendas</p>
               </a>
-              <a href="#" class="nav-link active">
+              <a href="" class="nav-link active">
                 <i class="ri-team-line icon-nav-link"></i>
                 <p class="title-nav-link">Gerenciamento de Leads</p>
               </a>
             </div>
-            <a href="./assets/php/logout.php" class="nav-link"
+            <a href="../../assets/php/logout.php" class="nav-link"
               ><!-- esse link leva ao processo de logout com php -->
 
               <i class="ri-logout-circle-line icon-nav-link"></i>
