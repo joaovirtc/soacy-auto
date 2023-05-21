@@ -62,6 +62,71 @@
         e.target.selectionStart = ss;
         e.target.selectionEnd = se;
       }
+      (function(window) { 
+  'use strict'; 
+ 
+var noback = { 
+	 
+	//globals 
+	version: '0.0.1', 
+	history_api : typeof history.pushState !== 'undefined', 
+	 
+	init:function(){ 
+		window.location.hash = '#no-back'; 
+		noback.configure(); 
+	}, 
+	 
+	hasChanged:function(){ 
+		if (window.location.hash == '#no-back' ){ 
+			window.location.hash = '#BLOQUEIO';
+			//mostra mensagem que não pode usar o btn volta do browser
+			if($( "#msgAviso" ).css('display') =='none'){
+				$( "#msgAviso" ).slideToggle("slow");
+			}
+		} 
+	}, 
+	 
+	checkCompat: function(){ 
+		if(window.addEventListener) { 
+			window.addEventListener("hashchange", noback.hasChanged, false); 
+		}else if (window.attachEvent) { 
+			window.attachEvent("onhashchange", noback.hasChanged); 
+		}else{ 
+			window.onhashchange = noback.hasChanged; 
+		} 
+	}, 
+	 
+	configure: function(){ 
+		if ( window.location.hash == '#no-back' ) { 
+			if ( this.history_api ){ 
+				history.pushState(null, '', '#BLOQUEIO'); 
+			}else{  
+				window.location.hash = '#BLOQUEIO';
+				//mostra mensagem que não pode usar o btn volta do browser
+				if($( "#msgAviso" ).css('display') =='none'){
+					$( "#msgAviso" ).slideToggle("slow");
+				}
+			} 
+		} 
+		noback.checkCompat(); 
+		noback.hasChanged(); 
+	} 
+	 
+	}; 
+	 
+	// AMD support 
+	if (typeof define === 'function' && define.amd) { 
+		define( function() { return noback; } ); 
+	}  
+	// For CommonJS and CommonJS-like 
+	else if (typeof module === 'object' && module.exports) { 
+		module.exports = noback; 
+	}  
+	else { 
+		window.noback = noback; 
+	} 
+	noback.init();
+}(window)); 
     </script>
     <main class="layout" id="openFormActiveOpacity">
       <aside class="sidebar">
@@ -121,20 +186,20 @@
               />
             </div>
           </header>
-          <!-- MESAGEM SUCESSO  -->
-          <div class="menssagem-sucesso">
-            <i class="ri-check-line icon-mensagem-sucesso"></i>
-            <p class="title-mensagem-sucesso">Veículo adicionado</p>
-            <span class="notificantion__progress-sucesso"></span>
-          </div>
-          <!-- MESAGEM SUCESSO -->
-          <!-- MESAGEM ERRO  -->
-          <div class="menssagem-erro">
-            <i class="ri-error-warning-line icon-mensagem-erro"></i>
-            <p class="title-mensagem-erro">Erro ao adicionar veículo</p>
-            <span class="notificantion__progress-erro"></span>
-          </div>
-          <!-- MESAGEM  ERRO -->
+          <?php 
+                if(isset($_GET['msgErr'])){
+                  echo("
+                  <!-- MESAGEM ERRO  -->
+                  <div class=\"menssagem-erro\">
+                    <i class=\"ri-error-warning-line icon-mensagem-erro\"></i>
+                    <p class=\"title-mensagem-erro\">Erro ao adicionar veículo</p>
+                    <span class=\"notificantion__progress-erro\"></span>
+                  </div>
+                  <!-- MESAGEM  ERRO -->
+                  ");
+        }
+      ?>
+          
           <header class="">
             <p class="subtitle-body">FOTOS DO VEÍCULO</p>
           </header>

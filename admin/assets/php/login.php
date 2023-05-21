@@ -18,7 +18,7 @@ if($db_user->num_rows != 0 or $db_user->num_rows != null){
     $_SESSION["userID"] = $db_user_arr["id_user"]; // criando session com id de usuario
     header('Location: http://localhost/sistemadecarro/admin/'); // mandando o usuario para o painel de controle
 }else{
-    header('Location: http://localhost/sistemadecarro/admin/pages/singin/?err=true');
+    header('Location: http://localhost/sistemadecarro/admin/pages/singin/?err=Erro ao fazer login');
      // caso os dados estejam errados, volta para pagina de login com um erro
 }
 
