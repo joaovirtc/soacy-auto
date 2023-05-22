@@ -43,7 +43,8 @@ try {
     }
  }
  catch (Exception $e) {
-    header('location: http://localhost/sistemadecarro/admin/pages/adicionar-novo-veiculo/?msgErr=Erro%20ao%20adicionar%20veiculo'); 
+   $_SESSION['msgError'] = "Erro ao adicionar veiculo";
+    header('location: http://localhost/sistemadecarro/admin/pages/adicionar-novo-veiculo/'); 
     exit;
  }
     
@@ -59,7 +60,7 @@ try {
             $conn->query("INSERT INTO `foto`(`id_foto`, `path`, `id_carro`) VALUES (id_foto,'$path','$idCarro')");
         }
     }
-
-    header('location: http://localhost/sistemadecarro/admin/pages/estoque/?msgSucess=Veiculo%20adicionado');
+    $_SESSION['msgSucess'] = "Veículo adicionado";
+    header('location: http://localhost/sistemadecarro/admin/pages/estoque/');
 
 ?>

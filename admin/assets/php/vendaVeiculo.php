@@ -10,5 +10,6 @@ $hoje = date('Y,m,d');
 // query's no banco de dados
 $conn->query("UPDATE `carro` SET `status` = 'vendido' WHERE `carro`.`id_carro` = $id;");
 $conn->query("INSERT INTO `vendidos`(`id_venda`, `id_carro`, `dt_venda`) VALUES (id_venda,$id,'$hoje')");
-header('Location: http://localhost/sistemadecarro/admin/'); // mandando o usuario para o painel de controle
+$_SESSION['msgSucess'] = "Veículo vendido";
+header('Location: http://localhost/sistemadecarro/admin/pages/financeiro/'); // mandando o usuario para o painel de controle
 
