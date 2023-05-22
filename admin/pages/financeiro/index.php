@@ -115,6 +115,20 @@ var noback = {
 }(window)); 
     </script>
     <main class="layout">
+    <?php 
+        if(isset($_SESSION['msgSucess'])){
+          echo("
+            <!-- MESAGEM SUCESSO  -->
+            <div class=\"menssagem-sucesso\">
+              <i class=\"ri-check-line icon-mensagem-sucesso\"></i>
+              <p class=\"title-mensagem-sucesso\">{$_SESSION['msgSucess']}</p>
+              <span class=\"notificantion__progress-sucesso\"></span>
+            </div>
+            <!-- MESAGEM SUCESSO -->
+          ");
+          unset($_SESSION['msgSucess']);
+        }
+      ?>
       <aside class="sidebar">
         <div class="content-sidebar">
           <div class="header-sidebar">

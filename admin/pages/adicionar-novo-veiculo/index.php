@@ -1,3 +1,8 @@
+<?php
+// carregando dependencias
+include_once('../../assets/conn.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -129,6 +134,20 @@ var noback = {
 }(window)); 
     </script>
     <main class="layout" id="openFormActiveOpacity">
+    <?php 
+                if(isset($_SESSION['msgError'])){
+                  echo("
+                  <!-- MESAGEM ERRO  -->
+                  <div class=\"menssagem-erro\">
+                    <i class=\"ri-error-warning-line icon-mensagem-erro\"></i>
+                    <p class=\"title-mensagem-erro\">Erro ao adicionar veículo</p>
+                    <span class=\"notificantion__progress-erro\"></span>
+                  </div>
+                  <!-- MESAGEM  ERRO -->
+                  ");
+                  unset($_SESSION['msgError']);
+        }
+      ?>
       <aside class="sidebar">
         <div class="content-sidebar">
           <div class="header-sidebar">
@@ -186,20 +205,7 @@ var noback = {
               />
             </div>
           </header>
-          <?php 
-                if(isset($_GET['msgErr'])){
-                  echo("
-                  <!-- MESAGEM ERRO  -->
-                  <div class=\"menssagem-erro\">
-                    <i class=\"ri-error-warning-line icon-mensagem-erro\"></i>
-                    <p class=\"title-mensagem-erro\">Erro ao adicionar veículo</p>
-                    <span class=\"notificantion__progress-erro\"></span>
-                  </div>
-                  <!-- MESAGEM  ERRO -->
-                  ");
-        }
-      ?>
-          
+
           <header class="">
             <p class="subtitle-body">FOTOS DO VEÍCULO</p>
           </header>

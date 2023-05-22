@@ -34,7 +34,7 @@ $pasta = $raiz . "/sistemadecarro/imagens/";
     `motor`='$motor',`ano`='$ano',`cor`='$ano',`combustivel`='$combustivel',`cambio`='$cambio',`quilometragem`='$quilometragem',
     `portas`='$portas',`carroceria`='$carroceria',`status`='$status', `sobre`='$sobre' WHERE `carro`.`id_carro` = $id;");
 
-
-    header('location: http://localhost/sistemadecarro/admin/pages/estoque/')
+$_SESSION['msgSucess'] = "Dados editados com sucesso";
+    header("location: http://localhost/sistemadecarro/admin/pages/visualizar-veiculo/?id={$id}")
 
 ?>
