@@ -255,9 +255,9 @@ body {
   translate: 0px 0%;
   opacity: 0;
   visibility: hidden;
-  background-color: #fff;
-  color: #000;
-  padding: 6px;
+  background-color: #111;
+  color: #fff;
+  padding: 3px 8px;
   font-size: 13px;
   border-radius: 4px;
   transition: 200ms;
@@ -277,9 +277,9 @@ body {
   translate: 0px 0%;
   opacity: 0;
   visibility: hidden;
-  background-color: #fff;
-  color: #000;
-  padding: 6px;
+  background-color: #111;
+  color: #fff;
+  padding: 3px 8px;
   font-size: 13px;
   border-radius: 4px;
   transition: 200ms;
@@ -457,7 +457,10 @@ body {
 }
 
 .input-group label {
+  font-weight: 600;
   font-size: 14px;
+  line-height: 16px;
+  color: #000;
 }
 
 .input-dados {
