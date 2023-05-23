@@ -362,16 +362,17 @@ var noback = {
               </div>
             </div>
             <header class="header-dados-veiculo">
-              <p class="subtitle-body">DIGA MAIS SOBRE O VEICULO</p>
+              <p class="subtitle-body">DADOS ADICIONAIS DO VEÍCULO</p>
             </header>
             <div class="dados-veiculo">
               <div class="input-group">
-                <label for="">Sobre o veiculo</label>
+                <label for="">Adicionais</label>
                 <textarea
                   name="sobre"
                   class="text-sobre"
                   rows="4"
                   cols="50"
+                  placeholder="Ex"
                 ></textarea>
               </div>
             </div>

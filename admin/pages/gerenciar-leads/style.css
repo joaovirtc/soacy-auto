@@ -328,6 +328,15 @@ body {
   font-weight: 500;
 }
 
+@media screen and (max-width: 1625px) {
+  .container-leads {
+    width: 90%;
+  }
+  .container-leads-novo {
+    width: 90%;
+  }
+}
+
 .nome-lead {
   font-size: 17px;
   margin: 10px 0;

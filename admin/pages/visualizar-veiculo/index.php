@@ -190,6 +190,7 @@ var noback = {
               </a>
               <a href="../../assets/php/vendaVeiculo.php?id=<?php echo($idCarro) ?> " class="action-btn" data-tooltip="Marcar como vendido">
                 <i class="ri-money-dollar-circle-line icon-action-sale"></i>
+                
               </a>
               <button
                 class="action-btn-excluir"
