@@ -239,7 +239,7 @@ var noback = {
                       </td>
                       <td class=\"descricao-tabela ações\">
                         <a class=\"edit\" href=\"../visualizar-veiculo?id={$registro["id_carro"]}\">
-                          <i class=\"ri-pencil-line\"></i>
+                        <i class=\"ri-eye-line\"></i>
                         </a>
                       </td>
                     </tr>

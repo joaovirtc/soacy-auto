@@ -297,11 +297,11 @@ var noback = {
               </div>
             </div>
             <header class="header-dados-veiculo">
-              <p class="subtitle-body">DIGA MAIS SOBRE O VEICULO</p>
+              <p class="subtitle-body">DADOS ADICIONAIS DO VEÍCULO</p>
             </header>
             <div class="dados-veiculo">
               <div class="input-group">
-                <label for="">Sobre o veiculo</label>
+                <label for="">Adicionais</label>
                 <textarea class="text-sobre" readonly rows="4" cols="50"><?php echo($dt_car['sobre']) ?></textarea>
               </div>
             </div>

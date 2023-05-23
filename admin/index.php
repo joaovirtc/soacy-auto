@@ -164,7 +164,7 @@ if(!isset($_SESSION["userID"])){
               <!-- CARD -->
               <div class="card-visao-geral">
                 <div class="header-card">
-                  <i class="ri-exchange-dollar-line icon-card"></i>
+                  <i class="ri-user-follow-line icon-card"></i>
                   <p class="title-card">Leads</p>
                 </div>
                 <div class="content-card">
@@ -194,7 +194,7 @@ if(!isset($_SESSION["userID"])){
                   <th class="title-tabela Km">KM</th>
                   <th class="title-tabela Ano">Ano</th>
                   <th class="title-tabela Status">Status</th>
-                  <th class="title-tabela Ações"></th>
+                  <th class="title-tabela Ações">Ações</th>
                 </tr>
                 <!-- HEADER PLANILHA -->
 
@@ -234,7 +234,8 @@ if(!isset($_SESSION["userID"])){
                       </td>
                       <td class=\"descricao-tabela ações\">
                         <a class=\"edit\" href=\"./pages/visualizar-veiculo?id={$registro["id_carro"]}\">
-                          <i class=\"ri-pencil-line\"></i>
+                          <i class=\"ri-eye-line\"></i>
+                    
                         </a>
                       </td>
                     </tr>

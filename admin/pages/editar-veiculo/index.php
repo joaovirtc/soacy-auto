@@ -239,8 +239,9 @@ var noback = {
                   ");
                 }
               ?>
-              
-              
+                <div class="container-add-foto">
+                  <input type="file">
+                </div>
             </div>
           </div>
 

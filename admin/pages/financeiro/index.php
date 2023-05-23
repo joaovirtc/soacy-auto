@@ -215,7 +215,7 @@ var noback = {
                   <th class="title-tabela Km">KM</th>
                   <th class="title-tabela Ano">Ano</th>
                   <th class="title-tabela Status">Status</th>
-                  <th class="title-tabela Ações"></th>
+                  <th class="title-tabela Ações">Ações</th>
                 </tr>
                 <!-- HEADER PLANILHA -->
                   <?php 
@@ -236,7 +236,7 @@ var noback = {
                           </td>
                           <td class=\"descricao-tabela ações\">
                             <a href=\"http://localhost/sistemadecarro/admin/visualizar-veiculo\" class=\"edit\">
-                              <i class=\"ri-pencil-line\"></i>
+                            <i class=\"ri-eye-line\"></i>
                             </a>
                           </td>
                         </tr>
