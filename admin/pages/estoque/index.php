@@ -241,12 +241,14 @@ var noback = {
                         <a class=\"edit\" href=\"../visualizar-veiculo?id={$registro["id_carro"]}\">
                         <i class=\"ri-eye-line\"></i>
                         </a>
+                      
                       </td>
                     </tr>
                     <!-- DESCRIÇÃO PLANILHA -->    
                     ");
                   }
                 ?> 
+                <!-- <span class=\"tooltiptext\">Visualizar veículo</span> -->
                 <!-- DESCRIÇÃO PLANILHA -->
                 <!-- <tr>
                   <td class="descricao-tabela id">1</td>
