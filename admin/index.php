@@ -112,7 +112,7 @@ if(!isset($_SESSION["userID"])){
           <header class="header-body">
             <div class="content-logo-concessionaria">
               <img src="./assets/img/logo-Icon-Pretabela" alt="" />
-              <p class="title"><?php echo(saudacao()) ?> SoacyCars</p>
+              <p class="title"><?php echo(saudacao()) ?>, SoacyCars</p>
               
               
             </div>

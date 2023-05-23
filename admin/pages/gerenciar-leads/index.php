@@ -170,7 +170,8 @@ if(!isset($_SESSION["userID"])){
                             </div>
                           </div>
                           <div class=\"action-leads\">
-                          <a target=\"_blank\" href=\"https://api.whatsapp.com/send?phone={$leads['telefone']}&text=Olá {$leads['nome']}.\">
+                          <a class=\"msg-whatsapp\" data-tooltip=\"Enviar mesangem via Whatsapp\" target=\"_blank\" href=\"https://api.whatsapp.com/send?phone={$leads['telefone']}&text=Olá {$leads['nome']}.\">
+                            
                               <img
                                 src=\"../../assets/img/WhatsApp logo.png\"
                                 alt=\"\"
