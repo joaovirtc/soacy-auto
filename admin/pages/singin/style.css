@@ -68,18 +68,24 @@ body {
 }
 
 .content {
-  padding: 1rem;
+  padding: 50px 1px;
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 5px;
 }
 
 .header-singin {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   gap: 10px;
 }
 
@@ -94,11 +100,13 @@ body {
 }
 
 .form-login {
-  width: 100%;
+  width: 90%;
   margin-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
 .input-group {
@@ -118,7 +126,7 @@ input {
   font-weight: 500;
   font-size: 14px;
   height: 40px;
-  max-width: 400px;
+  width: 100%;
 }
 
 input::placeholder {

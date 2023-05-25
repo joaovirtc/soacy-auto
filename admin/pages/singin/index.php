@@ -60,7 +60,7 @@ if(isset($_SESSION["userID"])){
             <span class="span-required">Senha incorreta</span>
             <?php
               if(isset($_GET['err'])){
-                echo("<p class=\"span-required on\">Dados de usuario invalido</p>");
+                echo("<p class=\"span-required on\">Dados de usuario inválido</p>");
               }
             ?>
           </div>
