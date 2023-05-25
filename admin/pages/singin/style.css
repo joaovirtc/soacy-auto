@@ -75,9 +75,22 @@ body {
   max-width: 500px;
 }
 
+.header-singin {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
 .title {
-  font-size: 50px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-color-opacity);
 }
 
 .form-login {
@@ -92,6 +105,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  font-size: 14px;
+  width: 100%;
 }
 
 input {
@@ -102,7 +117,8 @@ input {
   outline: none;
   font-weight: 500;
   font-size: 14px;
-  height: 46px;
+  height: 40px;
+  max-width: 400px;
 }
 
 input::placeholder {
@@ -118,7 +134,7 @@ input:focus {
 
 .link {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 15px;
   text-decoration-line: underline;
   color: var(--primary-color);
@@ -132,6 +148,11 @@ input:focus {
   cursor: pointer;
   font-size: 16px;
   border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 44px;
 }
 
 #mensagem {
