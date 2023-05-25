@@ -68,30 +68,53 @@ body {
 }
 
 .content {
-  padding: 1rem;
+  padding: 50px 1px;
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.header-singin {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
 }
 
 .title {
-  font-size: 50px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-color-opacity);
 }
 
 .form-login {
-  width: 100%;
+  width: 90%;
   margin-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
 .input-group {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  font-size: 14px;
+  width: 100%;
 }
 
 input {
@@ -102,7 +125,8 @@ input {
   outline: none;
   font-weight: 500;
   font-size: 14px;
-  height: 46px;
+  height: 40px;
+  width: 100%;
 }
 
 input::placeholder {
@@ -118,7 +142,7 @@ input:focus {
 
 .link {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 15px;
   text-decoration-line: underline;
   color: var(--primary-color);
@@ -132,6 +156,11 @@ input:focus {
   cursor: pointer;
   font-size: 16px;
   border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 44px;
 }
 
 #mensagem {

@@ -17,7 +17,7 @@ if(isset($_SESSION["userID"])){
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login em Painel de Controle</title>
+    <title>Autenticação SoacyCars</title>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -31,7 +31,11 @@ if(isset($_SESSION["userID"])){
   <body>
     <main class="container">
       <div class="content">
-        <h1 class="title">Painel De Controle</h1>
+        <div class="header-singin">
+            <img src="../../assets/img/logo-Icon-Preto 1.png" alt=""> 
+         <h1 class="title">Entrar em SoacyCars</h1>
+         <p class="subtitle">Preencha com seus dados para prosseguir</p>
+        </div>
         <form action="../../assets/php/login.php" method="POST" class="form-login" id="formLogin">
           <div class="input-group">
             <label for="user">Usuário</label>
@@ -56,7 +60,7 @@ if(isset($_SESSION["userID"])){
             <span class="span-required">Senha incorreta</span>
             <?php
               if(isset($_GET['err'])){
-                echo("<p class=\"span-required on\">Dados de usuario invalido</p>");
+                echo("<p class=\"span-required on\">Dados de usuario inválido</p>");
               }
             ?>
           </div>
@@ -74,7 +78,7 @@ if(isset($_SESSION["userID"])){
             </div>
           </div>
           <div class="input-group">
-            <input type="submit" class="input-submit" />
+            <input type="submit" class="input-submit" value="Entrar" />
           </div>
           <script src="../../assets/js/formValidate.js"></script>
         </form>
