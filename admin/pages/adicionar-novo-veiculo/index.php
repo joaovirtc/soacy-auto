@@ -2,6 +2,7 @@
 // carregando dependencias
 include_once('../../assets/conn.php');
 session_start();
+$marcas = $conn->query("select * from marcas;");
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -246,10 +247,12 @@ var noback = {
                 <label for="">Marca</label>
                 <select name="marca" id="" class="input-dados">
                   <option selected value=""></option>
-                  <option value="Volkswagem">Volkswagem</option>
-                  <option value="Fiat">Fiat</option>
-                  <option value="Toytota">Toytota</option>
-                  <option value="Renault">Renault</option>
+                  <!-- trazendo marcas do banco de dados -->
+                  <?php
+                      foreach($marcas as $marca){
+                        echo(" <option value=\"{$marca['nome']}\">{$marca['nome']}</option> ");
+                      }
+                  ?>
                 </select>
               </div>
               <div class="input-group">

@@ -9,7 +9,7 @@ $idCarro = $_GET['id'];
 $raiz = $_SERVER['DOCUMENT_ROOT'] . "/sistemadecarro/";
 
 // query's
-
+$marcas = $conn->query("select * from marcas;");
 $veiculo = $conn->query("SELECT * from carro where id_carro = $idCarro;");
 $dt_car = mysqli_fetch_array($veiculo);
 $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
@@ -257,10 +257,17 @@ var noback = {
               <div class="input-group">
                 <label for="">Marca</label>
                 <select name="marca" id="" class="input-dados">
-                  <option <?php echo ($dt_car['marca'] == "Volkswagem") ? "selected" : '' ?> value="Volkswagem">Volkswagem</option>
-                  <option <?php echo ($dt_car['marca'] == "Fiat") ? "selected" : '' ?> value="Fiat">Fiat</option>
-                  <option <?php echo ($dt_car['marca'] == "Toytota") ? "selected" : '' ?> value="Toytota">Toytota</option>
-                  <option <?php echo ($dt_car['marca'] == "Renault") ? "selected" : '' ?> value="Renault">Renault</option>
+                  <?php
+                      foreach($marcas as $marca){
+                        if($dt_car['marca'] === $marca['nome']){
+                          echo("<option selected value=\"{$marca['nome']}\">{$marca['nome']}</option>");
+                        }else{
+                          echo("<option value=\"{$marca['nome']}\">{$marca['nome']}</option>");
+                        }
+                        
+                      }
+
+                  ?>
                 </select>
               </div>
               <div class="input-group">
