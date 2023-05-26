@@ -205,7 +205,7 @@ var noback = {
       </aside>
 
       <section class="container-body">
-        <form action="../../assets/php/editarVeiculo.php?id=<?php echo($idCarro) ?>" method="post" class="content-body">
+        <form action="../../assets/php/editarVeiculo.php?id=<?php echo($idCarro) ?>" method="post" class="content-body" enctype="multipart/form-data">
           <header class="header-body">
             <div class="content-info-veiculo">
               <p class="title">ID: <?php echo($dt_car['id_carro']) ?></p>
@@ -240,7 +240,7 @@ var noback = {
                 }
               ?>
                 <div class="container-add-foto">
-                  <input type="file">
+                  <input type="file" name="arquivo" accept=".jpeg,.png,.webp">
                 </div>
             </div>
           </div>
