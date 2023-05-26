@@ -28,6 +28,19 @@ $raiz = $_SERVER['DOCUMENT_ROOT'];
 $pasta = $raiz . "/sistemadecarro/imagens/";
 // query's no banco de dados
 
+if(isset($_FILES['arquivo'])){
+    $nomeArquivo = $_FILES['arquivo']['name'];
+        $nvNomeArquivo = uniqid();
+        $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+
+        $path = $nvNomeArquivo . "." . $extensao;
+        $deuCerto = move_uploaded_file($_FILES["arquivo"]["tmp_name"], $pasta . $path);
+        if($deuCerto) {
+            $conn->query("INSERT INTO `foto`(`id_foto`, `path`, `id_carro`) VALUES (id_foto,'$path','$id')");
+        }
+}
+    
+
 
 // codigo
     $conn->query("UPDATE `carro` SET `placa`='$placa',`valor`='$valor',`marca`='$marca',`modelo`='$modelo',`versao`='$versao',
