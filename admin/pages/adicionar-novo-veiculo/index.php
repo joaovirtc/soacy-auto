@@ -2,7 +2,14 @@
 // carregando dependencias
 include_once('../../assets/conn.php');
 session_start();
-$marcas = $conn->query("select * from marcas;");
+$marcas = $conn->query("SELECT * from marcas;");
+$cambios = $conn->query("SELECT * from cambios;");
+$combustiveis = $conn->query("SELECT * from combustiveis;");
+$carrocerias = $conn->query("SELECT * from carrocerias;");
+$hoje = date('Y');
+$anos = $conn->query("SELECT * FROM `anos` where nome <= {$hoje} ORDER BY `nome` DESC;");
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -276,10 +283,11 @@ var noback = {
               <div class="input-group">
                 <label for="">Ano do Veículo</label>
                 <select name="ano" id="" class="input-dados">
-                  <option value="2023">2023</option>
-                  <option value="2022">2022</option>
-                  <option value="2021">2021</option>
-                  <option value="2020">2020</option>
+                <?php
+                      foreach($anos as $ano){
+                        echo(" <option value=\"{$ano['nome']}\">{$ano['nome']}</option> ");
+                      }
+                  ?>
                 </select>
               </div>
               <div class="input-group">
@@ -318,8 +326,11 @@ var noback = {
               <div class="input-group">
                 <label for="">Carroceria</label>
                 <select name="carroceria" id="" class="input-dados">
-                  <option value="Sedan">Sedan</option>
-                  <option value="SUV">SUV</option>
+                <?php
+                      foreach($carrocerias as $carroceria){
+                        echo(" <option value=\"{$carroceria['nome']}\">{$carroceria['nome']}</option> ");
+                      }
+                  ?>
                 </select>
               </div>
               <div class="input-group">
@@ -335,15 +346,21 @@ var noback = {
               <div class="input-group">
                 <label for="">Combustível</label>
                 <select name="combustivel" id="" class="input-dados">
-                  <option value="Gasolina">Gasolina</option>
-                  <option value="Eletrico">Eletrico</option>
+                <?php
+                      foreach($combustiveis as $combustivel){
+                        echo(" <option value=\"{$combustivel['nome']}\">{$combustivel['nome']}</option> ");
+                      }
+                  ?>
                 </select>
               </div>
               <div class="input-group">
                 <label for="">Câmbio</label>
                 <select name="cambio" id="" class="input-dados">
-                  <option value="Automático">Automático</option>
-                  <option value="Manual">Manual</option>
+                <?php
+                      foreach($cambios as $cambio){
+                        echo(" <option value=\"{$cambio['nome']}\">{$cambio['nome']}</option> ");
+                      }
+                  ?>
                 </select>
               </div>
             </div>
