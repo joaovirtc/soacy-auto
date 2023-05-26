@@ -9,6 +9,12 @@ $idCarro = $_GET['id'];
 $raiz = $_SERVER['DOCUMENT_ROOT'] . "/sistemadecarro/";
 
 // query's
+$marcas = $conn->query("select * from marcas;");
+$cambios = $conn->query("select * from cambios;");
+$combustiveis = $conn->query("select * from combustiveis;");
+$carrocerias = $conn->query("select * from carrocerias;");
+$hoje = date('Y');
+$anos = $conn->query("SELECT * FROM `anos` where nome <= {$hoje} ORDER BY `nome` DESC;");
 
 $veiculo = $conn->query("SELECT * from carro where id_carro = $idCarro;");
 $dt_car = mysqli_fetch_array($veiculo);
@@ -257,10 +263,16 @@ var noback = {
               <div class="input-group">
                 <label for="">Marca</label>
                 <select name="marca" id="" class="input-dados">
-                  <option <?php echo ($dt_car['marca'] == "Volkswagem") ? "selected" : '' ?> value="Volkswagem">Volkswagem</option>
-                  <option <?php echo ($dt_car['marca'] == "Fiat") ? "selected" : '' ?> value="Fiat">Fiat</option>
-                  <option <?php echo ($dt_car['marca'] == "Toytota") ? "selected" : '' ?> value="Toytota">Toytota</option>
-                  <option <?php echo ($dt_car['marca'] == "Renault") ? "selected" : '' ?> value="Renault">Renault</option>
+                  <?php
+                      foreach($marcas as $marca){
+                        if($dt_car['marca'] === $marca['nome']){
+                          echo("<option selected value=\"{$marca['nome']}\">{$marca['nome']}</option>");
+                        }else{
+                          echo("<option value=\"{$marca['nome']}\">{$marca['nome']}</option>");
+                        }
+                        
+                      }
+                  ?>
                 </select>
               </div>
               <div class="input-group">
@@ -279,10 +291,16 @@ var noback = {
               <div class="input-group">
                 <label for="">Ano do Veículo</label>
                 <select name="ano" id="" class="input-dados">
-                  <option <?php echo ($dt_car['ano'] == "2023") ? "selected" : '' ?> value="2023">2023</option>
-                  <option <?php echo ($dt_car['ano'] == "2022") ? "selected" : '' ?> value="2022">2022</option>
-                  <option <?php echo ($dt_car['ano'] == "2021") ? "selected" : '' ?> value="2021">2021</option>
-                  <option <?php echo ($dt_car['ano'] == "2020") ? "selected" : '' ?> value="2020">2020</option>
+                <?php
+                      foreach($anos as $ano){
+                        if($dt_car['ano'] === $ano['nome']){
+                          echo("<option selected value=\"{$ano['nome']}\">{$ano['nome']}</option>");
+                        }else{
+                          echo("<option value=\"{$ano['nome']}\">{$ano['nome']}</option>");
+                        }
+                        
+                      }
+                  ?>
                 </select>
               </div>
               <div class="input-group">
@@ -315,8 +333,16 @@ var noback = {
               <div class="input-group">
                 <label for="">Carroceria</label>
                 <select name="carroceria" id="" class="input-dados">
-                  <option <?php echo ($dt_car['carroceria'] == "Sedan") ? "selected" : '' ?> value="Sedan">Sedan</option>
-                  <option <?php echo ($dt_car['carroceria'] == "SUV") ? "selected" : '' ?> value="SUV">SUV</option>
+                <?php
+                      foreach($carrocerias as $carroceria){
+                        if($dt_car['carroceria'] === $carroceria['nome']){
+                          echo("<option selected value=\"{$carroceria['nome']}\">{$carroceria['nome']}</option>");
+                        }else{
+                          echo("<option value=\"{$carroceria['nome']}\">{$carroceria['nome']}</option>");
+                        }
+                        
+                      }
+                  ?>
                 </select>
               </div>
               <div class="input-group">
@@ -326,15 +352,32 @@ var noback = {
               <div class="input-group">
                 <label for="">Combustível</label>
                 <select name="combustivel" id="" class="input-dados">
-                  <option <?php echo ($dt_car['combustivel'] == "Gasolina") ? "selected" : '' ?> value="Gasolina">Gasolina</option>
-                  <option <?php echo ($dt_car['combustivel'] == "Eletrico") ? "selected" : '' ?> value="Eletrico">Eletrico</option>
+                <?php
+                      foreach($combustiveis as $combustivel){
+                        if($dt_car['combustivel'] === $combustivel['nome']){
+                          echo("<option selected value=\"{$combustivel['nome']}\">{$combustivel['nome']}</option>");
+                        }else{
+                          echo("<option value=\"{$combustivel['nome']}\">{$combustivel['nome']}</option>");
+                        }
+                        
+                      }
+                  ?>
                 </select>
               </div>
               <div class="input-group">
                 <label for="">Câmbio</label>
                 <select name="cambio" id="" class="input-dados">
-                  <option <?php echo ($dt_car['cambio'] == "Automático") ? "selected" : '' ?> value="Automático">Automático</option>
-                  <option <?php echo ($dt_car['cambio'] == "Manual") ? "selected" : '' ?> value="Manual">Manual</option>
+                <?php
+                      foreach($cambios as $cambio){
+                        if($dt_car['cambio'] === $cambio['nome']){
+                          echo("<option selected value=\"{$cambio['nome']}\">{$cambio['nome']}</option>");
+                        }else{
+                          echo("<option value=\"{$cambio['nome']}\">{$cambio['nome']}</option>");
+                        }
+                        
+                      }
+
+                  ?>
                 </select>
               </div>
             </div>
