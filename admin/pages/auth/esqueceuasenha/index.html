@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redefinir Senha</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="content">
+        <div class="header-singin">
+          <img src="../../../assets/img/logo-Icon-Preto 1.png" alt="" />
+          <h1 class="title">Redefinir senha</h1>
+          <p class="subtitle">Preencha com sua nova senha para prosseguir</p>
+        </div>
+        <form
+          action="../../assets/php/login.php"
+          method="POST"
+          class="form"
+          id="formLogin"
+        >
+          <div class="input-group">
+            <label for="senha">Digite sua nova senha</label>
+            <input
+              type="password"
+              placeholder="Digite sua senha"
+              class="requiredInput"
+              name="senha"
+            />
+          </div>
+          <div class="input-group">
+            <label for="senha">Confirme sua nova senha</label>
+            <input
+              type="password"
+              placeholder="Confirme sua senha"
+              class="requiredInput"
+              name="senha"
+            />
+          </div>
+
+          <div class="input-group">
+            <input type="submit" class="input-submit" value="Confirmar" />
+          </div>
+        </form>
+      </div>
+      <script src="../../assets/js/app.js"></script>
+    </main>
+  </body>
+</html>

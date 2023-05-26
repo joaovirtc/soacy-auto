@@ -99,7 +99,7 @@ body {
   color: var(--text-color-opacity);
 }
 
-.form-login {
+.form {
   width: 90%;
   margin-top: 32px;
   display: flex;
