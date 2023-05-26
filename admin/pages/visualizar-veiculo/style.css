@@ -21,8 +21,8 @@ body {
   --primary-color: #0066cc;
   --background-color: #f5f5f7;
   --container-color: #fff;
-  --border: 1px solid #ccc;
-  --text-color-opacity: rgba(0, 0, 0, 0.6);
+  --border: 1px solid #dddddc;
+  --text-color-opacity: rgba(55, 53, 47, 0.65);
   --color-background-status-on: #d1eccc;
   --color-text-status-on: #56d641;
   --color-background-status-off: #e8c6c6;
@@ -34,7 +34,7 @@ body {
   /* SIZE FONTS */
   --font-size-big: 22px;
   --font-size-medium: 16px;
-  --font-size-small: 15px;
+  --font-size-small: 14px;
 }
 /* ::-webkit-scrollbar {
   width: 5px;

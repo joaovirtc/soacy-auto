@@ -170,7 +170,7 @@ if(!isset($_SESSION["userID"])){
                             </div>
                           </div>
                           <div class=\"action-leads\">
-                          <a class=\"msg-whatsapp\" data-tooltip=\"Enviar mesangem via Whatsapp\" target=\"_blank\" href=\"https://api.whatsapp.com/send?phone={$leads['telefone']}&text=Olá {$leads['nome']}.\">
+                          <a class=\"link\" data-tooltip=\"Enviar mesangem via Whatsapp\" target=\"_blank\" href=\"https://api.whatsapp.com/send?phone={$leads['telefone']}&text=Olá {$leads['nome']}.\">
                               <img
                                 src=\"../../assets/img/WhatsApp logo.png\"
                                 alt=\"\"
@@ -179,8 +179,9 @@ if(!isset($_SESSION["userID"])){
                               />
                               <span class=\"tooltiptext\">Enviar mensagem</span>
                             </a>
-                            <a href=\"../../assets/php/vistoLead.php?id={$leads['id']}\">
+                            <a class=\"link\" href=\"../../assets/php/vistoLead.php?id={$leads['id']}\">
                               <i class=\"ri-check-double-line icon-marcar-como-visto\"></i>
+                              <span class=\"tooltiptext\">Marcar como visto</span>
                             </a>
                           </div>
                         </div>
@@ -210,17 +211,20 @@ if(!isset($_SESSION["userID"])){
                           </div>
                         </div>
                         <div class=\"action-leads\">
-                          <a target=\"_blank\" href=\"https://api.whatsapp.com/send?phone={$leads['telefone']}&text=Olá {$leads['nome']}.\">
+                          <a class=\"link\" target=\"_blank\" href=\"https://api.whatsapp.com/send?phone={$leads['telefone']}&text=Olá {$leads['nome']}.\">
                             <img
                               src=\"../../assets/img/WhatsApp logo.png\"
                               alt=\"\"
                               width=\"30px\"
                               height=\"30px\"
                             />
+                            <span class=\"tooltiptext\">Enviar mensagem</span>
                           </a>
+
                           
-                          <button class=\"button-marcar-como-visto\" disabled>
+                          <button class=\"button-marcar-como-visto link\" >
                             <i class=\"ri-check-double-line icon-visto\"></i>
+                            <span class=\"tooltiptext\">Marcado como visto</span>
                           </button>
                           
                         </div>
