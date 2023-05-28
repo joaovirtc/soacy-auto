@@ -1,6 +1,7 @@
 <?php
 // carregando dependencias
-include_once('../../assets/conn.php'); // puxando arquivo de conexao com o banco de dados
+$raiz = $_SERVER['DOCUMENT_ROOT'];
+include_once($raiz.'/SistemaDeCarro/src/assets/php/conn.php'); // puxando arquivo de conexao com o banco de dados
 session_start(); // carregando sessoes
 
 // definindo variaveis
@@ -24,7 +25,7 @@ $sobre = $_POST['sobre'];
 $portas = $_POST["portas"];
 $hoje = date('Y,m,d');
 $raiz = $_SERVER['DOCUMENT_ROOT'];
-$pasta = $raiz . "/sistemadecarro/imagens/";
+$pasta = $raiz . "/sistemadecarro/src/assets/img/imagens_veiculos/";
 // query's no banco de dados
 
 
@@ -61,6 +62,6 @@ try {
         }
     }
     $_SESSION['msgSucess'] = "Veículo adicionado";
-    header('location: http://localhost/sistemadecarro/admin/pages/estoque/');
+    header('location: http://localhost/sistemadecarro/src/dashborad/pages/estoque/');
 
 ?>

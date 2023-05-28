@@ -1,6 +1,7 @@
 <?php
 // carregando dependencias
-include_once('../../assets/conn.php');
+$raiz = $_SERVER['DOCUMENT_ROOT'];
+include_once($raiz.'/SistemaDeCarro/src/assets/php/conn.php');
 session_start();
 
 
@@ -146,7 +147,7 @@ var noback = {
               <div>
                <p class="title-small-sidebar">Menu Principal</p>
               </div>
-              <a href="../../index.php" class="nav-link">
+              <a href="http://localhost/sistemadecarro/" class="nav-link">
                 <i class="ri-function-line icon-nav-link"></i>
                 <p class="title-nav-link">Dashboard</p>
               </a>

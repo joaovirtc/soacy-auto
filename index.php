@@ -1,6 +1,6 @@
 <?php
 // carregando dependencias
-include_once('./assets/conn.php');
+include_once('src/assets/php/conn.php');
 session_start();
 
 // query's no banco de dados
@@ -47,7 +47,7 @@ $vendas_mes = number_format($vendas_mes, 2,',', '.');
 // codigo
 
 if(!isset($_SESSION["userID"])){
-  header('location: http://localhost/sistemadecarro/admin/pages/singin');
+  header('location: http://localhost/sistemadecarro/admin/auth/singin');
 }
 
 ?>
@@ -67,7 +67,7 @@ if(!isset($_SESSION["userID"])){
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
  
@@ -82,19 +82,19 @@ if(!isset($_SESSION["userID"])){
               <div>
                 <p class="title-small-sidebar">Menu Principal</p>
               </div>
-              <a href="index.php" class="nav-link active">
+              <a href="" class="nav-link active">
                 <i class="ri-function-line icon-nav-link"></i>
                 <p class="title-nav-link">Dashboard</p>
               </a>
-              <a href="./pages/estoque/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/estoque/" class="nav-link">
                 <i class="ri-car-line icon-nav-link"></i>
                 <p class="title-nav-link">Estoque</p>
               </a>
-              <a href="./pages/financeiro/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/financeiro/" class="nav-link">
                 <i class="ri-money-dollar-circle-line icon-nav-link"></i>
                 <p class="title-nav-link">Vendas</p>
               </a>
-              <a href="./pages/gerenciar-leads/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/gerenciar-leads/" class="nav-link">
                 <i class="ri-team-line icon-nav-link"></i>
                 <p class="title-nav-link">Gerenciamento de Leads</p>
               </a>
@@ -116,7 +116,7 @@ if(!isset($_SESSION["userID"])){
               
               
             </div>
-            <a href="./pages/adicionar-novo-veiculo/">
+            <a href="src/dashboard/pages/adicionar-novo-veiculo">
               <button class="botao-primario">
                 <i class="ri-add-line icon-botao"></i>
                 Adicionar Veículo
