@@ -10,3 +10,5 @@ $id = $_GET['id'];
 $conn->query("UPDATE `leads` SET `visto` = 1 WHERE `leads`.`id` = $id;");
 $_SESSION['msgSucess'] = "Marcado como visto";
 header('Location: http://localhost/sistemadecarro/admin/pages/gerenciar-leads/'); // mandando o usuario para o painel de controle
+
+?>
