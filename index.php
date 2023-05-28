@@ -47,7 +47,7 @@ $vendas_mes = number_format($vendas_mes, 2,',', '.');
 // codigo
 
 if(!isset($_SESSION["userID"])){
-  header('location: http://localhost/sistemadecarro/admin/auth/singin');
+  header('location: http://localhost/sistemadecarro/src/dashboard/auth/singin/');
 }
 
 ?>
