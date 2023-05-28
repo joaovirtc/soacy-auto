@@ -44,7 +44,6 @@ $vendas_mes = 0;
 $vendas_mes = number_format($vendas_mes, 2,',', '.');
 
 
-
 // codigo
 
 if(!isset($_SESSION["userID"])){
@@ -71,6 +70,7 @@ if(!isset($_SESSION["userID"])){
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+ 
     <main class="layout">
       <aside class="sidebar">
         <div class="content-sidebar">

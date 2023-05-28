@@ -42,6 +42,7 @@ if(!isset($_SESSION["userID"])){
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+
     <main class="layout">
     <?php 
         if(isset($_SESSION['msgSucess'])){
@@ -170,7 +171,7 @@ if(!isset($_SESSION["userID"])){
                             </div>
                           </div>
                           <div class=\"action-leads\">
-                          <a class=\"link\" data-tooltip=\"Enviar mesangem via Whatsapp\" target=\"_blank\" href=\"../../assets/php/leadVisto.php?telefone={$leads['telefone']}&nome={$leads['nome']}\">
+                          <a id=\"link-whats-ver\" class=\"link\" data-tooltip=\"Enviar mesangem via Whatsapp\" target=\"_blank\" href=\"../../assets/php/leadVisto.php?telefone={$leads['telefone']}&nome={$leads['nome']}&id={$leads['id']}\">
                               <img
                                 src=\"../../assets/img/WhatsApp logo.png\"
                                 alt=\"\"
@@ -242,5 +243,19 @@ if(!isset($_SESSION["userID"])){
         </div>
       </section>
     </main>
+    <script>
+
+var el =document.getElementById("link-whats-ver");
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+  el.addEventListener("click", function() {
+    sleep(500).then(() => {
+   location.reload();
+});
+    
+});
+
+</script>
   </body>
 </html>
