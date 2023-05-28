@@ -269,3 +269,14 @@ input:focus {
     transform: translateY(0);
   }
 }
+
+.aviso{
+  font-size: 12px;
+  color: #f30d0d;
+}
+.visivel{
+  display: block;
+}
+.invisivel{
+  display: none;
+}

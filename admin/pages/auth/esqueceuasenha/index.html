@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    
     <main class="container">
       <div class="content">
         <div class="header-singin">
@@ -24,7 +25,7 @@
           <p class="subtitle">Preencha com sua nova senha para prosseguir</p>
         </div>
         <form
-          action="../../assets/php/login.php"
+          action="../../../assets/php/redefinirSenha.php"
           method="POST"
           class="form"
           id="formLogin"
@@ -32,28 +33,47 @@
           <div class="input-group">
             <label for="senha">Digite sua nova senha</label>
             <input
+            id="senha" 
               type="password"
               placeholder="Digite sua senha"
               class="requiredInput"
               name="senha"
+              required
             />
           </div>
           <div class="input-group">
             <label for="senha">Confirme sua nova senha</label>
             <input
+            id="confirmarSenha"
               type="password"
               placeholder="Confirme sua senha"
               class="requiredInput"
-              name="senha"
+              name="ConfirmarSenha"
+              required
             />
           </div>
-
+          <p id="p" class="aviso invisivel">Senhas não coincidem. Verifique e garanta que sejam idênticas antes de prosseguir.</p>
           <div class="input-group">
-            <input type="submit" class="input-submit" value="Confirmar" />
+            <input type="submit" class="input-submit" onclick="return validarSenha()" value="Confirmar" />
           </div>
         </form>
       </div>
       <script src="../../assets/js/app.js"></script>
+      <script>
+let senha = document.getElementById('senha');
+let senhaC = document.getElementById('confirmarSenha');
+      function validarSenha() {
+        if (senha.value != senhaC.value) {
+          senhaC.setCustomValidity("Senhas não coincidem. Verifique e garanta que sejam idênticas antes de prosseguir.");
+          senhaC.reportValidity();
+          return false;
+        } else {
+          senhaC.setCustomValidity("");
+          return true;
+        }
+      }
+      senhaC.addEventListener('input', validarSenha);
+        </script>
     </main>
   </body>
 </html>
