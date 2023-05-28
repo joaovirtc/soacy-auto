@@ -37,6 +37,10 @@ body {
   --font-size-small: 14px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .botao {
   display: flex;
   flex-direction: row;
