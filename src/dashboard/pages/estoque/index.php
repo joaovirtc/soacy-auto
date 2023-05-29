@@ -164,7 +164,7 @@ var noback = {
                 <p class="title-nav-link">Gerenciamento de Leads</p>
               </a>
             </div>
-            <a href="../../assets/php/logout.php" class="nav-link"
+            <a href="http://localhost/sistemadecarro/src/assets/php/logout.php" class="nav-link"
               ><!-- esse link leva ao processo de logout com php -->
 
               <i class="ri-logout-circle-line icon-nav-link"></i>
