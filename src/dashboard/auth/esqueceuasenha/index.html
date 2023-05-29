@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    
     <main class="container">
       <div class="content">
         <div class="header-singin">
@@ -29,11 +28,13 @@
           method="POST"
           class="form"
           id="formLogin"
+          onsubmit="verificarSenha()"
         >
           <div class="input-group">
             <label for="senha">Digite sua nova senha</label>
+
             <input
-            id="senha" 
+              id="senha"
               type="password"
               placeholder="Digite sua senha"
               class="requiredInput"
@@ -41,39 +42,39 @@
               required
             />
           </div>
+
           <div class="input-group">
             <label for="senha">Confirme sua nova senha</label>
             <input
-            id="confirmarSenha"
+              id="confirmarSenha"
               type="password"
               placeholder="Confirme sua senha"
               class="requiredInput"
               name="ConfirmarSenha"
               required
             />
+
+            <span class="aviso" id="aviso"
+              >Senhas não coincidem. Verifique e garanta que sejam idênticas
+              antes de prosseguir</span
+            >
+            <script src="./validação.js"></script>
           </div>
-          <p id="p" class="aviso invisivel">Senhas não coincidem. Verifique e garanta que sejam idênticas antes de prosseguir.</p>
+          <div class="checkbox-div">
+            <input type="checkbox" onclick="show()" class="checkbox" />
+            <label>Mostrar senhas</label>
+          </div>
           <div class="input-group">
-            <input type="submit" class="input-submit" onclick="return validarSenha()" value="Confirmar" />
+            <input
+              type="submit"
+              class="input-submit"
+              onclick="return validarSenha()"
+              value="Confirmar"
+            />
           </div>
         </form>
       </div>
       <script src="../../assets/js/app.js"></script>
-      <script>
-let senha = document.getElementById('senha');
-let senhaC = document.getElementById('confirmarSenha');
-      function validarSenha() {
-        if (senha.value != senhaC.value) {
-          senhaC.setCustomValidity("Senhas não coincidem. Verifique e garanta que sejam idênticas antes de prosseguir.");
-          senhaC.reportValidity();
-          return false;
-        } else {
-          senhaC.setCustomValidity("");
-          return true;
-        }
-      }
-      senhaC.addEventListener('input', validarSenha);
-        </script>
     </main>
   </body>
 </html>
