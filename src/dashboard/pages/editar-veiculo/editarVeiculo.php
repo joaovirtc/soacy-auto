@@ -1,6 +1,6 @@
 <?php
 // carregando dependencias
-include_once('../../assets/conn.php'); // puxando arquivo de conexao com o banco de dados
+include_once($_SERVER['DOCUMENT_ROOT'].'/sistemadecarro/src/assets/php/conn.php'); // puxando arquivo de conexao com o banco de dados
 session_start(); // carregando sessoes
 
 // definindo variaveis
@@ -25,7 +25,7 @@ $portas = $_POST["portas"];
 $sobre = $_POST["sobre"];
 $hoje = date('Y,m,d');
 $raiz = $_SERVER['DOCUMENT_ROOT'];
-$pasta = $raiz . "/sistemadecarro/imagens/";
+$pasta = $raiz . "/sistemadecarro/src/assets/img/imagens_veiculos/";
 // query's no banco de dados
 
 if(isset($_FILES['arquivo'])){
@@ -48,6 +48,6 @@ if(isset($_FILES['arquivo'])){
     `portas`='$portas',`carroceria`='$carroceria',`status`='$status', `sobre`='$sobre' WHERE `carro`.`id_carro` = $id;");
 
 $_SESSION['msgSucess'] = "Dados editados com sucesso";
-    header("location: http://localhost/sistemadecarro/admin/pages/visualizar-veiculo/?id={$id}")
+    header("location: http://localhost/sistemadecarro/src/dashboard/pages/visualizar-veiculo/?id={$id}")
 
 ?>

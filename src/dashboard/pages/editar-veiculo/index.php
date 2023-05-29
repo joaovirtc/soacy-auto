@@ -187,20 +187,20 @@ var noback = {
                 <i class="ri-function-line icon-nav-link"></i>
                 <p class="title-nav-link">Dashboard</p>
               </a>
-              <a href="../estoque/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/estoque/" class="nav-link">
                 <i class="ri-car-line icon-nav-link"></i>
                 <p class="title-nav-link">Estoque</p>
               </a>
-              <a href="../financeiro/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/financeiro/" class="nav-link">
                 <i class="ri-money-dollar-circle-line icon-nav-link"></i>
                 <p class="title-nav-link">Vendas</p>
               </a>
-              <a href="../gerenciar-leads/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/gerenciar-leads/" class="nav-link">
                 <i class="ri-team-line icon-nav-link"></i>
                 <p class="title-nav-link">Gerenciamento de Leads</p>
               </a>
             </div>
-            <a href="../../assets/php/logout.php" class="nav-link"
+            <a href="http://localhost/sistemadecarro/src/assets/php/logout.php" class="nav-link"
               ><!-- esse link leva ao processo de logout com php -->
 
               <i class="ri-logout-circle-line icon-nav-link"></i>
@@ -212,7 +212,7 @@ var noback = {
       </aside>
 
       <section class="container-body">
-        <form action="../../assets/php/editarVeiculo.php?id=<?php echo($idCarro) ?>" method="post" class="content-body" enctype="multipart/form-data">
+        <form action="./editarVeiculo.php?id=<?php echo($idCarro) ?>" method="post" class="content-body" enctype="multipart/form-data">
           <header class="header-body">
             <div class="content-info-veiculo">
               <p class="title">ID: <?php echo($dt_car['id_carro']) ?></p>
@@ -238,10 +238,10 @@ var noback = {
                 foreach($fotos as $foto){
                   echo("
                   <div class=\"div\">
-                   <a href=\"../../assets/php/apagarImg.php?id={$foto['id_foto']}\" class=\"btn-deletar-foto\">
+                   <a href=\"./apagarImg.php?id={$foto['id_foto']}\" class=\"btn-deletar-foto\">
                       <i class=\"ri-delete-bin-line\"></i>
                    </a>
-                   <img src=\"../../../imagens/{$foto["path"]}\" alt=\"veiculo {$dt_car["marca"]}\" />
+                   <img src=\"/sistemadecarro/src/assets/img/imagens_veiculos/{$foto["path"]}\" alt=\"veiculo {$dt_car["marca"]}\" />
                  </div>
                   ");
                 }
