@@ -1,12 +1,13 @@
 <?php
+
 // carregando dependencias
-include_once('../../assets/conn.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sistemadecarro/src/assets/php/conn.php');
 session_start();
 
 // codigo
 
 if(isset($_SESSION["userID"])){
-  header('location: http://localhost/sistemadecarro/admin/');
+  header('location: http://localhost/sistemadecarro/');
 }
 
 ?>
@@ -36,7 +37,7 @@ if(isset($_SESSION["userID"])){
          <h1 class="title">Entrar em SoacyCars</h1>
          <p class="subtitle">Preencha com seus dados para prosseguir</p>
         </div>
-        <form action="../../assets/php/login.php" method="POST" class="form-login" id="formLogin">
+        <form action="./login.php" method="POST" class="form-login" id="formLogin">
           <div class="input-group">
             <label for="user">Usuário</label>
             <input

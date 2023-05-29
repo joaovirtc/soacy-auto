@@ -1,8 +1,7 @@
 <?php 
 
 // carregando dependencias
-$raiz = $_SERVER['DOCUMENT_ROOT'];
-include_once($raiz.'/SistemaDeCarro/src/assets/php/conn.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sistemadecarro/src/assets/php/conn.php');
 session_start();
 
 // variaveis
@@ -130,20 +129,20 @@ var noback = {
                 <i class="ri-function-line icon-nav-link"></i>
                 <p class="title-nav-link">Dashboard</p>
               </a>
-              <a href="../estoque/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/estoque/" class="nav-link">
                 <i class="ri-car-line icon-nav-link"></i>
                 <p class="title-nav-link">Estoque</p>
               </a>
-              <a href="../financeiro/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/financeiro/" class="nav-link">
                 <i class="ri-money-dollar-circle-line icon-nav-link"></i>
                 <p class="title-nav-link">Vendas</p>
               </a>
-              <a href="../gerenciar-leads/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/gerenciar-leads/" class="nav-link">
                 <i class="ri-team-line icon-nav-link"></i>
                 <p class="title-nav-link">Gerenciamento de Leads</p>
               </a>
             </div>
-            <a href="../../assets/php/logout.php" class="nav-link"
+            <a href="http://localhost/sistemadecarro/src/assets/php/logout.php" class="nav-link"
               ><!-- esse link leva ao processo de logout com php -->
 
               <i class="ri-logout-circle-line icon-nav-link"></i>
@@ -169,7 +168,7 @@ var noback = {
             <button class="btn-action-aviso" onclick="closePopup()">
               Cancelar
             </button>
-            <a href="../../assets/php/excluirVeiculo.php?id=<?php echo($idCarro) ?> " class="btn-action-aviso btn-delete">Excluir</a>
+            <a href="./excluirVeiculo.php?id=<?php echo($idCarro) ?> " class="btn-action-aviso btn-delete">Excluir</a>
             
           </div>
         </div>
@@ -185,11 +184,11 @@ var noback = {
               <span class="<?php echo($dt_car['status']) ?>"><?php echo($dt_car['status']) ?></span>
             </div>
             <div class="content-actions">
-              <a href="http://localhost/sistemadecarro/admin/pages/editar-veiculo/?id=<?php echo($dt_car['id_carro']) ?>" class="botao-primario">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/editar-veiculo/?id=<?php echo($dt_car['id_carro']) ?>" class="botao-primario">
                 <i class="ri-pencil-line"></i>
                 Editar Veículo
               </a>
-              <a href="../../assets/php/vendaVeiculo.php?id=<?php echo($idCarro) ?> " class="action-btn" data-tooltip="Marcar como vendido">
+              <a href="./vendaVeiculo.php?id=<?php echo($idCarro) ?> " class="action-btn" data-tooltip="Marcar como vendido">
                 <i class="ri-money-dollar-circle-line icon-action-sale"></i>
                 
               </a>
@@ -211,7 +210,7 @@ var noback = {
             <div class="fotos-veiculo">
               <?php
                 foreach($fotos as $foto){
-                  echo("<img src=\"../../../imagens/{$foto['path']}\" alt=\"\" />");
+                  echo("<img src=\"/sistemadecarro/src/assets/img/imagens_veiculos/{$foto['path']}\" alt=\"\" />");
                 }
               ?>
               

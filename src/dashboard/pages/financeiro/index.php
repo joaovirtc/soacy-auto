@@ -1,7 +1,7 @@
 <?php
 // carregando dependencias
-$raiz = $_SERVER['DOCUMENT_ROOT'];
-include_once($raiz.'/SistemaDeCarro/src/assets/php/conn.php');
+
+include_once($_SERVER['DOCUMENT_ROOT'].'/sistemadecarro/src/assets/php/conn.php');
 session_start();
 
 // query´s
@@ -25,7 +25,7 @@ $qtd_vendas = mysqli_fetch_array($conn->query(" SELECT count(1) from vendidos; "
 // codigo
 
 if(!isset($_SESSION["userID"])){
-  header('location: http://localhost/sistemadecarro/admin/pages/singin');
+  header('location: http://localhost/sistemadecarro/src/dashbord/auth/singin/');
 }
 
 ?>
@@ -144,23 +144,23 @@ var noback = {
                 <i class="ri-function-line icon-nav-link"></i>
                 <p class="title-nav-link">Dashboard</p>
               </a>
-              <a href="../../pages/estoque/index.php" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/estoque/" class="nav-link">
                 <i class="ri-car-line icon-nav-link"></i>
                 <p class="title-nav-link">Estoque</p>
               </a>
               <a
-                href="../../pages/financeiro/"
+                href="http://localhost/sistemadecarro/src/dashboard/pages/financeiro/"
                 class="nav-link active"
               >
                 <i class="ri-money-dollar-circle-line icon-nav-link"></i>
                 <p class="title-nav-link">Vendas</p>
               </a>
-              <a href="../../pages/gerenciar-leads/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/gerenciar-leads/" class="nav-link">
                 <i class="ri-team-line icon-nav-link"></i>
                 <p class="title-nav-link">Gerenciamento de Leads</p>
               </a>
             </div>
-            <a href="../../assets/php/logout.php" class="nav-link"
+            <a href="http://localhost/sistemadecarro/src/assets/php/logout.php" class="nav-link"
               ><!-- esse link leva ao processo de logout com php -->
 
               <i class="ri-logout-circle-line icon-nav-link"></i>

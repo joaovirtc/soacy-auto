@@ -1,6 +1,6 @@
 <?php
 // carregando dependencias
-include_once('src/assets/php/conn.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sistemadecarro/src/assets/php/conn.php');
 session_start();
 
 // query's no banco de dados
@@ -47,7 +47,7 @@ $vendas_mes = number_format($vendas_mes, 2,',', '.');
 // codigo
 
 if(!isset($_SESSION["userID"])){
-  header('location: http://localhost/sistemadecarro/admin/auth/singin');
+  header('location: http://localhost/sistemadecarro/src/dashboard/auth/singin/');
 }
 
 ?>
@@ -116,7 +116,7 @@ if(!isset($_SESSION["userID"])){
               
               
             </div>
-            <a href="src/dashboard/pages/adicionar-novo-veiculo">
+            <a href="http://localhost/sistemadecarro/src/dashboard/pages/adicionar-novo-veiculo/">
               <button class="botao-primario">
                 <i class="ri-add-line icon-botao"></i>
                 Adicionar Veículo
@@ -233,7 +233,7 @@ if(!isset($_SESSION["userID"])){
                         <span class=\"status-{$registro["status"]}\">{$registro["status"]}</span>
                       </td>
                       <td class=\"descricao-tabela ações\">
-                        <a class=\"edit\" href=\"./pages/visualizar-veiculo?id={$registro["id_carro"]}\">
+                        <a class=\"edit\" href=\"http://localhost/sistemadecarro/src/dashboard/pages/visualizar-veiculo?id={$registro["id_carro"]}\">
                           <i class=\"ri-eye-line\"></i>
                           </a>
                       </td>
