@@ -33,7 +33,7 @@ $fotos = $conn->query("SELECT * from foto where id_carro = $idCarro");
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <script>
+  <script>
       (function(window) { 
   'use strict'; 
  
@@ -50,7 +50,7 @@ var noback = {
 	 
 	hasChanged:function(){ 
 		if (window.location.hash == '#no-back' ){ 
-			window.location.hash = '#BLOQUEIO';
+			window.location.hash = '#jxTfmvt2cO2HCOzOOXodzPhGQ5o1Ngxdkf55X6e7d30';
 			//mostra mensagem que não pode usar o btn volta do browser
 			if($( "#msgAviso" ).css('display') =='none'){
 				$( "#msgAviso" ).slideToggle("slow");
@@ -71,9 +71,9 @@ var noback = {
 	configure: function(){ 
 		if ( window.location.hash == '#no-back' ) { 
 			if ( this.history_api ){ 
-				history.pushState(null, '', '#BLOQUEIO'); 
+				history.pushState(null, '', '#jxTfmvt2cO2HCOzOOXodzPhGQ5o1Ngxdkf55X6e7d30'); 
 			}else{  
-				window.location.hash = '#BLOQUEIO';
+				window.location.hash = '#jxTfmvt2cO2HCOzOOXodzPhGQ5o1Ngxdkf55X6e7d30';
 				//mostra mensagem que não pode usar o btn volta do browser
 				if($( "#msgAviso" ).css('display') =='none'){
 					$( "#msgAviso" ).slideToggle("slow");
