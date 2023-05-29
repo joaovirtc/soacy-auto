@@ -66,16 +66,24 @@ if(isset($_SESSION["userID"])){
             ?>
           </div>
           <div class="input-group">
-            <a onclick="showMensageForgetPassword()" class="link"
+            <a onclick="showMensageForgetPassword()" href="http://localhost/sistemadecarro/src/dashboard/auth/singin/email.php" class="link"
               >Esqueci minha senha</a
             >
             
             <div>
-              <p id="mensagem">
-                Por questões de segurança, enviamos um email para
-                <span class="link mensagem">***@gmail.com</span><br />
-                leia e siga todas instruções solicitadas.
-              </p>
+            <?php 
+        if(isset($_SESSION['msgSucess'])){
+          echo("
+          <p id=\"mensagem\" style=\"display: block\">
+          Por questões de segurança, enviamos um email para
+          <span class=\"link mensagem\">***@gmail.com</span><br />
+          leia e siga todas instruções solicitadas.
+        </p>
+          ");
+          unset($_SESSION['msgSucess']);
+        }
+      ?>
+              
             </div>
           </div>
           <div class="input-group">
