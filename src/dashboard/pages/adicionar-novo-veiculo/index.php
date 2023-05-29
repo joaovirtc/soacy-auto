@@ -171,20 +171,20 @@ var noback = {
                 <i class="ri-function-line icon-nav-link"></i>
                 <p class="title-nav-link">Dashboard</p>
               </a>
-              <a href="../estoque/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/estoque/" class="nav-link">
                 <i class="ri-car-line icon-nav-link"></i>
                 <p class="title-nav-link">Estoque</p>
               </a>
-              <a href="../financeiro/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/financeiro/" class="nav-link">
                 <i class="ri-money-dollar-circle-line icon-nav-link"></i>
                 <p class="title-nav-link">Vendas</p>
               </a>
-              <a href="../gerenciar-leads/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/gerenciar-leads/" class="nav-link">
                 <i class="ri-team-line icon-nav-link"></i>
                 <p class="title-nav-link">Gerenciamento de Leads</p>
               </a>
             </div>
-            <a href="../../assets/php/logout.php" class="nav-link"
+            <a href="http://localhost/sistemadecarro/src/php/logout.php" class="nav-link"
               ><!-- esse link leva ao processo de logout com php -->
 
               <i class="ri-logout-circle-line icon-nav-link"></i>
@@ -198,7 +198,7 @@ var noback = {
       <section class="container-body">
         <form
           class="content-body"
-          action="<?php echo($raiz. '/SistemaDeCarro/src/assets/php/conn.php')?>"
+          action="./adicionarVeiculo.php"
           method="post"
           enctype="multipart/form-data"
         >
