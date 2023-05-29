@@ -6,6 +6,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sistemadecarro/src/assets/php/conn.php'
 $user = $_POST['user'];
 $senha = md5($_POST['senha']);
 
+
 // query's no banco de dados
 try {
     //usamos o arroba para ocultar o possível erro retornado pelo PHP
