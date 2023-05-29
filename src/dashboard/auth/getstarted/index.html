@@ -47,7 +47,7 @@
             </p>
           </header>
           <form
-            action=""
+            action="./getstarted.php"
             class="formulário-get-started"
             onsubmit="verificarSenha()"
             id="form"
@@ -58,6 +58,7 @@
                 type="text"
                 class="requiredInput"
                 oninput="nameValidate()"
+                name="user"
               />
               <span class="span-required"> Informe um nome de usuário </span>
               <p class="aviso-usuário">
@@ -69,7 +70,7 @@
             </div>
             <div class="input-group">
               <label for="">Digite sua senha</label>
-              <input type="password" class="requiredInput" id="senha" />
+              <input type="password" class="requiredInput" id="senha"  name="senha"/>
             </div>
             <div class="input-group">
               <label for="">Confirme sua senha</label>
@@ -77,6 +78,7 @@
                 type="password"
                 class="requiredInput"
                 id="confirmarSenha"
+                
               />
             </div>
             <span class="aviso" id="aviso"
