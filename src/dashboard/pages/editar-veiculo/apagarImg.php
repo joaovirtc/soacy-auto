@@ -17,5 +17,5 @@ unlink($pasta.$foto["path"]);
 $conn->query("DELETE FROM `foto` WHERE `foto`.`id_foto` = $id");
 
 $_SESSION['msgSucess'] = "Imagem excluida";
-header("Location: http://localhost/sistemadecarro/admin/pages/editar-veiculo/?id={$foto['id_carro']}"); //mandando o usuario para pagina de ediçao do veiculo
+header("Location: http://localhost/sistemadecarro/src/dashboard/pages/editar-veiculo/?id={$foto['id_carro']}"); //mandando o usuario para pagina de ediçao do veiculo
 
