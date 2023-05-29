@@ -116,7 +116,7 @@ if(!isset($_SESSION["userID"])){
               
               
             </div>
-            <a href="src/dashboard/pages/adicionar-novo-veiculo">
+            <a href="http://localhost/sistemadecarro/src/dashboard/pages/adicionar-novo-veiculo/">
               <button class="botao-primario">
                 <i class="ri-add-line icon-botao"></i>
                 Adicionar Veículo
@@ -233,7 +233,7 @@ if(!isset($_SESSION["userID"])){
                         <span class=\"status-{$registro["status"]}\">{$registro["status"]}</span>
                       </td>
                       <td class=\"descricao-tabela ações\">
-                        <a class=\"edit\" href=\"./pages/visualizar-veiculo?id={$registro["id_carro"]}\">
+                        <a class=\"edit\" href=\"http://localhost/sistemadecarro/src/dashboard/pages/visualizar-veiculo?id={$registro["id_carro"]}\">
                           <i class=\"ri-eye-line\"></i>
                           </a>
                       </td>
