@@ -21,7 +21,7 @@
         <header class="content-preview">
           <div>
             <img
-              src="../../../assets/img/logo branca 1.png"
+              src="../../../assets/img/icons_logos/logo branca 1.png"
               alt="Logo da SoacyAuto"
               width="50"
               height="50"
@@ -46,11 +46,21 @@
               utilização do nosso sistema.
             </p>
           </header>
-          <form action="" class="formulário-get-started">
+          <form
+            action=""
+            class="formulário-get-started"
+            onsubmit="verificarSenha()"
+            id="form"
+          >
             <div class="input-group">
               <label for="">Nome de usuário</label>
-              <input type="text" class="input-form" />
-              <p class="aviso">
+              <input
+                type="text"
+                class="requiredInput"
+                oninput="nameValidate()"
+              />
+              <span class="span-required"> Informe um nome de usuário </span>
+              <p class="aviso-usuário">
                 <span class="important">*</span>No momento não apresentamos
                 configurações de vários usuários, portanto so poderá criar um
                 usuário, recomendamos utlizar o nome da sua revenda como nome de
@@ -59,19 +69,29 @@
             </div>
             <div class="input-group">
               <label for="">Digite sua senha</label>
-              <input type="password" class="input-form" />
+              <input type="password" class="requiredInput" id="senha" />
             </div>
             <div class="input-group">
               <label for="">Confirme sua senha</label>
-              <input type="password" class="input-form" />
-            </div>
-            <div class="input-group">
               <input
-                type="submit"
-                class="input-form submit"
-                value="Continuar"
+                type="password"
+                class="requiredInput"
+                id="confirmarSenha"
               />
             </div>
+            <span class="aviso" id="aviso"
+              >Senhas não coincidem. Verifique e garanta que sejam idênticas
+              antes de prosseguir</span
+            >
+            <div class="checkbox-div">
+              <input type="checkbox" onclick="show()" class="checkbox" />
+              <label>Mostrar senhas</label>
+            </div>
+
+            <div class="input-group">
+              <input type="submit" class="submit" value="Continuar" />
+            </div>
+            <script src="./validate.js"></script>
           </form>
         </div>
       </div>

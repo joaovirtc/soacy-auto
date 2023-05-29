@@ -66,7 +66,7 @@ html {
   height: 100vh;
   background-color: #0066cc;
   display: flex;
-  background-image: url(../../../assets/img/preview.svg);
+  background-image: url(../../../assets/img/icons_logos/preview.svg);
   background-repeat: no-repeat;
   background-size: cover;
   align-items: flex-start;
@@ -162,7 +162,6 @@ html {
 .formulário-get-started {
   display: flex;
   flex-direction: column;
-  gap: 33px;
 }
 
 .input-group {
@@ -170,6 +169,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 13px;
+  margin: 12px 0;
 }
 
 label {
@@ -179,7 +179,7 @@ label {
   color: #111111;
 }
 
-.input-form {
+.requiredInput {
   outline: none;
   border: 1px solid #dddddc;
   padding: 10px 15px;
@@ -190,10 +190,10 @@ label {
   transition: 200ms border;
 }
 
-.input-form:hover {
+.requiredInput:hover {
   border: 1px solid #0066cc;
 }
-.input-form:focus {
+.requiredInput:focus {
   border: 1px solid #0066cc;
 }
 
@@ -201,11 +201,17 @@ label {
   background-color: #0066cc;
   color: #fff;
   cursor: pointer;
-  border: 1px solid #0066cc;
+  outline: none;
+  border: none;
   font-size: 16px;
+  outline: none;
+  padding: 12px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: 200ms border;
 }
 
-.aviso {
+.aviso-usuário {
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
@@ -253,4 +259,28 @@ label {
   .content-preview {
     gap: 40px;
   }
+}
+
+.aviso,
+.span-required {
+  font-size: 12px;
+  color: #f30d0d;
+  display: none;
+}
+
+.checkbox-div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  border: var(--border);
+  background-color: #0066cc;
+  cursor: pointer;
 }
