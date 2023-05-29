@@ -1,6 +1,6 @@
 <?php
 // carregando dependencias
-include_once('src/assets/php/conn.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sistemadecarro/src/assets/php/conn.php');
 session_start();
 
 // query's no banco de dados

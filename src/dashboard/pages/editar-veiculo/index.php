@@ -1,7 +1,7 @@
 <?php
 // carregando dependencias
 $raiz = $_SERVER['DOCUMENT_ROOT'];
-include_once($raiz.'/SistemaDeCarro/src/assets/php/conn.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sistemadecarro/src/assets/php/conn.php');
 session_start();
 
 
