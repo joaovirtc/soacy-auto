@@ -1,6 +1,7 @@
 <?php
 header('Content-type: text/html; charset=iso-8859-1');
-
+session_start();
+$_SESSION['msgSucess'] = 'msg';
 require '../../../assets/php/PHPMailer/src/Exception.php';
 require '../../../assets/php/PHPMailer/src/PHPMailer.php';
 require '../../../assets/php/PHPMailer/src/SMTP.php';
@@ -26,7 +27,8 @@ try {
 
     //Recipients
     $mail->setFrom('contato@soacy.com', 'kawan');
-    $mail->addAddress('pereirakawan07@gmail.com', 'Joe User');     //Add a recipient
+    $mail->addAddress('pereirakawan07@gmail.com', 'kawan'); 
+    $mail->addAddress('joaovictorcarmindo@gmail.com', 'joao');    //Add a recipient
 
 
     //Attachments
@@ -57,7 +59,7 @@ try {
             table, td {}
         </style>
     </head>
-<body style="margin: 0; padding: 0;
+<body style="margin: 0; padding: 0;font-family: "Inter";
 font-style: normal;font-weight: 600;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="500"
      style="background-color: #121316;color: #fff;">
@@ -100,7 +102,7 @@ Equipe de suporte da Soacy
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'Message has been sent';
+    header('location: http://localhost/sistemadecarro/src/dashboard/auth/singin/');
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
