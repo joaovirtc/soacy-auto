@@ -1,6 +1,6 @@
 <?php
 // carregando dependencias
-include_once('../../assets/conn.php'); // puxando arquivo de conexao com o banco de dados
+include_once($_SERVER['DOCUMENT_ROOT'].'/sistemadecarro/src/assets/php/conn.php'); // puxando arquivo de conexao com o banco de dados
 session_start(); // carregando sessoes
 
 // definindo variaveis
