@@ -14,7 +14,7 @@ session_start(); // carregando sessoes
 // destruindo todas as sessoes
 
     session_destroy();
-    header('Location: http://localhost/sistemadecarro/src/dashboard/pages/singin/');
+    header('Location: http://localhost/sistemadecarro/src/dashboard/auth/singin/');
 
 
 ?>
