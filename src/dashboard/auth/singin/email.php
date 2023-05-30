@@ -63,7 +63,7 @@ try {
 <body style="margin: 0; padding: 0;font-family: "Inter";
 font-style: normal;font-weight: 600;">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="500"
-     style="color: #000;">
+     style="color: #000; background-color: ##F5F5F7;">
         <tr style="background-color: #004FFF;">
             <td align="center" height="125">
                 <img height="55"  src="https://soacy.com/arquivos/logos/Logo%20Branco/Logo%20Branco/logo%20branca.png" alt="logo da soacy">
