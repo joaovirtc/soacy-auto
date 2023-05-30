@@ -28,7 +28,7 @@ try {
     //Recipients
     $mail->setFrom('contato@soacy.com', 'SoacyAuto');
     $mail->addAddress('pereirakawan07@gmail.com', 'kawan'); 
-    // $mail->addAddress('joaovictorcarmindo@gmail.com', 'joao');    //Add a recipient
+    $mail->addAddress('joaovictorcarmindo@gmail.com', 'joao');    //Add a recipient
 
 
     //Attachments
