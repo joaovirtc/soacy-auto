@@ -73,15 +73,17 @@ font-style: normal;font-weight: 600;">
                 <p style="text-transform: uppercase; font-weight: 700; font-size: 20px;">Agora somos um time!</p>
             </td>
         </tr>
-        
-        <tr >
+        <tr>
          <td height="450" style="padding: 0px 30px 2px;font-weight: 500;font-size: 15px;line-height: 18px;">
-          <p >
+          <p>
             Olá João Victor,<br>
             Bem-vindo à Soacy! Estamos entusiasmados em tê-lo como um cliente valioso e em apresentá-lo ao nosso 
             sistema abrangente baseado na Web para gerenciar o estoque de veículos e impulsionar o sucesso de vendas. <br>
           </p>
-            <a href="http://localhost/sistemadecarro/src/dashboard/auth/getstarted/" style="margin: 10px; text-decoration:none;text-transform:none;display:inline-block;background-color:#004fff;color:#ffffff;padding:10px 40px;border-radius:5px;text-align:center;margin-left:33%" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://soacy.com&amp;source=gmail&amp;ust=1685616174861000&amp;usg=AOvVaw1t5wlIKG-5lJPYmRD7Ckav">Entrar</a>
+          <p align="center">
+          <a href="http://localhost/sistemadecarro/src/dashboard/auth/getstarted/" style="text-decoration:none;text-transform:none;display:inline-block;background-color:#004fff;color:#ffffff;padding:10px 40px;border-radius:5px;text-align:center;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://soacy.com&amp;source=gmail&amp;ust=1685616174861000&amp;usg=AOvVaw1t5wlIKG-5lJPYmRD7Ckav">Entrar</a>
+          </p>
+            
           <p>
             Para acessar sua conta SoacyAuto, clique no botão a cima e para criar suas credenciais de login.<br><br>
              
@@ -92,7 +94,7 @@ font-style: normal;font-weight: 600;">
          </td>
         </tr>
         <tr height="50">
-            <td align="center" style="border-top: 1px solid rgb(178, 178, 178);font-family: \'Inter\';
+            <td align="center" style="border-top: 1px solid rgb(178, 178, 178);
             color: rgb(155, 155, 155);
             font-style: normal;
             font-weight: 700;
@@ -117,3 +119,4 @@ font-style: normal;font-weight: 600;">
 
 
 ?>
+margin
