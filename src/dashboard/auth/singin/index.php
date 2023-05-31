@@ -24,6 +24,11 @@ if(isset($_SESSION["userID"])){
       rel="stylesheet"
     />
     <link
+      rel="shortcut icon"
+      href="../../../assets/img/icons_logos/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />

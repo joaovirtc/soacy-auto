@@ -64,6 +64,11 @@ if(!isset($_SESSION["userID"])){
       rel="stylesheet"
     />
     <link
+      rel="shortcut icon"
+      href="./src/assets/img/icons_logos/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
@@ -141,7 +146,7 @@ var noback = {
       <aside class="sidebar">
         <div class="content-sidebar">
           <div class="header-sidebar">
-            <p>LOGO</p>
+          <img src="./src/assets/img/icons_logos/logo.svg" alt="Logo soacy auto" width="100" heigth="100">
           </div>
           <div class="menu">
             <div class="menu-principal">
@@ -199,7 +204,7 @@ var noback = {
               <div class="card-visao-geral">
                 <div class="header-card">
                   <i class="ri-car-line icon-card"></i>
-                  <p class="title-card">Total veículos cadastrados</p>
+                  <p class="title-card">Total veículos em estoque</p>
                 </div>
                 <div class="content-card">
                   <div>
