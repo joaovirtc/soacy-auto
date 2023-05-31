@@ -236,7 +236,7 @@ var noback = {
                             <span class=\"status-sale\">vendido</span>
                           </td>
                           <td class=\"descricao-tabela ações\">
-                            <a href=\"http://localhost/sistemadecarro/admin/visualizar-veiculo\" class=\"edit\">
+                            <a href=\"../visualizar-veiculo?id={$registro["id_carro"]}\" class=\"edit\">
                             <i class=\"ri-eye-line\"></i>
                             </a>
                           </td>
