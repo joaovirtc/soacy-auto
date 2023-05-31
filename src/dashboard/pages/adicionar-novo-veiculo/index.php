@@ -24,6 +24,11 @@ $anos = $conn->query("SELECT * FROM `anos` where nome <= {$hoje} ORDER BY `nome`
       rel="stylesheet"
     />
     <link
+      rel="shortcut icon"
+      href="../../../assets/img/icons_logos/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
@@ -160,7 +165,7 @@ var noback = {
       <aside class="sidebar">
         <div class="content-sidebar">
           <div class="header-sidebar">
-            <p>LOGO</p>
+            <img src="../../../assets/img/icons_logos/logo.svg" alt="Logo soacy auto" width="100" heigth="100">
           </div>
           <div class="menu">
             <div class="menu-principal">
