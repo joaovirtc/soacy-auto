@@ -28,16 +28,17 @@ $raiz = $_SERVER['DOCUMENT_ROOT'];
 $pasta = $raiz . "/sistemadecarro/src/assets/img/imagens_veiculos/";
 // query's no banco de dados
 
-if(isset($_FILES['arquivo'])){
-    $nomeArquivo = $_FILES['arquivo']['name'];
-        $nvNomeArquivo = uniqid();
-        $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+for($i=0; $i < count($_FILES['arquivo']["name"]); $i++){
+        
+    $nomeArquivo = $_FILES['arquivo']['name'][$i];
+    $nvNomeArquivo = uniqid();
+    $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
 
-        $path = $nvNomeArquivo . "." . $extensao;
-        $deuCerto = move_uploaded_file($_FILES["arquivo"]["tmp_name"], $pasta . $path);
-        if($deuCerto) {
-            $conn->query("INSERT INTO `foto`(`id_foto`, `path`, `id_carro`) VALUES (id_foto,'$path','$id')");
-        }
+    $path = $nvNomeArquivo . "." . $extensao;
+    $deuCerto = move_uploaded_file($_FILES["arquivo"]["tmp_name"][$i], $pasta . $path);
+    if($deuCerto) {
+        $conn->query("INSERT INTO `foto`(`id_foto`, `path`, `id_carro`) VALUES (id_foto,'$path','$idCarro')");
+    }
 }
     
 
