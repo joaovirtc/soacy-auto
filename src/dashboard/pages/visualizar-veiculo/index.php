@@ -183,15 +183,22 @@ var noback = {
               <p><?php echo($dt_car['motor'] . ' ' . $dt_car['versao']) ?></p>
               <span class="<?php echo($dt_car['status']) ?>"><?php echo($dt_car['status']) ?></span>
             </div>
+            
             <div class="content-actions">
-              <a href="http://localhost/sistemadecarro/src/dashboard/pages/editar-veiculo/?id=<?php echo($dt_car['id_carro']) ?>" class="botao-primario">
-                <i class="ri-pencil-line"></i>
-                Editar Veículo
-              </a>
-              <a href="./vendaVeiculo.php?id=<?php echo($idCarro) ?> " class="action-btn" data-tooltip="Marcar como vendido">
-                <i class="ri-money-dollar-circle-line icon-action-sale"></i>
-                
-              </a>
+              <?php
+                if($dt_car['status'] != 'vendido'){
+                  echo("
+                  <a href=\"http://localhost/sistemadecarro/src/dashboard/pages/editar-veiculo/?id={$dt_car['id_carro']}\" class=\"botao-primario\">
+                    <i class=\"ri-pencil-line\"></i>
+                    Editar Veículo
+                  </a>
+                  <a href=\"./vendaVeiculo.php?id=${idCarro}\" class=\"action-btn\" data-tooltip=\"Marcar como vendido\">
+                    <i class=\"ri-money-dollar-circle-line icon-action-sale\"></i>
+                  </a>
+                  ");
+                }
+              ?>
+              
               <button
                 class="action-btn-excluir"
                 onclick="openPopup()"

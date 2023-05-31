@@ -325,9 +325,11 @@ var noback = {
               <div class="input-group">
                 <label for="">Motor</label>
                 <select name="motor" id="" class="input-dados">
+                <option <?php echo ($dt_car['motor'] == "4.1") ? "selected" : '' ?> value="4.1">4.1</option>
                   <option <?php echo ($dt_car['motor'] == "3.0") ? "selected" : '' ?> value="3.0">3.0</option>
                   <option <?php echo ($dt_car['motor'] == "2.0") ? "selected" : '' ?> value="2.0">2.0</option>
-                  <option <?php echo ($dt_car['motor'] == "1.5") ? "selected" : '' ?> value="1.5">1.5</option>
+                  <option <?php echo ($dt_car['motor'] == "1.6") ? "selected" : '' ?> value="1.6">1.6</option>
+                  <option <?php echo ($dt_car['motor'] == "1.4") ? "selected" : '' ?> value="1.4">1.4</option>
                   <option <?php echo ($dt_car['motor'] == "1.0") ? "selected" : '' ?> value="1.0">1.0</option>
                 </select>
               </div>
