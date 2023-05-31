@@ -393,16 +393,11 @@ var noback = {
                 <textarea
                   name="sobre"
                   class="text-sobre"
-                  rows="4"
+                  rows="7"
                   cols="50"
                   placeholder="Ex: Se você estava sonhando com um VolksWagen Golf 1.4 TSI HIGHLINE 16V GASOLINA 4P AUTOMÁTICO, 
-                  agora é a hora de transformar esse sonho em realidade! Este VolksWagen Golf 1.4 TSI HIGHLINE 16V
-                   GASOLINA 4P AUTOMÁTICO, Prata/2015/61861km está disponível para test drive. Vamos lá? Fale com 
-                   nossa equipe online por WhatsApp (**)****-****, ou venha até uma de nossas lojas. Este carro 
-                   está na ********, nº ****.
-                    Confira os endereços de nossas outras lojas no site e veja qual delas fica perto de você. Preço para
-                     pagamento à vista. Caso tenha carro ou moto como entrada na troca, consulte o valor do veículo com 
-                     nossa equipe de vendas."
+agora é a hora de transformar esse sonho em realidade! Este VolksWagen Golf 1.4 TSI HIGHLINE 16V
+GASOLINA 4P AUTOMÁTICO, Prata/2015/61861km está disponível para test drive."
                 ></textarea>
               </div>
             </div>
