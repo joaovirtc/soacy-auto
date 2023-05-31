@@ -138,11 +138,11 @@ var noback = {
                 <i class="ri-function-line icon-nav-link"></i>
                 <p class="title-nav-link">Dashboard</p>
               </a>
-              <a href="../estoque/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/estoque" class="nav-link">
                 <i class="ri-car-line icon-nav-link"></i>
                 <p class="title-nav-link">Estoque</p>
               </a>
-              <a href="../financeiro/" class="nav-link">
+              <a href="http://localhost/sistemadecarro/src/dashboard/pages/financeiro/" class="nav-link">
                 <i class="ri-money-dollar-circle-line icon-nav-link"></i>
                 <p class="title-nav-link">Vendas</p>
               </a>
@@ -151,7 +151,7 @@ var noback = {
                 <p class="title-nav-link">Gerenciamento de Leads</p>
               </a>
             </div>
-            <a href="../../assets/php/logout.php" class="nav-link"
+            <a href="http://localhost/sistemadecarro/src/assets/php/logout.php" class="nav-link"
               ><!-- esse link leva ao processo de logout com php -->
 
               <i class="ri-logout-circle-line icon-nav-link"></i>
@@ -237,16 +237,16 @@ var noback = {
                             </div>
                           </div>
                           <div class=\"action-leads\">
-                          <a id=\"link-whats-ver\" class=\"link\" data-tooltip=\"Enviar mesangem via Whatsapp\" target=\"_blank\" href=\"../../assets/php/leadVisto.php?telefone={$leads['telefone']}&nome={$leads['nome']}&id={$leads['id']}\">
+                          <a id=\"link-whats-ver\" class=\"link\" data-tooltip=\"Enviar mesangem via Whatsapp\" target=\"_blank\" href=\"./leadVisto.php?telefone={$leads['telefone']}&nome={$leads['nome']}&id={$leads['id']}\">
                               <img
-                                src=\"../../assets/img/WhatsApp logo.png\"
+                                src=\"http://localhost/sistemadecarro/src\assets\img\icons_logos\WhatsApp logo.png\"
                                 alt=\"\"
                                 width=\"30px\"
                                 height=\"30px\"
                               />
                               <span class=\"tooltiptext\">Enviar mensagem</span>
                             </a>
-                            <a class=\"link\" href=\"../../assets/php/vistoLead.php?id={$leads['id']}\">
+                            <a class=\"link\" href=\"./vistoLead.php?id={$leads['id']}\">
                               <i class=\"ri-check-double-line icon-marcar-como-visto\"></i>
                               <span class=\"tooltiptext\">Marcar como visto</span>
                             </a>
@@ -280,7 +280,7 @@ var noback = {
                         <div class=\"action-leads\">
                           <a class=\"link\" target=\"_blank\" href=\"https://api.whatsapp.com/send?phone={$leads['telefone']}&text=Olá {$leads['nome']}.\">
                             <img
-                              src=\"../../assets/img/WhatsApp logo.png\"
+                              src=\"http://localhost/sistemadecarro/src\assets\img\icons_logos\WhatsApp logo.png\"
                               alt=\"\"
                               width=\"30px\"
                               height=\"30px\"
