@@ -318,10 +318,12 @@ var noback = {
               <div class="input-group">
                 <label for="">Motor</label>
                 <select name="motor" id="" class="input-dados">
-                  <option value="3.0">3.0</option>
-                  <option value="2.0">2.0</option>
-                  <option value="1.5">1.5</option>
                   <option selected value="1.0">1.0</option>
+                  <option value="1.4">1.4</option>
+                  <option value="1.6">1.6</option>
+                  <option value="2.0">2.0</option>
+                  <option value="3.0">3.0</option>
+                  <option value="4.1">4.1</option>
                 </select>
               </div>
               <div class="input-group">
