@@ -247,7 +247,7 @@ var noback = {
                 }
               ?>
                 <div class="container-add-foto">
-                  <input type="file" name="arquivo" accept=".jpeg,.png,.webp">
+                  <input type="file" name="arquivo" multiple accept=".jpeg,.png,.webp">
                 </div>
             </div>
           </div>
