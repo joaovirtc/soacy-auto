@@ -65,7 +65,7 @@ font-style: normal;font-weight: 600;">
      style="color: #000000;background-color: #F5F5F7;">
         <tr style="background-color: #004FFF;">
             <td height="25">
-                <img height="30" style="display: block;" src="https://soacy.com/arquivos/logos/Logo%20Branco/Logo%20Branco/logo%20branca%20texto.png" alt="logo da soacy">
+                <img height="35" style="display: block;" src="https://soacy.com/arquivos/logos/Logo%20Branco/Logo%20Branco/logo%20branca%20texto.png" alt="logo da soacy">
             </td>
         </tr>
         <tr style="background-color: #004FFF; color: #ffffff;">
@@ -79,19 +79,13 @@ font-style: normal;font-weight: 600;">
           <p >
             Olá João Victor,<br>
             Bem-vindo à Soacy! Estamos entusiasmados em tê-lo como um cliente valioso e em apresentá-lo ao nosso 
-            sistema abrangente baseado na Web para gerenciar o estoque de veículos e impulsionar o sucesso de vendas. 
-            Na Soacy, entendemos as complexidades envolvidas no gerenciamento de estoque de veículos e na maximização 
-            das oportunidades de vendas. Nossa missão é fornecer a você uma plataforma poderosa que simplifique suas operações, 
-            agilize seus processos de vendas e ajude você a atingir suas metas de negócios.<br>
+            sistema abrangente baseado na Web para gerenciar o estoque de veículos e impulsionar o sucesso de vendas. <br>
           </p>
-
-            <a href="http://localhost/sistemadecarro/src/dashboard/auth/getstarted/" style="text-decoration:none;text-transform:none;display:inline-block;background-color:#004fff;color:#ffffff;padding:10px 40px;border-radius:5px;text-align:center;margin-left:33%" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://soacy.com&amp;source=gmail&amp;ust=1685616174861000&amp;usg=AOvVaw1t5wlIKG-5lJPYmRD7Ckav">Entrar</a>
+            <a href="http://localhost/sistemadecarro/src/dashboard/auth/getstarted/" style="margin: 10px; text-decoration:none;text-transform:none;display:inline-block;background-color:#004fff;color:#ffffff;padding:10px 40px;border-radius:5px;text-align:center;margin-left:33%" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://soacy.com&amp;source=gmail&amp;ust=1685616174861000&amp;usg=AOvVaw1t5wlIKG-5lJPYmRD7Ckav">Entrar</a>
           <p>
-            Para acessar sua conta SoacyAuto, clique no botão a cima e faça login usando suas credenciais. Depois de fazer login, você descobrirá um mundo de recursos e ferramentas
-             projetados para aprimorar o gerenciamento de estoque de veículos e os processos de vendas.<br>
-             Se você tiver alguma dúvida, feedback ou sugestão, não hesite em nos contatar. Estamos aqui para apoiá-lo e ajudá-lo a prosperar.
-             Obrigado por escolher o SoacyAuto como sua solução confiável de gerenciamento e vendas de inventário de veículos. Juntos, vamos elevar
-              o seu negócio a novos patamares!<br>
+            Para acessar sua conta SoacyAuto, clique no botão a cima e para criar suas credenciais de login.<br><br>
+             
+             Obrigado por escolher o SoacyAuto como sua solução confiável.<br>
               Atenciosamente, <br><br>
             Equipe SoacyAuto.
           </p>

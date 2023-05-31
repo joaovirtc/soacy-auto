@@ -316,7 +316,7 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
   el.addEventListener("click", function() {
-    sleep(500).then(() => {
+    sleep(300).then(() => {
    location.reload();
 });
     
