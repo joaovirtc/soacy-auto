@@ -37,7 +37,7 @@ for($i=0; $i < count($_FILES['arquivo']["name"]); $i++){
     $path = $nvNomeArquivo . "." . $extensao;
     $deuCerto = move_uploaded_file($_FILES["arquivo"]["tmp_name"][$i], $pasta . $path);
     if($deuCerto) {
-        $conn->query("INSERT INTO `foto`(`id_foto`, `path`, `id_carro`) VALUES (id_foto,'$path','$idCarro')");
+        $conn->query("INSERT INTO `foto`(`id_foto`, `path`, `id_carro`) VALUES (id_foto,'$path','$id')");
     }
 }
     
