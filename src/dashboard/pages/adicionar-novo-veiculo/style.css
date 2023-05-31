@@ -71,6 +71,7 @@ body {
   font-size: 14px;
   font-weight: 600;
   border-radius: 5px;
+  line-height: 25px;
   background-color: var(--container-color);
 }
 .icon-botao {
@@ -362,6 +363,11 @@ body {
   border-radius: 5px;
   background-color: var(--container-color);
   width: 140px;
+}
+
+::placeholder {
+  font-weight: 500;
+  color: var(--text-color-opacity);
 }
 
 .header-dados-veiculo {

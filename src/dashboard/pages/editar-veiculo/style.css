@@ -467,8 +467,15 @@ body {
   font-size: 14px;
   font-weight: 600;
   border-radius: 5px;
+  line-height: 25px;
   background-color: var(--container-color);
 }
+
+::placeholder {
+  font-weight: 500;
+  color: var(--text-color-opacity);
+}
+
 .header-dados-veiculo {
   margin-top: 34px;
 }
