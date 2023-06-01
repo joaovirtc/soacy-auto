@@ -183,7 +183,7 @@ var noback = {
           <header class="header-body">
             <div class="content-logo-concessionaria">
               <img src="./assets/img/logo-Icon-Pretabela" alt="" />
-              <p class="title"><?php echo(saudacao()) ?>, SoacyCars &#128075</p>
+              <p class="title"><?php echo(saudacao()) ?>, <?php echo($_SESSION['userName']) ?> &#128075</p>
               
               
             </div>
