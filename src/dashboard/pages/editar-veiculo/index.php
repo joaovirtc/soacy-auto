@@ -400,8 +400,8 @@ var noback = {
               <div class="input-group">
                 <label for="">Portas</label>
                 <select name="portas" id="" class="input-dados">
-                  <option <?php echo ($dt_car['portas'] == "2") ? "selected" : '' ?> value="4">2 portas</option>
-                  <option <?php echo ($dt_car['portas'] == "4") ? "selected" : '' ?> value="2">4 portas</option>
+                  <option <?php echo ($dt_car['portas'] == "2") ? "selected" : '' ?> value="2">2 portas</option>
+                  <option <?php echo ($dt_car['portas'] == "4") ? "selected" : '' ?> value="4">4 portas</option>
                   <option <?php echo ($dt_car['portas'] == "6") ? "selected" : '' ?> value="6">6 Portas</option>
                 </select>
               </div>

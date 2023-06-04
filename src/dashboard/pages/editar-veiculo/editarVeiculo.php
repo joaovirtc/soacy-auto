@@ -45,7 +45,7 @@ for($i=0; $i < count($_FILES['arquivo']["name"]); $i++){
 
 // codigo
     $conn->query("UPDATE `carro` SET `placa`='$placa',`valor`='$valor',`marca`='$marca',`modelo`='$modelo',`versao`='$versao',
-    `motor`='$motor',`ano`='$ano',`cor`='$ano',`combustivel`='$combustivel',`cambio`='$cambio',`quilometragem`='$quilometragem',
+    `motor`='$motor',`ano`='$ano',`cor`='$cor',`combustivel`='$combustivel',`cambio`='$cambio',`quilometragem`='$quilometragem',
     `portas`='$portas',`carroceria`='$carroceria',`status`='$status', `sobre`='$sobre' WHERE `carro`.`id_carro` = $id;");
 
 $_SESSION['msgSucess'] = "Dados editados com sucesso";
