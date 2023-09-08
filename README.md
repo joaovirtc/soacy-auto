@@ -12,8 +12,9 @@ Um projeto pessoal desenvolvido inteiramente por dois desenvolvedores, é um sis
 ![App Screenshot]("https://avatars.githubusercontent.com/u/97305685?v=4")
 ## Funcionalidades
 
-- Autenticação completa de usuário 
-- Adicionar, deletar e editar novos veículos
-- Informações dos leads capturados
-- Informações e métricas mostrado em tela para o usuário : quantidade de veículos, vendas de veículos e leads capturados 
-
+Focamos bastante em um sistema intuitivo para o usuário conseguir administrar com facilidade sua concessionária, aqui estão algumas funcionalidades que o sistema proporciona : 
+ 
+- Autenticação completa de usuário
+- Controle total para adicionar, excluir e editar novos veículos
+- Infomações e dados dos leads capturados 
+- Infomações e métricas de vendas, estoque, leads capturados entre outros, todos  mostrados em tela 
