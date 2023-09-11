@@ -14,7 +14,7 @@ Focamos bastante em um sistema intuitivo para o usuário conseguir administrar c
 - Autenticação completa de usuário
 - Controle total para adicionar, excluir e editar novos veículos
 - Infomações e dados dos leads capturados 
-- Infomações e métricas de vendas, estoque, leads capturados entre outros, todos  mostrados em tela
+- Infomações e métricas de vendas, estoque, leads capturados, entre outros, todos  mostrados em tela
 
 
 ## Contribuidores
