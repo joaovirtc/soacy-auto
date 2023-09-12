@@ -5,7 +5,7 @@ Um projeto pessoal desenvolvido inteiramente por dois desenvolvedores, é um sis
 
 ## Preview
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="https://www.vectorlogo.zone/logos/elixir-lang/elixir-lang-icon.svg" alt="elixir" width="40" height="40"/>
 
 ## Funcionalidades
 
@@ -16,7 +16,3 @@ Focamos bastante em um sistema intuitivo para o usuário conseguir administrar c
 - Infomações e dados dos leads capturados 
 - Infomações e métricas de vendas, estoque, leads capturados, entre outros, todos  mostrados em tela
 
-
-## Contribuidores
-
-![App Screenshot]("https://avatars.githubusercontent.com/u/97305685?v=4")
