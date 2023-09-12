@@ -5,7 +5,7 @@ Um projeto pessoal desenvolvido inteiramente por dois desenvolvedores, é um sis
 
 ## Preview
 
-<img src="./src/assets/img/icon_logos/Preview.png" alt="Preview" />
+<img src="/src/assets/img/icon_logos/Preview.png" alt="Preview" />
 
 ## Funcionalidades
 
