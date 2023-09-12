@@ -5,7 +5,7 @@ Um projeto pessoal desenvolvido inteiramente por dois desenvolvedores, é um sis
 
 ## Preview
 
-<img src="https://www.vectorlogo.zone/logos/elixir-lang/elixir-lang-icon.svg" alt="elixir" width="40" height="40"/>
+<img src="./src/assets/img/icon_logos/Preview.png" alt="Preview" />
 
 ## Funcionalidades
 
